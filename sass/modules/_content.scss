@@ -1,0 +1,10 @@
+.content 
+{ 
+	@include container;
+	@include margin-leader(1);
+	background-color: $bg1; 
+	color: $bsTxtClr;
+	border: 3px solid $bgBrdr;
+	@include border-radius();
+	@include drop-shadow(full);
+}

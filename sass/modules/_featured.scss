@@ -1,0 +1,72 @@
+.cs-text 
+{
+    width: 600px;
+    margin: 120px auto 30px;
+    cursor: default;
+    text-align: center;
+
+	span
+	{
+	  display:block;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-top: 6px;
+		font-family: Helvetica, sans-serif;
+		
+		&:first-child
+			{
+			font-size:50px;	
+			letter-spacing: 10px;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+		}
+	}
+}
+
+.cs-text span:nth-child(2)
+{
+	font-family: Georgia, serif;
+	font-weight: 400;
+	text-transform: none;
+	font-style: italic;
+    line-height: 40px;
+    font-size: 50px;
+	color: #eee;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
+    position: relative;
+	
+		 &:before, &:after
+		{
+		content:'';
+		width:250px;
+		height: 2px;
+		background: #eee;
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		@include box-shadow( -1px -1px 1px rgba(0,0,0,0.2));
+	}
+	
+	&:before
+		{
+		left:0px;
+	}
+	
+	&:after
+		{
+		right: 0px;
+	}
+}
+
+span:nth-child(3), span:nth-child(4)
+{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+span:nth-child(5), span:nth-child(6)
+{
+	float: right;
+	width: 50%;
+		text-align: center;
+}

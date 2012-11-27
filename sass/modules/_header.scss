@@ -1,0 +1,176 @@
+		  
+	%btn
+	{
+		display: inline-block;
+		transition: all 0.3s ease-out;
+		text-decoration: none;
+	}
+
+
+	%btnTrans
+	{
+		position: relative;
+		@include border-radius();
+		background: rgba( 188,198,206, .5 );
+		@include box-shadow( 0 4px rgba(168,180,191, .5) );
+
+		&:hover
+		{
+			background: lighten( rgba( 188,198,206, .5 ), 10% );
+		}
+
+		&:active
+		{
+			box-shadow: none;
+			top: 3px;
+		}
+	}
+
+
+header
+{
+	 @include container;
+	
+	#logo
+	{
+		@include span-columns(3,6);
+		min-height: 75px;
+		float: left;
+		
+		a
+		{
+			color: $white;
+	    	text-decoration: none;
+
+	    	h1
+			{
+				@include adjust-font-size-to(20px);
+				background: url("../img/base/logo-jason.png") left center no-repeat;
+		    	@include image-2x("../img/base/logo-jason@2x.png", 37px, 75px);
+		    	padding: .7em 0 .7em 50px; 
+		    	vertical-align: middle;
+			}
+		}
+	}
+
+	.wrap-dropdown
+	{
+		@include span-columns(3 omega,6);
+		margin: .5em auto;
+	}
+
+	a.toggleMenu
+	{
+		@extend %btn;
+		@extend %btnTrans;
+		width: 100%;
+		margin-top: 1.5rem;
+		padding: .4em .7em;
+
+		// Typography
+		color: $white;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-shadow: 0 -1px rgba( 99,114,131, .5 );
+
+		&:after 
+		{
+		    content: "";
+		    width: 0;
+		    height: 0;
+		    position: absolute;
+		    right: 16px;
+		    top: 50%;
+		    margin-top: -6px;
+		    border-width: 6px 0 6px 6px;
+		    border-style: solid;
+		    border-color: transparent $white;    
+		}
+	}
+
+
+	.nav
+	{
+		ul
+		{	
+			list-style: none;
+			*zoom: 1;
+			background:#175e4c;
+	     	position: relative;
+	     	@include clearfix;
+
+			li
+			{
+
+				a
+				{					
+					// Font Styles
+					color: $white;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: 0 -1px rgba( 99,114,131, .5 );
+
+					// Other
+					@include transition( all 0.1s ease-in );
+				}
+
+			}
+		}
+	}
+}
+
+
+// iPad Portrait
+@include at-breakpoint($ipad-portrait 10) 
+{
+	.content
+	{
+		@include container;
+	}
+
+	header
+	{
+		padding: 0;
+	}
+
+	header
+	{
+		.nav
+		{
+			float: right;
+			
+			ul
+			{
+				padding-top: 1.3em;
+					
+				li
+				{
+					display: inline;
+					margin-left: $gutter-width;
+
+					a
+					{
+						font-weight: 600;
+						padding: .4em .7em;
+						
+						// Font Styles
+						color: $white;
+						text-decoration: none;
+						text-transform: uppercase;
+						text-shadow: 0 -1px rgba( 99,114,131, .5 );
+
+						// Other
+						@include transition( all 0.1s ease-in );
+					}
+
+					a.btnTransparent
+					{
+						// @extend %btnTrans;
+					}
+				}
+			}
+		}
+	}
+}
+
+

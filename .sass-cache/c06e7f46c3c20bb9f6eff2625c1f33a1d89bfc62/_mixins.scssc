@@ -1,0 +1,1143 @@
+3.2.3 (Media Mark)
+c56c4fe38dc0dbc1195ce9089056f0a7e42abff0
+o:Sass::Tree::RootNode
+:@template" //----------------------------------------------------------------------------
+// Mixins  
+// custom mixins
+//----------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------
+// mixins.scss
+//----------------------------------------------------------------------------
+
+
+// ---------------------------------------------------------------------------
+// Media Queries
+
+@mixin respond-to($val, $query)
+{
+	@media ($val: $query)
+	{
+		@content
+	}
+}
+
+// Retina Images
+// Reference: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+// Debuggin Media Queries
+
+@mixin debugmessage($message, $color )
+{ 
+	@if $DEBUGMEDIA == true
+	{ 
+		&::before
+		{ 
+			content: $message; 
+			font-weight: bold; 
+			display: block; 
+			text-align: center; 
+			color: darken($color, 30%);
+			background: #{$color}; 
+			position: absolute; 
+			right: 0; 
+			left: 0; 
+			top: 0; 
+			z-index: 99; 
+		} 
+	}
+}
+
+
+// ---------------------------------------------------------------------------
+// REMs
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: 10px;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: unquote("");
+    @each $value in $px-values {
+      // If the value is zero, return 0
+      @if $value == 0 {
+        $rem-values: append($rem-values, $value); }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); } }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values; } }
+
+
+// ---------------------------------------------------------------------------
+// Header Style
+
+@mixin heading($style)
+{
+  @if $style == "drop-outline"
+  {
+     h1 
+     {
+        text-shadow: 
+          0 2px $bodyBackground,
+          0 3px $headingsColor;
+
+        font-weight: normal;
+        text-transform: uppercase;
+     }
+
+     h2
+     {
+        font-weight: normal;
+     }
+
+     h3
+     {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight:normal;
+        font-style: italic;
+     }
+
+     h4
+     {
+        font-weight: normal; }
+  }
+
+  @if $style == "two-corners"
+  {
+    h1
+    {   
+      @include box-shadow (
+        inset 0 0 0 1px complement( rgba($baseColor, .4) ),
+        inset 0 0 0 1px complement( rgba($baseColor, .5) ),
+        inset -285px 0 35px $white );
+      position: relative;
+      padding: 15px 15px 15px 15%;
+      
+      font-weight: 600;
+
+      background: #fff url('../img/ivan.jpeg') no-repeat center left;
+    }
+
+    h2
+    {
+      font-weight: normal;
+      position: relative;
+      text-shadow: 0 -1px $font-shadow-inset;
+      background: complement($baseColor);
+      background: complement( rgba($baseColor, .8) );
+      border: 1px solid $white;
+    }
+  }
+}
+
+
+// %valley
+// {
+// 	position: relative;
+// 	overflow: hidden;
+
+// 	&:before,
+// 	&:after
+// 	{
+// 		content: '';
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 	}
+
+// 	&:before
+// 	{
+// 		@extend %lip;
+// 		top: 0;
+// 	}
+
+// 	&:after
+// 	{
+// 		@extend %reversed-lip;
+// 		bottom: 0;
+// 	}
+// }
+
+
+// ---------------------------------------------------------------------------
+// Drop Shadow
+
+@mixin drop-shadow($direction)
+{
+	@if $direction == "top"
+	{
+		@include box-shadow( 0 (-$default-box-shadow-v-offset) ($default-box-shadow-v-offset / 2) (-($default-box-shadow-v-offset / 2)) $default-box-shadow-color );
+	}
+
+	@if $direction == "bottom"
+	{
+		@include box-shadow( 0 $default-box-shadow-v-offset ($default-box-shadow-v-offset / 2) (-($default-box-shadow-v-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "right"
+	{
+		@include box-shadow( $default-box-shadow-h-offset 0 ($default-box-shadow-h-offset / 2) (-($default-box-shadow-h-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "left"
+	{
+		@include box-shadow( (-$default-box-shadow-h-offset) 0 ($default-box-shadow-h-offset / 2) (-($default-box-shadow-h-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "full"
+	{
+		@include box-shadow(0 0 $default-box-shadow-blur 2px $default-box-shadow-color);
+	}
+
+	@if $direction == "light"
+	{
+		@include box-shadow(0 0 0 10px $whiteTransperntMed);
+	}
+
+	@if $direction == "glow"
+	{
+		@include box-shadow(0 0 $default-box-shadow-blur 4px $whiteTransperntLight inset);
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Emphasis Boxes
+
+@mixin emphasize($style, $color: $baseColor, $borderRadius: $defaultBorderRadius)
+{
+	@if $style == "dark"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(full);
+		background: $color;
+	}
+
+	@if $style == "light"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(light);
+		background: $color;
+	}
+
+	@if $style == "glow"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(glow);
+		background: $color;
+	}
+}
+
+
+// ---------------------------------------------------------------------------
+// Emboss
+
+@mixin emboss($style, $color: $baseColor, $borderRadius: $defaultBorderRadius)
+{
+	@if $style == "light"
+	{
+		@include border-radius($borderRadius);
+		border: 1px solid $color;
+		@include box-shadow(0 1px 0 $whiteTransperntLight inset);
+	}
+
+	@if $style == "heavy"
+	{
+		@include border-radius($borderRadius);
+		border: 1px solid $color;
+		@include box-shadow 
+		(
+			0 2px 3px $whiteTransperntLight inset,
+			0 -2px 3px  $blackTransperntLight inset,
+			0 1px 1px $whiteTransperntLow
+		);
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Helper Functions
+
+// image replacement
+%hide-text 
+{
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+
+    &:before 
+	{
+    	content: "";
+    	display: block;
+    	width: 0;
+    	height: 100%;
+	}
+}
+
+// hide from both screenreaders and browsers: h5bp.com/u
+%hidden 
+{
+    display: none !important;
+    visibility: hidden;
+}
+
+// hide only visually, but have it available for screenreaders: h5bp.com/v
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+}
+
+
+// extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+@mixin vh($expanded: false)
+{
+	.visuallyHidden
+	{
+	    border: 0;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+
+	    @if $expanded == "true"
+	    {
+			&.focusable
+			{
+				&:active, &:focus
+				{
+				    clip: auto;
+				    height: auto;
+				    margin: 0;
+				    overflow: visible;
+				    position: static;
+				    width: auto;
+			    }
+			}
+		}
+	}
+}
+
+
+// hide visually and from screenreaders, but maintain layout
+%invisible 
+{
+    visibility: hidden;
+}
+
+
+// responsive images
+@mixin responsive()
+{
+	.responsive 
+	{
+	  max-width: 100%;
+	}
+
+	img.responsive 
+	{
+	  height: auto;
+	}
+}
+
+:@has_childrenT:@options{ :
+@linei:@children[*o:Sass::Tree::CommentNode
+:
+@type:silent;@;	i;
+[ :@value["½/*----------------------------------------------------------------------------
+ * Mixins  
+ * custom mixins
+ *---------------------------------------------------------------------------- */o;
+;;;@;	i;
+[ ;["¯/*----------------------------------------------------------------------------
+ * mixins.scss
+ *---------------------------------------------------------------------------- */o;
+;;;@;	i;
+[ ;["g/* ---------------------------------------------------------------------------
+ * Media Queries */o:Sass::Tree::MixinDefNode;T:
+@args[[o:Sass::Script::Variable:@underscored_name"val;@:
+@name"val0[o;;"
+query;@;"
+query0;@;	i;
+[o:Sass::Tree::MediaNode;T;@;	i:
+@tabsi ;
+[o:Sass::Tree::ContentNode;@;	i;
+[ :@query[
+"(o;	;"val;@;	i;"val": o;	;"
+query;@;	i;"
+query");" ;"respond-to:@splat0o;
+;;;@;	i;
+[ ;["n/* Retina Images
+ * Reference: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss */o;;T;[[o;;"
+image;@;"
+image0[o;;"
+width;@;"
+width0[o;;"height;@;"height0;@;	i;
+[o;;T;@;	i";i ;
+[o;
+;:normal;@;	i#;
+[ ;["2/* on retina, use image that's scaled by 2 */o:Sass::Tree::PropNode:@prop_syntax:new;@;	i$;i ;
+[ ;["background-image;o:Sass::Script::Funcall;[o;	;"
+image;@;	i$;"
+image;@;	i$:@keywords{ ;"url;0o;;;;@;	i%;i ;
+[ ;["background-size;o:Sass::Script::List	;@;	i%:@separator:
+space;[o;	;"
+width;@;	i%;"
+widtho;	;"height;@;	i%;"height;[""(o:Sass::Script::String	;:identifier;@;	i;" min--moz-device-pixel-ratio": o:Sass::Script::Number:@original"1.3;@;	i:@denominator_units[ :@numerator_units[ ;f1.3 ÌÍ")", "(o;"	;;#;@;	i;"-o-min-device-pixel-ratio": o:Sass::Script::Operation
+:@operand2o;$;%"2;@;	i;&@g;'[ ;i;@;	i:@operand1o;$;%"2.6;@;	i;&@g;'[ ;f2.6000000000000001 ÌÍ:@operator:div")@k"(o;"	;;#;@;	i ;"#-webkit-min-device-pixel-ratio": o;$;%"1.3;@;	i ;&@g;'[ ;f1.3 ÌÍ")@k"(o;"	;;#;@;	i!;"min-device-pixel-ratio": o;$;%"1.3;@;	i!;&@g;'[ ;f1.3 ÌÍ")@k"(o;"	;;#;@;	i";"min-resolution": o;$;%"1.3dppx;@;	i";&[ ;'["	dppx;f1.3 ÌÍ");" ;"image-2x;0o;
+;;;@;	i);
+[ ;["!/* Debuggin Media Queries */o;;T;[[o;;"message;@;"message0[o;;"
+color;@;"
+color0;@;	i,;
+[u:Sass::Tree::IfNodej[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Bool:@options{ :
+@linei-:@valueT;@;	i-:@operand1o:Sass::Script::Variable	:@underscored_name"DEBUGMEDIA;@;	i-:
+@name"DEBUGMEDIA:@operator:eq0[o:Sass::Tree::RuleNode:@has_childrenT;@;	i0:
+@tabsi :@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;	i1;i ;[ ;["content;
+o;	;"message;@;	i1;"messageo;;;;@;	i2;i ;[ ;["font-weight;
+o:Sass::Script::String:
+@type:identifier;@;
+"	boldo;;;;@;	i3;i ;[ ;["display;
+o;;;;@;
+"
+blocko;;;;@;	i4;i ;[ ;["text-align;
+o;;;;@;
+"centero;;;;@;	i5;i ;[ ;["
+color;
+o:Sass::Script::Funcall:
+@args[o;	;"
+color;@;	i5;"
+coloro:Sass::Script::Number:@original"30%;@;	i5:@denominator_units[ :@numerator_units["%;
+i#;@;	i5:@keywords{ ;"darken:@splat0o;;;;@;	i6;i ;[ ;["background;
+o: Sass::Script::Interpolation:@after0:@originally_textF;@;	i6:	@mido;	;"
+color;@;	i6;"
+color:@whitespace_after0:@before0:@whitespace_beforeiýo;;;;@;	i7;i ;[ ;["position;
+o;;;;@;
+"absoluteo;;;;@;	i8;i ;[ ;["
+right;
+o;;;;@;
+"0o;;;;@;	i9;i ;[ ;["	left;
+o;;;;@;
+"0o;;;;@;	i:;i ;[ ;["top;
+o;;;;@;
+"0o;;;;@;	i;;i ;[ ;["z-index;
+o;;;;@;
+"99:
+@rule["&::before:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;	i0:@members[o:Sass::Selector::Sequence;.[o:#Sass::Selector::SimpleSequence
+;-@a;	i0:@subject0:@sourceso:Set:
+@hash{ ;.[o:Sass::Selector::Parent;-@a;	i0o:Sass::Selector::Pseudo
+;-@a;:element;	i0:	@arg0;["before;"debugmessage;0o;
+;;;@;	iA;
+[ ;["^/* ---------------------------------------------------------------------------
+ * REMs */o;
+;;;@;	iD;
+[ ;["ù/* Baseline, measured in pixels
+ * The value should be the same as the font-size value for the html element
+ * If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+ * then the variable below would be 10px. */o:Sass::Tree::VariableNode;@;	iH;
+[ :@guarded0;"baseline-px:
+@expro;$;%"	10px;@;	iH;&[ ;'["px;io;;T;[[o;;"property;@;"property0[o;;"px_values;@;"px-values0;@;	iJ;
+[o;
+;;;@;	iK;
+[ ;[")/* Convert the baseline into rems */o;.;@;	iL;
+[ ;/0;"baseline-rem;0o;(
+;)o;$;%"	1rem;@;	iL;&[ ;'["rem;i;@;	iL;*o;	;"baseline_px;@;	iL;"baseline-px;+;,o;
+;;;@;	iM;
+[ ;["//* Print the first line in pixel values */o;;;;@;	iN;i ;
+[ ;[o;	;"property;@;	iN;"property;o;	;"px_values;@;	iN;"px-valueso;
+;;;@;	iO;
+[ ;["W/* If there is only one (numeric) value, return the property/value line for it. */u;-ð[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiP:@value"number;
+@;iP:@operand1o:Sass::Script::Funcall:
+@args[o:Sass::Script::Variable	:@underscored_name"px_values;
+@;iP:
+@name"px-values;
+@;iP:@keywords{ ;"type-of:@splat0:@operator:equ:Sass::Tree::IfNodeÅ[00[
+o:Sass::Tree::CommentNode
+:
+@type:silent:@options{ :
+@lineiS:@children[ :@value["</* Create an empty list that we can dump values into */o:Sass::Tree::VariableNode;@;	iT;
+[ :@guarded0:
+@name"rem-values:
+@expro:Sass::Script::Funcall:
+@args[o:Sass::Script::String	;:string;@;	iT;" ;@;	iT:@keywords{ ;"unquote:@splat0o:Sass::Tree::EachNode:@has_childrenT;@;	iU;
+[o; 
+;;;@;	iV;
+[ ;[")/* If the value is zero, return 0 */u:Sass::Tree::IfNode—[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :
+@lineiW:@denominator_units[ :@numerator_units[ :@valuei ;	@	;
+iW:@operand1o:Sass::Script::Variable	:@underscored_name"
+value;	@	;
+iW:
+@name"
+value:@operator:equ:Sass::Tree::IfNode—[00[o:Sass::Tree::VariableNode:@options{ :
+@lineiZ:@children[ :@guarded0:
+@name"rem-values:
+@expro:Sass::Script::Funcall:
+@args[o:Sass::Script::Variable	:@underscored_name"rem_values;@;iZ;
+"rem-valueso:Sass::Script::Operation
+:@operand2o;	;"baseline_rem;@;iZ;
+"baseline-rem;@;iZ:@operand1o;	;"
+value;@;iZ;
+"
+value:@operator:div;@;iZ:@keywords{ ;
+"append:@splat0[o:Sass::Tree::VariableNode;	@	;
+iX:@children[ :@guarded0;"rem-values:
+@expro:Sass::Script::Funcall:
+@args[o;	;"rem_values;	@	;
+iX;"rem-valueso;	;"
+value;	@	;
+iX;"
+value;	@	;
+iX:@keywords{ ;"append:@splat0:	@var"
+value:
+@listo:Sass::Script::Variable	:@underscored_name"px_values;@;	iU;"px-valueso; 
+;;;@;	i[;
+[ ;["?/* Return the property and its list of converted values */o:Sass::Tree::PropNode:@prop_syntax:new;@;	i\:
+@tabsi ;
+[ ;[o;	;"property;@;	i\;"property;o;	;"rem_values;@;	i\;"rem-values[o:Sass::Tree::PropNode:@prop_syntax:new;
+@;iQ:
+@tabsi :@children[ ;[o;	;"property;
+@;iQ;"property;o; 
+;o;	;"baseline_rem;
+@;iQ;"baseline-rem;
+@;iQ;o;	;"px_values;
+@;iQ;"px-values;:div;"rem;0o;
+;;;@;	i_;
+[ ;["f/* ---------------------------------------------------------------------------
+ * Header Style */o;;T;[[o;;"
+style;@;"
+style0;@;	ic;
+[u;-i[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineid:@value"drop-outline;
+@;id:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;id:
+@name"
+style:@operator:eq0[	o:Sass::Tree::RuleNode:@has_childrenT;
+@;ig:
+@tabsi :@children[o:Sass::Tree::PropNode:@prop_syntax:new;
+@;ij;i ;[ ;["text-shadow;o:Sass::Script::List	;
+@;ii:@separator:
+comma;[o;	;
+@;ii;:
+space;[o:Sass::Script::Number:@original"0;
+@;ii:@denominator_units[ :@numerator_units[ ;i o;;"2px;
+@;ii; [ ;!["px;io;	;"bodyBackground;
+@;ii;"bodyBackgroundo;	;
+@;ij;;;[o;;"0;
+@;ij; @;![ ;i o;;"3px;
+@;ij; [ ;!["px;io;	;"headingsColor;
+@;ij;"headingsColoro;;;;
+@;il;i ;[ ;["font-weight;o;;:identifier;
+@;"normalo;;;;
+@;im;i ;[ ;["text-transform;o;;;";
+@;"uppercase:
+@rule["h1:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;ig:@members[o:Sass::Selector::Sequence;'[o:#Sass::Selector::SimpleSequence
+;&@@;ig:@subject0:@sourceso:Set:
+@hash{ ;'[o:Sass::Selector::Element	;&@@;ig:@namespace0;["h1o;;T;
+@;iq;i ;[o;;;;
+@;ir;i ;[ ;["font-weight;o;;;";
+@;"normal;#["h2;$o;%;&" ;iq;'[o;(;'[o;)
+;&@V;iq;*0;+o;,;-{ ;'[o;.	;&@V;iq;/0;["h2o;;T;
+@;iv;i ;[	o;;;;
+@;iw;i ;[ ;["text-transform;o;;;";
+@;"uppercaseo;;;;
+@;ix;i ;[ ;["letter-spacing;o;;;";
+@;"1pxo;;;;
+@;iy;i ;[ ;["font-weight;o;;;";
+@;"normalo;;;;
+@;iz;i ;[ ;["font-style;o;;;";
+@;"italic;#["h3;$o;%;&" ;iv;'[o;(;'[o;)
+;&@~;iv;*0;+o;,;-{ ;'[o;.	;&@~;iv;/0;["h3o;;T;
+@;i~;i ;[o;;;;
+@;i;i ;[ ;["font-weight;o;;;";
+@;"normal;#["h4;$o;%;&" ;i~;'[o;(;'[o;)
+;&@;i~;*0;+o;,;-{ ;'[o;.	;&@;i~;/0;["h4u;-û[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@linei}:@value"two-corners;
+@;i}:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;i}:
+@name"
+style:@operator:eq0[o:Sass::Tree::RuleNode:@has_childrenT;
+@;i€:
+@tabsi :@children[
+o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;i:@separator:
+space;[o;	;:identifier;
+@;i‚;"
+inseto:Sass::Script::Number:@original"0;
+@;i‚:@denominator_units[ :@numerator_units[ ;i o;;"0;
+@;i‚;@; [ ;i o;;"0;
+@;i‚;@; [ ;i o;;"1px;
+@;i‚;[ ; ["px;io:Sass::Script::Funcall;[o;!;[o;	;"baseColor;
+@;i‚;"baseColoro;;"0.4;
+@;i‚;@; [ ;f0.40000000000000002 ™š;
+@;i‚:@keywords{ ;"	rgba:@splat0;
+@;i‚;"{ ;"complement;#0o;	;
+@;i‚;;;[o;	;;;
+@;iƒ;"
+inseto;;"0;
+@;iƒ;@; [ ;i o;;"0;
+@;iƒ;@; [ ;i o;;"0;
+@;iƒ;@; [ ;i o;;"1px;
+@;iƒ;[ ; ["px;io;!;[o;!;[o;	;"baseColor;
+@;iƒ;"baseColoro;;"0.5;
+@;iƒ;@; [ ;f0.5;
+@;iƒ;"{ ;"	rgba;#0;
+@;iƒ;"{ ;"complement;#0o;	;
+@;iƒ;;;[
+o;	;;;
+@;i„;"
+inseto;;"-285px;
+@;i„;[ ; ["px;iþãþo;;"0;
+@;i„;@; [ ;i o;;"	35px;
+@;i„;[ ; ["px;i(o;	;"
+white;
+@;i„;"
+white;
+@;i„;"{ ;[ ;"box-shadow;#0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;i…;i ;[ ;["position;o;;;;
+@;"relativeo;$;%;&;
+@;i†;i ;[ ;["padding;o;;;;
+@;"15px 15px 15px 15%o;$;%;&;
+@;iˆ;i ;[ ;["font-weight;o;;;;
+@;"600o;$;%;&;
+@;iŠ;i ;[ ;["background;o;	;
+@;iŠ;;;[
+o:Sass::Script::Color	:@attrs{	:
+alphai:
+greeniÿ:	blueiÿ:rediÿ;
+@;iŠ;0o;!;[o;	;;	;
+@;iŠ;"../img/ivan.jpeg;
+@;iŠ;"{ ;"url;#0o;	;;;
+@;iŠ;"no-repeato;	;;;
+@;iŠ;"centero;	;;;
+@;iŠ;"	left:
+@rule["h1:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;i€:@members[o:Sass::Selector::Sequence;1[o:#Sass::Selector::SimpleSequence
+;0@;i€:@subject0:@sourceso:Set:
+@hash{ ;1[o:Sass::Selector::Element	;0@;i€:@namespace0;["h1o;;T;
+@;iŽ;i ;[o;$;%;&;
+@;i;i ;[ ;["font-weight;o;;;;
+@;"normalo;$;%;&;
+@;i;i ;[ ;["position;o;;;;
+@;"relativeo;$;%;&;
+@;i‘;i ;[ ;["text-shadow;o;	;
+@;i‘;;;[o;;"0;
+@;i‘;@; [ ;i o;;"	-1px;
+@;i‘;[ ; ["px;iúo;	;"font_shadow_inset;
+@;i‘;"font-shadow-inseto;$;%;&;
+@;i’;i ;[ ;["background;o;!;[o;	;"baseColor;
+@;i’;"baseColor;
+@;i’;"{ ;"complement;#0o;$;%;&;
+@;i“;i ;[ ;["background;o;!;[o;!;[o;	;"baseColor;
+@;i“;"baseColoro;;"0.8;
+@;i“;@; [ ;f0.80000000000000004 ™š;
+@;i“;"{ ;"	rgba;#0;
+@;i“;"{ ;"complement;#0o;$;%;&;
+@;i”;i ;[ ;["border;o;	;
+@;i”;;;[o;;"1px;
+@;i”;[ ; ["px;io;	;;;
+@;i”;"
+solido;	;"
+white;
+@;i”;"
+white;-["h2;.o;/;0" ;iŽ;1[o;2;1[o;3
+;0@ë;iŽ;40;5o;6;7{ ;1[o;8	;0@ë;iŽ;90;["h2;"heading;0o;
+;;;@;	iš;
+[ ;["E/* %valley
+ * {
+ * 	position: relative;
+ * 	overflow: hidden; */o;
+;;;@;	iŸ;
+[ ;["u/* 	&:before,
+ * 	&:after
+ * 	{
+ * 		content: '';
+ * 		position: absolute;
+ * 		left: 0;
+ * 		right: 0;
+ * 	} */o;
+;;;@;	i¨;
+[ ;["@/* 	&:before
+ * 	{
+ * 		@extend %lip;
+ * 		top: 0;
+ * 	} */o;
+;;;@;	i®;
+[ ;["P/* 	&:after
+ * 	{
+ * 		@extend %reversed-lip;
+ * 		bottom: 0;
+ * 	}
+ * } */o;
+;;;@;	i¶;
+[ ;["e/* ---------------------------------------------------------------------------
+ * Drop Shadow */o;;T;[[o;;"direction;@;"direction0;@;	iº;
+[u;-º[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@linei»:@value"top;
+@;i»:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;i»:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;i½:@separator:
+space;[
+o:Sass::Script::Number:@original"0;
+@;i½:@denominator_units[ :@numerator_units[ ;i o:!Sass::Script::UnaryOperation	;
+@;i½;:
+minus:@operando;	;" default_box_shadow_v_offset;
+@;i½;" default-box-shadow-v-offseto; 
+;o;;"2;
+@;i½;@;[ ;i;
+@;i½;o;	;" default_box_shadow_v_offset;
+@;i½;" default-box-shadow-v-offset;:divo;	;
+@;i½;;;o; 
+;o;;"2;
+@;i½;@;[ ;i;
+@;i½;o;	;" default_box_shadow_v_offset;
+@;i½;" default-box-shadow-v-offset;;o;	;"default_box_shadow_color;
+@;i½;"default-box-shadow-color;
+@;i½:@keywords{ :@children[ ;"box-shadow:@splat0u;-ª[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÀ:@value"bottom;
+@;iÀ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÀ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÂ:@separator:
+space;[
+o:Sass::Script::Number:@original"0;
+@;iÂ:@denominator_units[ :@numerator_units[ ;i o;	;" default_box_shadow_v_offset;
+@;iÂ;" default-box-shadow-v-offseto; 
+;o;;"2;
+@;iÂ;@;[ ;i;
+@;iÂ;o;	;" default_box_shadow_v_offset;
+@;iÂ;" default-box-shadow-v-offset;:divo:!Sass::Script::UnaryOperation	;
+@;iÂ;:
+minus:@operando; 
+;o;;"2;
+@;iÂ;@;[ ;i;
+@;iÂ;o;	;" default_box_shadow_v_offset;
+@;iÂ;" default-box-shadow-v-offset;;o;	;"default_box_shadow_color;
+@;iÂ;"default-box-shadow-color;
+@;iÂ:@keywords{ :@children[ ;"box-shadow:@splat0u;-©[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÅ:@value"
+right;
+@;iÅ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÅ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÇ:@separator:
+space;[
+o;	;" default_box_shadow_h_offset;
+@;iÇ;" default-box-shadow-h-offseto:Sass::Script::Number:@original"0;
+@;iÇ:@denominator_units[ :@numerator_units[ ;i o; 
+;o;;"2;
+@;iÇ;@;[ ;i;
+@;iÇ;o;	;" default_box_shadow_h_offset;
+@;iÇ;" default-box-shadow-h-offset;:divo:!Sass::Script::UnaryOperation	;
+@;iÇ;:
+minus:@operando; 
+;o;;"2;
+@;iÇ;@;[ ;i;
+@;iÇ;o;	;" default_box_shadow_h_offset;
+@;iÇ;" default-box-shadow-h-offset;;o;	;"default_box_shadow_color;
+@;iÇ;"default-box-shadow-color;
+@;iÇ:@keywords{ :@children[ ;"box-shadow:@splat0u;-»[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÊ:@value"	left;
+@;iÊ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÊ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÌ:@separator:
+space;[
+o:!Sass::Script::UnaryOperation	;
+@;iÌ;:
+minus:@operando;	;" default_box_shadow_h_offset;
+@;iÌ;" default-box-shadow-h-offseto:Sass::Script::Number:@original"0;
+@;iÌ:@denominator_units[ :@numerator_units[ ;i o; 
+;o;;"2;
+@;iÌ;@;[ ;i;
+@;iÌ;o;	;" default_box_shadow_h_offset;
+@;iÌ;" default-box-shadow-h-offset;:divo;	;
+@;iÌ;;;o; 
+;o;;"2;
+@;iÌ;@;[ ;i;
+@;iÌ;o;	;" default_box_shadow_h_offset;
+@;iÌ;" default-box-shadow-h-offset;;o;	;"default_box_shadow_color;
+@;iÌ;"default-box-shadow-color;
+@;iÌ:@keywords{ :@children[ ;"box-shadow:@splat0u;-§[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÏ:@value"	full;
+@;iÏ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÏ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÑ:@separator:
+space;[
+o:Sass::Script::Number:@original"0;
+@;iÑ:@denominator_units[ :@numerator_units[ ;i o;;"0;
+@;iÑ;@;[ ;i o;	;"default_box_shadow_blur;
+@;iÑ;"default-box-shadow-bluro;;"2px;
+@;iÑ;[ ;["px;io;	;"default_box_shadow_color;
+@;iÑ;"default-box-shadow-color;
+@;iÑ:@keywords{ :@children[ ;"box-shadow:@splat0u;-x[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÔ:@value"
+light;
+@;iÔ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÔ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÖ:@separator:
+space;[
+o:Sass::Script::Number:@original"0;
+@;iÖ:@denominator_units[ :@numerator_units[ ;i o;;"0;
+@;iÖ;@;[ ;i o;;"0;
+@;iÖ;@;[ ;i o;;"	10px;
+@;iÖ;[ ;["px;io;	;"whiteTransperntMed;
+@;iÖ;"whiteTransperntMed;
+@;iÖ:@keywords{ :@children[ ;"box-shadow:@splat0u;-Ã[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiÙ:@value"	glow;
+@;iÙ:@operand1o:Sass::Script::Variable	:@underscored_name"direction;
+@;iÙ:
+@name"direction:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o:Sass::Script::List	;
+@;iÛ:@separator:
+space;[o:Sass::Script::Number:@original"0;
+@;iÛ:@denominator_units[ :@numerator_units[ ;i o;;"0;
+@;iÛ;@;[ ;i o;	;"default_box_shadow_blur;
+@;iÛ;"default-box-shadow-bluro;;"4px;
+@;iÛ;[ ;["px;i	o;	;"whiteTransperntLight;
+@;iÛ;"whiteTransperntLighto;	;:identifier;
+@;iÛ;"
+inset;
+@;iÛ:@keywords{ :@children[ ;"box-shadow:@splat0;"drop-shadow;0o;
+;;;@;	iß;
+[ ;["h/* ---------------------------------------------------------------------------
+ * Emphasis Boxes */o;;T;[[o;;"
+style;@;"
+style0[o;;"
+color;@;"
+coloro;	;"baseColor;@;	iâ;"baseColor[o;;"borderRadius;@;"borderRadiuso;	;"defaultBorderRadius;@;	iâ;"defaultBorderRadius;@;	iã;
+[u;-2[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiä:@value"	dark;
+@;iä:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;iä:
+@name"
+style:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o;	;"borderRadius;
+@;iæ;"borderRadius;
+@;iæ:@keywords{ :@children[ ;"border-radius:@splat0o;;[o;	;:identifier;
+@;iç;"	full;
+@;iç;{ ;[ ;"drop-shadow;0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;iè:
+@tabsi ;[ ;["background;o;	;"
+color;
+@;iè;"
+coloru;-4[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineië:@value"
+light;
+@;ië:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;ië:
+@name"
+style:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o;	;"borderRadius;
+@;ií;"borderRadius;
+@;ií:@keywords{ :@children[ ;"border-radius:@splat0o;;[o;	;:identifier;
+@;iî;"
+light;
+@;iî;{ ;[ ;"drop-shadow;0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;iï:
+@tabsi ;[ ;["background;o;	;"
+color;
+@;iï;"
+coloru;-2[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiò:@value"	glow;
+@;iò:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;iò:
+@name"
+style:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o;	;"borderRadius;
+@;iô;"borderRadius;
+@;iô:@keywords{ :@children[ ;"border-radius:@splat0o;;[o;	;:identifier;
+@;iõ;"	glow;
+@;iõ;{ ;[ ;"drop-shadow;0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;iö:
+@tabsi ;[ ;["background;o;	;"
+color;
+@;iö;"
+color;"emphasize;0o;
+;;;@;	iû;
+[ ;["`/* ---------------------------------------------------------------------------
+ * Emboss */o;;T;[[o;;"
+style;@;"
+style0[o;;"
+color;@;"
+coloro;	;"baseColor;@;	iþ;"baseColor[o;;"borderRadius;@;"borderRadiuso;	;"defaultBorderRadius;@;	iþ;"defaultBorderRadius;@;	iÿ;
+[u;-¥[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@linei :@value"
+light;
+@;i :@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;i :
+@name"
+style:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o;	;"borderRadius;
+@;i;"borderRadius;
+@;i:@keywords{ :@children[ ;"border-radius:@splat0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;i:
+@tabsi ;[ ;["border;o:Sass::Script::List	;
+@;i:@separator:
+space;[o:Sass::Script::Number:@original"1px;
+@;i:@denominator_units[ :@numerator_units["px;io;	;:identifier;
+@;i;"
+solido;	;"
+color;
+@;i;"
+coloro;;[o;	;
+@;i;;;[
+o;; "0;
+@;i;![ ;"[ ;i o;; "1px;
+@;i;![ ;"["px;io;; "0;
+@;i;!@,;"[ ;i o;	;"whiteTransperntLight;
+@;i;"whiteTransperntLighto;	;;#;
+@;i;"
+inset;
+@;i;{ ;[ ;"box-shadow;0u;-=[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@linei:@value"
+heavy;
+@;i:@operand1o:Sass::Script::Variable	:@underscored_name"
+style;
+@;i:
+@name"
+style:@operator:eq0[o:Sass::Tree::MixinNode:
+@args[o;	;"borderRadius;
+@;i	;"borderRadius;
+@;i	:@keywords{ :@children[ ;"border-radius:@splat0o:Sass::Tree::PropNode:@prop_syntax:new;
+@;i
+:
+@tabsi ;[ ;["border;o:Sass::Script::List	;
+@;i
+:@separator:
+space;[o:Sass::Script::Number:@original"1px;
+@;i
+:@denominator_units[ :@numerator_units["px;io;	;:identifier;
+@;i
+;"
+solido;	;"
+color;
+@;i
+;"
+coloro;;[o;	;
+@;i;;;[
+o;; "0;
+@;i;![ ;"[ ;i o;; "2px;
+@;i;![ ;"["px;io;; "3px;
+@;i;![ ;"["px;io;	;"whiteTransperntLight;
+@;i;"whiteTransperntLighto;	;;#;
+@;i;"
+inseto;	;
+@;i;;;[
+o;; "0;
+@;i;!@,;"[ ;i o;; "	-2px;
+@;i;![ ;"["px;iùo;; "3px;
+@;i;![ ;"["px;io;	;"blackTransperntLight;
+@;i;"blackTransperntLighto;	;;#;
+@;i;"
+inseto;	;
+@;i;;;[	o;; "0;
+@;i;!@,;"[ ;i o;; "1px;
+@;i;![ ;"["px;io;; "1px;
+@;i;![ ;"["px;io;	;"whiteTransperntLow;
+@;i;"whiteTransperntLow;
+@;i;{ ;[ ;"box-shadow;0;"emboss;0o;
+;;;@;	i;
+[ ;["j/* ---------------------------------------------------------------------------
+ * Helper Functions */o;
+;;;@;	i;
+[ ;["/* image replacement */o:Sass::Tree::RuleNode;T;@;	i;i ;
+[o;;;;@;	i;i ;
+[ ;["background-color;o;";;#;@;"transparento;;;;@;	i;i ;
+[ ;["border;o;";;#;@;"0o;;;;@;	i;i ;
+[ ;["overflow;o;";;#;@;"hiddeno;
+;;;@;	i;
+[ ;["/* IE 6/7 fallback */o;;;;@;	i;i ;
+[ ;["*text-indent;o;$;%"-9999px;@;	i;&[ ;'["px;iþñØo;1;T;@;	i!;i ;
+[	o;;;;@;	i";i ;
+[ ;["content;o;";;#;@;"""o;;;;@;	i#;i ;
+[ ;["display;o;";;#;@;"
+blocko;;;;@;	i$;i ;
+[ ;["
+width;o;";;#;@;"0o;;;;@;	i%;i ;
+[ ;["height;o;";;#;@;"	100%:
+@rule["&:before:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;	i!:@members[o:Sass::Selector::Sequence;6[o:#Sass::Selector::SimpleSequence
+;5@’;	i!:@subject0:@sourceso:Set:
+@hash{ ;6[o:Sass::Selector::Parent;5@’;	i!o:Sass::Selector::Pseudo
+;5@’;:
+class;	i!:	@arg0;["before;2["%hide-text;3o;4;5" ;	i;6[o;7;6[o;8
+;5@¡;	i;90;:o;;;<{ ;6[o: Sass::Selector::Placeholder;5@¡;	i;["hide-texto;
+;;;@;	i);
+[ ;["@/* hide from both screenreaders and browsers: h5bp.com/u */o;1;T;@;	i+;i ;
+[o;;;;@;	i,;i ;
+[ ;["display;o;";;#;@;"none !importanto;;;;@;	i-;i ;
+[ ;["visibility;o;";;#;@;"hidden;2["%hidden;3o;4;5" ;	i+;6[o;7;6[o;8
+;5@Á;	i+;90;:o;;;<{ ;6[o;A;5@Á;	i+;["hiddeno;
+;;;@;	i0;
+[ ;["·/* hide only visually, but have it available for screenreaders: h5bp.com/v
+ * element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */o;;T;[ ;@;	i2;
+[o;;;;@;	i3;i ;
+[ ;["position;o;";;#;@;"absolute !importanto;;;;@;	i4;i ;
+[ ;["overflow;o;";;#;@;"hiddeno;;;;@;	i5;i ;
+[ ;["	clip;o;;[	o;$;%"1px;@;	i5;&[ ;'["px;io;$;%"1px;@;	i5;&[ ;'["px;io;$;%"1px;@;	i5;&[ ;'["px;io;$;%"1px;@;	i5;&[ ;'["px;i;@;	i5;{ ;"	rect;0o;;;;@;	i6;i ;
+[ ;["margin;o;$;%"	-1px;@;	i6;&[ ;'["px;iúo;;;;@;	i7;i ;
+[ ;["padding;o;";;#;@;"0o;;;;@;	i8;i ;
+[ ;["
+width;o;";;#;@;"1pxo;;;;@;	i9;i ;
+[ ;["height;o;";;#;@;"1pxo;;;;@;	i:;i ;
+[ ;["border;o;";;#;@;"0u;-$[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Variable	:@underscored_name"legacy_support_for_ie7:@options{ :
+@linei;:
+@name"legacy-support-for-ie7;	@	;
+i;:@operand1o;	;"legacy_support_for_ie6;	@	;
+i;;"legacy-support-for-ie6:@operator:or0[o:Sass::Tree::PropNode:@prop_syntax:new;	@	;
+i<:
+@tabsi :@children[ ;["	clip:@valueo:Sass::Script::Funcall:
+@args[o:Sass::Script::List	;	@	;
+i<:@separator:
+space;[	o:Sass::Script::Number:@original"1px;	@	;
+i<:@denominator_units[ :@numerator_units["px;io;;"1px;	@	;
+i<;[ ;["px;io;;"1px;	@	;
+i<;[ ;["px;io;;"1px;	@	;
+i<;[ ;["px;i;	@	;
+i<:@keywords{ ;"	rect:@splat0o:Sass::Tree::CommentNode
+:
+@type:silent;	@	;
+i<;[ ;[",/* IE6 and IE7 use the wrong syntax. */;"element-invisible;0o;
+;;;@;	iA;
+[ ;["~/* extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p */o;;T;[[o;;"expanded;@;"expandedo:Sass::Script::Bool;@;	iC;F;@;	iD;
+[o;1;T;@;	iF;i ;
+[o;;;;@;	iG;i ;
+[ ;["border;o;";;#;@;"0o;;;;@;	iH;i ;
+[ ;["	clip;o;;[o;	;@;	iH; ;!;[	o;$;%"0;@;	iH;&@g;'[ ;i o;$;%"0;@;	iH;&@g;'[ ;i o;$;%"0;@;	iH;&@g;'[ ;i o;$;%"0;@;	iH;&@g;'[ ;i ;@;	iH;{ ;"	rect;0o;;;;@;	iI;i ;
+[ ;["height;o;";;#;@;"1pxo;;;;@;	iJ;i ;
+[ ;["margin;o;$;%"	-1px;@;	iJ;&[ ;'["px;iúo;;;;@;	iK;i ;
+[ ;["overflow;o;";;#;@;"hiddeno;;;;@;	iL;i ;
+[ ;["padding;o;";;#;@;"0o;;;;@;	iM;i ;
+[ ;["position;o;";;#;@;"absoluteo;;;;@;	iN;i ;
+[ ;["
+width;o;";;#;@;"1pxu;-[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:
+@type:string:@options{ :
+@lineiP:@value"	true;
+@;iP:@operand1o:Sass::Script::Variable	:@underscored_name"expanded;
+@;iP:
+@name"expanded:@operator:eq0[o:Sass::Tree::RuleNode:@has_childrenT;
+@;iS:
+@tabsi :@children[o;;T;
+@;iU;i ;[o:Sass::Tree::PropNode:@prop_syntax:new;
+@;iV;i ;[ ;["	clip;o;;:identifier;
+@;"	autoo;;;;
+@;iW;i ;[ ;["height;o;;;;
+@;"	autoo;;;;
+@;iX;i ;[ ;["margin;o;;;;
+@;"0o;;;;
+@;iY;i ;[ ;["overflow;o;;;;
+@;"visibleo;;;;
+@;iZ;i ;[ ;["position;o;;;;
+@;"statico;;;;
+@;i[;i ;[ ;["
+width;o;;;;
+@;"	auto:
+@rule["&:active, &:focus:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;iU:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
+;@9;iU:@subject0:@sourceso:Set:
+@hash{ ;[o:Sass::Selector::Parent;@9;iUo:Sass::Selector::Pseudo
+;@9;:
+class;iU:	@arg0;["activeo; ;[o;!
+;@9;iU;"0;#o;$;%{ ;[o;&;@9;iUo;'
+;@9;;(;iU;)0;["
+focus;["&.focusable;o;;" ;iS;[o; ;[o;!
+;@R;iS;"0;#o;$;%{ ;[o;&;@R;iSo:Sass::Selector::Class;@R;iS;["focusable;2[".visuallyHidden;3o;4;5" ;	iF;6[o;7;6[o;8
+;5@s;	iF;90;:o;;;<{ ;6[o:Sass::Selector::Class;5@s;	iF;["visuallyHidden;"vh;0o;
+;;;@;	ic;
+[ ;["D/* hide visually and from screenreaders, but maintain layout */o;1;T;@;	ie;i ;
+[o;;;;@;	if;i ;
+[ ;["visibility;o;";;#;@;"hidden;2["%invisible;3o;4;5" ;	ie;6[o;7;6[o;8
+;5@Ž;	ie;90;:o;;;<{ ;6[o;A;5@Ž;	ie;["invisibleo;
+;;;@;	ij;
+[ ;["/* responsive images */o;;T;[ ;@;	il;
+[o;1;T;@;	in;i ;
+[o;;;;@;	io;i ;
+[ ;["max-width;o;";;#;@;"	100%;2[".responsive;3o;4;5" ;	in;6[o;7;6[o;8
+;5@«;	in;90;:o;;;<{ ;6[o;C;5@«;	in;["responsiveo;1;T;@;	is;i ;
+[o;;;;@;	it;i ;
+[ ;["height;o;";;#;@;"	auto;2["img.responsive;3o;4;5" ;	is;6[o;7;6[o;8
+;5@Á;	is;90;:o;;;<{ ;6[o:Sass::Selector::Element	;5@Á;	is:@namespace0;["imgo;C;5@Á;	is;["responsive;"responsive;0

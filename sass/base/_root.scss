@@ -1,0 +1,29 @@
+//----------------------------------------------------------------------------
+// Root
+//----------------------------------------------------------------------------
+
+// Base
+@import "base/base";
+
+@include establish-baseline;
+
+html
+{
+	background: url("../img/base/slate.png") repeat;
+    @include image-2x("../img/base/slate@2x.png", 200px, 200px);
+	background-attachment: fixed;
+}
+
+body 
+{ 
+	font-family: $baseFontFamily;
+}
+
+html,
+button,
+input,
+select,
+textarea 
+{
+    color: $bsTxtClr;
+}

@@ -1,0 +1,649 @@
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* normalize.css v2.0.1 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 19, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 27, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* line 38, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 45, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_html5.scss */
+[hidden] {
+  display: none;
+}
+
+/* normalize.css v2.0.1 | Base | MIT License | git.io/normalize */
+/* line 11, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_base.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 19, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_base.scss */
+body {
+  margin: 0;
+}
+
+/* normalize.css v2.0.1 | Links | MIT License | git.io/normalize */
+/* line 9, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_links.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 16, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* normalize.css v2.0.1 | Typography | MIT License | git.io/normalize */
+/* line 10, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+h1 {
+  font-size: 2em;
+}
+
+/* line 16, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 23, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 35, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 41, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 60, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* line 70, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 78, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* line 100, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 107, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 114, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 118, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_typography.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* normalize.css v2.0.1 | Embedded Content | MIT License | git.io/normalize */
+/* line 9, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_embeds.scss */
+img {
+  border: 0;
+}
+
+/* line 18, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_embeds.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* normalize.css v2.0.1 | Figures | MIT License | git.io/normalize */
+/* line 9, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_figures.scss */
+figure {
+  margin: 0;
+}
+
+/* normalize.css v2.0.1 | Forms | MIT License | git.io/normalize */
+/* line 17, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 30, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 49, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 63, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/* line 80, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 91, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/* line 103, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 116, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 127, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 134, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 142, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* normalize.css v2.0.1 | Tables | MIT License | git.io/normalize */
+/* line 9, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-normalize-1.4.1/stylesheets/normalize/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 19, ../sass/base/_base.scss */
+html {
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: white;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 28, ../sass/base/_base.scss */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 37, ../sass/base/_base.scss */
+img, embed, object, video {
+  max-width: 100%;
+}
+
+/* line 44, ../sass/base/_base.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 53, ../sass/base/_base.scss */
+::-moz-selection {
+  background: #0e93a9;
+  color: black;
+  text-shadow: none;
+}
+
+/* line 60, ../sass/base/_base.scss */
+::selection {
+  background: #0e93a9;
+  color: black;
+  text-shadow: none;
+}
+
+/* line 69, ../sass/base/_base.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 75, ../sass/base/_base.scss */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 83, ../sass/base/_base.scss */
+textarea {
+  resize: vertical;
+}
+
+/* corrects `inline-block` display not defined in IE 8/9 */
+/* line 91, ../sass/base/_base.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* Addresses styling for `hidden` attribute not present in IE 8/9. */
+/* line 98, ../sass/base/_base.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 14, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/susy-1.0.4/sass/susy/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+/* line 110, ../sass/base/_base.scss */
+.chromeframe {
+  margin: 0.2em 0;
+  padding: 0.2em 0;
+  background: #ccc;
+  color: #000;
+}
+
+/* line 61, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 100%;
+}
+
+/* line 64, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+/* line 11, ../sass/base/_root.scss */
+html {
+  background: url("../img/base/slate.png") repeat;
+  background-attachment: fixed;
+}
+@media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  /* line 11, ../sass/base/_root.scss */
+  html {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url("../img/base/slate@2x.png");
+    background-size: 200px 200px;
+  }
+}
+
+/* line 18, ../sass/base/_root.scss */
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 27, ../sass/base/_root.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+}
+
+/* line 3, ../sass/modules/_header.scss */
+header a.toggleMenu {
+  display: inline-block;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+/* line 11, ../sass/modules/_header.scss */
+header a.toggleMenu {
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(188, 198, 206, 0.5);
+  -webkit-box-shadow: 0 4px rgba(168, 180, 191, 0.5);
+  -moz-box-shadow: 0 4px rgba(168, 180, 191, 0.5);
+  box-shadow: 0 4px rgba(168, 180, 191, 0.5);
+}
+/* line 18, ../sass/modules/_header.scss */
+header a.toggleMenu:hover {
+  background: rgba(217, 223, 228, 0.5);
+}
+/* line 23, ../sass/modules/_header.scss */
+header a.toggleMenu:active {
+  box-shadow: none;
+  top: 3px;
+}
+
+/* line 31, ../sass/modules/_header.scss */
+header {
+  max-width: 32.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+/* line 38, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 35, ../sass/modules/_header.scss */
+header #logo {
+  width: 47.93388%;
+  float: left;
+  margin-right: 4.13223%;
+  min-height: 75px;
+  float: left;
+}
+/* line 41, ../sass/modules/_header.scss */
+header #logo a {
+  color: white;
+  text-decoration: none;
+}
+/* line 46, ../sass/modules/_header.scss */
+header #logo a h1 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  background: url("../img/base/logo-jason.png") left center no-repeat;
+  padding: .7em 0 .7em 50px;
+  vertical-align: middle;
+}
+@media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  /* line 46, ../sass/modules/_header.scss */
+  header #logo a h1 {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url("../img/base/logo-jason@2x.png");
+    background-size: 37px 75px;
+  }
+}
+/* line 57, ../sass/modules/_header.scss */
+header .wrap-dropdown {
+  width: 47.93388%;
+  float: right;
+  margin-right: 0;
+  margin: .5em auto;
+}
+/* line 63, ../sass/modules/_header.scss */
+header a.toggleMenu {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: .4em .7em;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 -1px rgba(99, 114, 131, 0.5);
+}
+/* line 77, ../sass/modules/_header.scss */
+header a.toggleMenu:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -6px;
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent white;
+}
+/* line 95, ../sass/modules/_header.scss */
+header .nav ul {
+  list-style: none;
+  *zoom: 1;
+  background: #175e4c;
+  position: relative;
+  overflow: hidden;
+}
+/* line 106, ../sass/modules/_header.scss */
+header .nav ul li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 -1px rgba(99, 114, 131, 0.5);
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+@media (min-width: 768px) {
+  /* line 127, ../sass/modules/_header.scss */
+  .content {
+    max-width: 53.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  /* line 38, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .content:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* line 132, ../sass/modules/_header.scss */
+  header {
+    padding: 0;
+  }
+
+  /* line 139, ../sass/modules/_header.scss */
+  header .nav {
+    float: right;
+  }
+  /* line 143, ../sass/modules/_header.scss */
+  header .nav ul {
+    padding-top: 1.3em;
+  }
+  /* line 147, ../sass/modules/_header.scss */
+  header .nav ul li {
+    display: inline;
+    margin-left: 1.25rem;
+  }
+  /* line 152, ../sass/modules/_header.scss */
+  header .nav ul li a {
+    font-weight: 600;
+    padding: .4em .7em;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 -1px rgba(99, 114, 131, 0.5);
+    -webkit-transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+  }
+}
+/* line 2, ../sass/modules/_content.scss */
+.content {
+  max-width: 32.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1.5em;
+  background-color: whitesmoke;
+  color: #404040;
+  border: 3px solid snow;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 8px 2px rgba(51, 51, 51, 0.2);
+  -moz-box-shadow: 0 0 8px 2px rgba(51, 51, 51, 0.2);
+  box-shadow: 0 0 8px 2px rgba(51, 51, 51, 0.2);
+}
+/* line 38, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 2, ../sass/modules/_featured.scss */
+.cs-text {
+  width: 600px;
+  margin: 120px auto 30px;
+  cursor: default;
+  text-align: center;
+}
+/* line 9, ../sass/modules/_featured.scss */
+.cs-text span {
+  display: block;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-family: Helvetica, sans-serif;
+}
+/* line 17, ../sass/modules/_featured.scss */
+.cs-text span:first-child {
+  font-size: 50px;
+  letter-spacing: 10px;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 26, ../sass/modules/_featured.scss */
+.cs-text span:nth-child(2) {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  text-transform: none;
+  font-style: italic;
+  line-height: 40px;
+  font-size: 50px;
+  color: #eee;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+/* line 38, ../sass/modules/_featured.scss */
+.cs-text span:nth-child(2):before, .cs-text span:nth-child(2):after {
+  content: '';
+  width: 250px;
+  height: 2px;
+  background: #eee;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2);
+}
+/* line 50, ../sass/modules/_featured.scss */
+.cs-text span:nth-child(2):before {
+  left: 0px;
+}
+/* line 55, ../sass/modules/_featured.scss */
+.cs-text span:nth-child(2):after {
+  right: 0px;
+}
+
+/* line 61, ../sass/modules/_featured.scss */
+span:nth-child(3), span:nth-child(4) {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+/* line 68, ../sass/modules/_featured.scss */
+span:nth-child(5), span:nth-child(6) {
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  /* line 6, ../sass/modules/_ipad.scss */
+  .content {
+    max-width: 53.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  /* line 38, ../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .content:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
