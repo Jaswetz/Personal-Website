@@ -1,10 +1,56 @@
 .content 
 { 
-	@include container;
-	@include margin-leader(1);
-	background-color: $bg1; 
-	color: $bsTxtClr;
+	/* Box */
+	@include rem('margin-top', -10px);
+	@include rem('margin-right', 10px);
+	@include rem('margin-left', 10px);
+	position: relative;
+
+	/* Border */
 	border: 3px solid $bgBrdr;
-	@include border-radius();
-	@include drop-shadow(full);
+
+	/* Background */
+	background-color: $bg1; 
+
+	/* Text */
+	color: $bsTxtClr;
+
+	section
+	{
+		background: url(../img/base/intro-ptrn@2x.png);
+	}
+
+	.arrw-dwn
+	{
+		/* Box */
+		margin: 0 auto;
+		width: 0;
+		height: 0;
+
+		/* Border */
+		border: 15px solid transparent;
+		border-top-color: $white;
+	}
+
+	.sctn-inner
+	{
+		/* Box */
+		@include rem('margin-left', 10px);
+		@include rem('margin-right', 10px);
+		@include rem('padding-bottom', 20px);
+		@include rem('padding-top', 30px);
+		
+		/* Text */
+		color: $white;
+		text-align: center;
+
+		h2
+		{
+			margin: 0;
+			background: $bsClr;
+			line-height: 2.2rem;
+		}
+	}
 }
+
+

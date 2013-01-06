@@ -1,72 +1,141 @@
-.cs-text 
-{
-    width: 600px;
-    margin: 120px auto 30px;
-    cursor: default;
-    text-align: center;
 
-	span
+
+.int
+{
+	padding: $gtr;
+
+	#int-img
 	{
-	  display:block;
-		font-weight: 400;
-		text-transform: uppercase;
-		margin-top: 6px;
-		font-family: Helvetica, sans-serif;
+		// background: url(../img/www-globe-smal.png) no-repeat;
+		// width: 147px;
+		// height: 126px;
+		// margin: 0 auto;
+		// @include margin-leader(-.5);
+	}
+
+	h2.int-txt
+	{ 
+	    cursor: default;
+	    margin-bottom: 0;
+	    margin-top: 0;
+	    display: block;
+	    
+	 
+
+	    // .ln-two
+	    .int-em, .scrpt-txt
+	    {
+	    	// display: block;
+	    	// text-align: center;
+	    }
+
+	    .int-em
+	    {
+	    	@include adjust-font-size-to(14px, .5, 16px);
+	    	color: $grayDark;
+	    	font-weight: 700;
+	    	// background: $bsClr;
+	    	// padding: 0 .3em;
+	    }
+
+	  	.scrpt-txt
+	  	{
+	  		// background: lighten($bsClr, 10%);
+	  		// font-family: $script-stack;
+	  		color: $bsClr;
+	  		@include adjust-font-size-to(10px, .5, 14px);
+	    
+
+	  		&:first-child
+	  		{
+
+	  			// @include border-top-radius();
+	  		}
+
+	  		&:last-child
+	  		{
+	  			// margin-left: $gutter-width;
+	  		}
+	  	}
+	}
+
+	em
+	{
+		//@extend %hidden;
+		// @include adjust-font-size-to(22px, 1.8, 16px);
+		// color: $bsClr;
+		// display: block;
+		// text-align: center;
+		// background: lighten($bsClr, 30%);
+		// @include border-bottom-radius();
 		
-		&:first-child
-			{
-			font-size:50px;	
-			letter-spacing: 10px;
-    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
-		}
 	}
 }
 
-.cs-text span:nth-child(2)
-{
-	font-family: Georgia, serif;
-	font-weight: 400;
-	text-transform: none;
-	font-style: italic;
-    line-height: 40px;
-    font-size: 50px;
-	color: #eee;
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
-    position: relative;
-	
-		 &:before, &:after
-		{
-		content:'';
-		width:250px;
-		height: 2px;
-		background: #eee;
-		position: absolute;
-		top: 50%;
-		margin-top: -1px;
-		@include box-shadow( -1px -1px 1px rgba(0,0,0,0.2));
-	}
-	
-	&:before
-		{
-		left:0px;
-	}
-	
-	&:after
-		{
-		right: 0px;
-	}
-}
 
-span:nth-child(3), span:nth-child(4)
-{
-	float: left;
-	width: 50%;
-	text-align: center;
-}
 
-span:nth-child(5), span:nth-child(6)
-{
-	float: right;
-	width: 50%;
-		text-align: center;
-}
+
+
+
+
+// .int
+// {
+// 	#int-img
+// 	{
+// 		background: url(../img/www-globe-smal.png) no-repeat;
+
+// 		width: 147px;
+// 		height: 126px;
+// 		margin: 0 auto;
+// 		@include margin-leader(-.5);
+// 	}
+
+// 	h2.int-txt
+// 	{ 
+// 	    cursor: default;
+// 	    margin-bottom: 0;
+
+
+// 	    .ln-two
+// 	    {
+// 	    	display: block;
+// 	    }
+
+// 	    .int-em
+// 	    {
+// 	    	@include adjust-font-size-to(22px, 1.5, 16px);
+	
+// 	    	color: $white;
+// 	    	font-weight: 700;
+// 	    	background: $bsClr;
+// 	    	padding: 0 .3em;
+// 	    }
+
+// 	  	.scrpt-txt
+// 	  	{
+// 	  		font-family: $script-stack;
+// 	  		color: $bsClr;
+// 	  		@include adjust-font-size-to(18px, 1.5, 22px);
+	    
+
+// 	  		&:first-child
+// 	  		{
+// 	  			display: block;
+// 	  		}
+
+// 	  		&:last-child
+// 	  		{
+// 	  			margin-left: $gutter-width;
+// 	  		}
+// 	  	}
+// 	}
+
+// 	em
+// 	{
+// 		@include adjust-font-size-to(22px, 1.5, 16px);
+// 	}
+// }
+
+
+
+

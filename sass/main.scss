@@ -7,12 +7,17 @@
 @import "partials/settings";
 
 // Base
+@import "base/fonts";
 @import "base/root";
 
+// Pages
+@import "pages/global-layout";
+
 // Modules
+@import "modules/blocks";
 @import "modules/header";
 @import "modules/content";
-@import "modules/featured";
+// @import "modules/featured";
 
 // ----------------------------------------------------------------------------
 // Type Settings
@@ -21,5 +26,5 @@
 // ---------------------------------------------------------------------------
 // @Responsive
 
-@import "modules/ipad";
+//@import "modules/ipad";
 

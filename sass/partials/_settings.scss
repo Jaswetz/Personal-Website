@@ -11,10 +11,12 @@ $DEBUG: true;
 // ----------------------------------------------------------------------------
 // Grid
 
-$total-columns      : 6;
-$column-width       : 4rem;
-$gutter-width       : 1.25rem;
-$grid-padding       : 1rem;
+$total-columns      : 3;
+$column-width       : 6.063rem;
+$gutter-width       : 0rem;
+$grid-padding       : $gutter-width;
+
+$gtr : 0.625rem;
 
 
 // ---------------------------------------------------------------------------
@@ -26,20 +28,20 @@ $grayDark					: lighten($black, 25%) ;
 $gray 						: lighten($black, 50%) ;
 $grayLight 					: lighten($black, 75%) ;
 $grayLighter				: lighten($black, 90%) ;
-$white						: rgb(255,255,255)     ;
+$white						: snow     ;
 
 // Transparents
-$whiteTransperntVeryLight   : transparentize(rgb(255, 255, 255), .90);
-$whiteTransperntLight       : transparentize(rgb(255, 255, 255), .70);
-$whiteTransperntMed			: transparentize(rgb(255, 255, 255), .50);
-$whiteTransperntLow         : transparentize(rgb(255, 255, 255), .30);
-$whiteTransperntVeryLow     : transparentize(rgb(255, 255, 255), .10);
+$whiteTransperntVeryLight   : transparentize($white, .90);
+$whiteTransperntLight       : transparentize($white, .70);
+$whiteTransperntMed			: transparentize($white, .50);
+$whiteTransperntLow         : transparentize($white, .30);
+$whiteTransperntVeryLow     : transparentize($white, .10);
 
-$blackTransperntVeryLight 	: transparentize(rgb(0, 0, 0), .90);
-$blackTransperntLight 		: transparentize(rgb(0, 0, 0), .70);
-$blackTransperntMed 		: transparentize(rgb(0, 0, 0), .50);
-$blackTransperntLow 		: transparentize(rgb(0, 0, 0), .30);
-$blackTransperntVeryLow 	: transparentize(rgb(0, 0, 0), .10);
+$blackTransperntVeryLight 	: transparentize($black, .90);
+$blackTransperntLight 		: transparentize($black, .70);
+$blackTransperntMed 		: transparentize($black, .50);
+$blackTransperntLow 		: transparentize($black, .30);
+$blackTransperntVeryLow 	: transparentize($black, .10);
 
 // Colors
 $red 						: #e35d5b ;
@@ -61,7 +63,7 @@ $linkColorVisited   		: darken($linkColorHover, 10);
 $linkColorFocus 			: darken($linkColorVisited, 10);
 
 // Color Scheme
-$bsClr              		: $cyan;
+$bsClr              		: slategray;
 $bsClrTint 					: tint($bsClr, 30%);
 $bsClrShade 				: shade($bsClr, 20%);
 

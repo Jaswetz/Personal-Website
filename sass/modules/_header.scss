@@ -1,19 +1,31 @@
 		  
 	%btn
 	{
+		/* Box */
 		display: inline-block;
-		transition: all 0.3s ease-out;
+
+		/* Text */
 		text-decoration: none;
+
+		/* Other */
+		@extend %df-trnsfrm;
 	}
 
 
 	%btnTrans
 	{
+		/* Box */
 		position: relative;
-		@include border-radius();
-		background: rgba( 188,198,206, .5 );
-		@include box-shadow( 0 4px rgba(168,180,191, .5) );
 
+		/* Border */
+		@include border-radius();
+
+		/* Background */
+		background: rgba( 188,198,206, .5 );
+		
+		/* Other */
+		@include box-shadow( 0 4px rgba(168,180,191, .5) );
+		
 		&:hover
 		{
 			background: lighten( rgba( 188,198,206, .5 ), 10% );
@@ -21,20 +33,36 @@
 
 		&:active
 		{
-			box-shadow: none;
 			top: 3px;
+			box-shadow: none;
 		}
 	}
 
 
-header
+.headerContainer
 {
-	 @include container;
-	
+	 //@include container;
+	 //background: $bsClr;
+	 @include clearfix();
+	 @include rem('margin-bottom', 20px);
+	 
+
+	 header
+	 {
+	 	padding: .5em;
+	 	float: left;
+	 	width: 100%;
+	 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
+	 }
+
+	 #logo, .nav
+	 {
+	 	margin-bottom: .5em;
+	 }
+
 	#logo
 	{
-		@include span-columns(3,6);
-		min-height: 75px;
+		//@include span-columns(3,6);
 		float: left;
 		
 		a
@@ -44,79 +72,106 @@ header
 
 	    	h1
 			{
-				@include adjust-font-size-to(20px);
-				background: url("../img/base/logo-jason.png") left center no-repeat;
-		    	@include image-2x("../img/base/logo-jason@2x.png", 37px, 75px);
-		    	padding: .7em 0 .7em 50px; 
+				margin: 0;
+				padding: 0;
+				// @include adjust-font-size-to(20px);
+				// background: url("../img/base/logo-jason.png") left center no-repeat;
+				//   	@include image-2x("../img/base/logo-jason@2x.png", 37px, 75px);
+				//   	padding: .7em 0 .7em 50px; 
+		  		@include hide-text();
 		    	vertical-align: middle;
+		    	background: black;
+		    	width: 100px;
+		    	height: 30px;
 			}
 		}
 	}
 
-	.wrap-dropdown
-	{
-		@include span-columns(3 omega,6);
-		margin: .5em auto;
-	}
-
+	// Dropdown Toggle
 	a.toggleMenu
 	{
 		@extend %btn;
-		@extend %btnTrans;
-		width: 100%;
-		margin-top: 1.5rem;
-		padding: .4em .7em;
 
-		// Typography
+		/* Box */
+		@include rem('max-width', 65px);
+		float: right;
+		margin-right: -$gutter-width;
+		// margin-top: 1.5em;
+		padding: .1em .6em .2em .6em;
+
+		/* Border */
+		border: 1px solid darken($bsClr, 10%);
+		@include border-radius(3px);
+
+		/* Background */
+		@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
+
+		/* Text */
 		color: $white;
 		text-decoration: none;
-		text-transform: uppercase;
-		text-shadow: 0 -1px rgba( 99,114,131, .5 );
+		text-shadow: 0 -1px $blackTransperntMed;
 
-		&:after 
+		/* Other */
+		@extend %df-trnsfrm;
+
+		&:hover
 		{
-		    content: "";
-		    width: 0;
-		    height: 0;
-		    position: absolute;
-		    right: 16px;
-		    top: 50%;
-		    margin-top: -6px;
-		    border-width: 6px 0 6px 6px;
-		    border-style: solid;
-		    border-color: transparent $white;    
+			@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
 		}
 	}
 
-
 	.nav
 	{
-		ul
-		{	
-			list-style: none;
-			*zoom: 1;
-			background:#175e4c;
-	     	position: relative;
-	     	@include clearfix;
+		@extend %hidden;
 
+		float: right;
+		
+		ul
+		{
+			padding-top: 1.3em;
+				
 			li
 			{
+				display: inline;
+				margin-left: $gutter-width;
 
 				a
-				{					
+				{
+					font-weight: 600;
+					padding: .4em .7em;
+					
 					// Font Styles
-					color: $white;
+					color: snow;
 					text-decoration: none;
 					text-transform: uppercase;
 					text-shadow: 0 -1px rgba( 99,114,131, .5 );
 
 					// Other
-					@include transition( all 0.1s ease-in );
+					@extend %df-trnsfrm;
 				}
 
+				a.btnTransparent
+				{
+				  position: relative;
+				  @include border-radius();
+				  background: rgba( 188,198,206, .5 );
+				  @include box-shadow( 0 4px rgba(168,180,191, .5) );
+				  
+				    &:hover
+				    {
+				       background: lighten( rgba( 188,198,206, .5 ), 10% );
+				    }
+				  
+				    &:active
+				    {
+				       box-shadow: none;
+				       top: 3px;
+				    }
+				}
 			}
 		}
 	}
+
 }
 
 
@@ -125,42 +180,31 @@ header
 {
 	.content
 	{
-		@include container;
+		//@include container;
 	}
 
 	header
 	{
-		padding: 0;
+	
 	}
 
 	header
 	{
 		.nav
 		{
-			float: right;
+		
 			
 			ul
 			{
-				padding-top: 1.3em;
+			
 					
 				li
 				{
-					display: inline;
-					margin-left: $gutter-width;
+	
 
 					a
 					{
-						font-weight: 600;
-						padding: .4em .7em;
-						
-						// Font Styles
-						color: $white;
-						text-decoration: none;
-						text-transform: uppercase;
-						text-shadow: 0 -1px rgba( 99,114,131, .5 );
-
-						// Other
-						@include transition( all 0.1s ease-in );
+					
 					}
 
 					a.btnTransparent

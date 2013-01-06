@@ -3,7 +3,10 @@
 //----------------------------------------------------------------------------
 
 // Animations
-
+%df-trnsfrm
+{
+	@include transition();
+}
 // Shadows
 
 // Borders

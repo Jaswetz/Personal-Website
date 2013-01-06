@@ -1,7 +1,6 @@
 // iPad Portrait
 @include at-breakpoint($ipad-portrait 10) 
 {
-
 	.content
 	{
 		@include container;
