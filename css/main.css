@@ -794,44 +794,25 @@ nav[role=navigation] li a:hover, nav[role=navigation] li a:active, nav[role=navi
 .icn-dsgn {
   /* Box */
   display: block;
-  float: right;
   width: 82px;
   height: 97px;
+  margin: 0 auto;
   /* Background */
   background-image: url(../img/icn-mbl-dsgn.png);
 }
 
-/* line 29, ../sass/modules/_skills.scss */
-.skls > article hgroup {
-  overflow: hidden;
-  margin: 0 auto;
-  width: 10.4em;
-  height: 6em;
-}
-/* line 40, ../sass/modules/_skills.scss */
+/* line 30, ../sass/modules/_skills.scss */
 .skls > article h3 {
-  /* Box */
-  float: left;
-  margin-top: 2em;
-  width: 4.5em;
-  /* Background */
-  background: #e70502;
-  /* Text */
-  color: white;
   text-align: center;
-  /* Other */
-  -webkit-box-shadow: inset -1px 0 8px rgba(51, 51, 51, 0.2);
-  -moz-box-shadow: inset -1px 0 8px rgba(51, 51, 51, 0.2);
-  box-shadow: inset -1px 0 8px rgba(51, 51, 51, 0.2);
 }
-/* line 58, ../sass/modules/_skills.scss */
+/* line 35, ../sass/modules/_skills.scss */
 .skls > article p {
   margin-left: 1em;
   margin-right: 1em;
   margin-bottom: 1.5em;
 }
 
-/* line 69, ../sass/modules/_skills.scss */
+/* line 46, ../sass/modules/_skills.scss */
 .prfc a {
   /* Includes and Mixins */
   /* Box */
@@ -842,7 +823,7 @@ nav[role=navigation] li a:hover, nav[role=navigation] li a:active, nav[role=navi
   text-align: left;
   font-weight: bold;
 }
-/* line 85, ../sass/modules/_skills.scss */
+/* line 62, ../sass/modules/_skills.scss */
 .prfc a:after {
   /* Other */
   content: "";
@@ -855,4 +836,39 @@ nav[role=navigation] li a:hover, nav[role=navigation] li a:active, nav[role=navi
   /* Border */
   border: 8px solid transparent;
   border-bottom: 8px solid white;
+}
+
+@media (min-width: 768px) {
+  /* line 99, ../sass/modules/_skills.scss */
+  .icn-dsgn {
+    float: left;
+    /* Background */
+    background-image: url(../img/icn-dsk-dsgn.png);
+    width: 108px;
+    height: 127px;
+    width: 15.07%;
+  }
+  /* line 109, ../sass/modules/_skills.scss */
+  .icn-dsgn p {
+    margin: 0 4em;
+  }
+
+  /* line 115, ../sass/modules/_skills.scss */
+  .skls-text {
+    float: left;
+    width: 74.93%;
+  }
+
+  /* line 123, ../sass/modules/_skills.scss */
+  .prfc a {
+    /* Includes and Mixins */
+    /* Box */
+    position: relative;
+    float: right;
+    padding: .4em .8em;
+    width: 10%;
+    /* Text */
+    text-align: left;
+    font-weight: bold;
+  }
 }

@@ -15,9 +15,9 @@
 {
 	/* Box */
 	display: block;
-	float: right;
 	width: 82px;
 	height: 97px;
+	margin: 0 auto;
 
 	/* Background */
 	background-image: url(../img/icn-mbl-dsgn.png);
@@ -25,33 +25,10 @@
 
 .skls > article
 {
-	hgroup
-	{
-		// Other
-		@include clearfix();
-
-		// Box
-		margin: 0 auto;
-		width: 10.4em;
-		height: 6em;
-	}
 
 	h3
 	{
-		/* Box */
-		float: left;
-		margin-top: 2em;
-		width: 4.5em;
-
-		/* Background */
-		background: $red;
-
-		/* Text */
-		color: white;
 		text-align: center;
-
-		/* Other */		
-		@include single-box-shadow($default-box-shadow-color, -1px, 0, $default-box-shadow-blur, $default-box-shadow-spread, true);
 	}
 
 	p
@@ -98,7 +75,6 @@
 			border-bottom: 8px solid white;
 		}
 	}
-
 }
 
 // Global ------
@@ -118,6 +94,48 @@
 // iPad Portrait
 @include at-breakpoint($ipad-portrait 10) 
 {
-	
+
+	.icn-dsgn
+	{
+		float: left;
+
+		/* Background */
+		background-image: url(../img/icn-dsk-dsgn.png);
+		width: 108px;
+		height: 127px;
+		width: 15.07%;
+
+		p
+		{
+			margin: 0 4em;
+		}
+	}
+
+	.skls-text
+	{
+		float: left;
+		width: 74.93%;
+	}
+
+	.prfc
+	{
+		a
+		{
+			/* Includes and Mixins */
+			@extend %btn;
+			@extend %btn-smpl;
+
+			/* Box */
+			position: relative;
+			float: right;
+			padding: .4em .8em;
+			width: 10%;
+
+			/* Text */
+			text-align: left;
+			font-weight: bold;
+
+		}
+	}
 
 }
