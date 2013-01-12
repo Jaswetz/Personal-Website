@@ -1,220 +1,162 @@
-		  
-	%btn
-	{
-		/* Box */
-		display: inline-block;
-
-		/* Text */
-		text-decoration: none;
-
-		/* Other */
-		@extend %df-trnsfrm;
-	}
+//----------------------------------------------------------------------------
+// Header  
+//----------------------------------------------------------------------------
 
 
-	%btnTrans
-	{
-		/* Box */
-		position: relative;
 
-		/* Border */
-		@include border-radius();
-
-		/* Background */
-		background: rgba( 188,198,206, .5 );
-		
-		/* Other */
-		@include box-shadow( 0 4px rgba(168,180,191, .5) );
-		
-		&:hover
-		{
-			background: lighten( rgba( 188,198,206, .5 ), 10% );
-		}
-
-		&:active
-		{
-			top: 3px;
-			box-shadow: none;
-		}
-	}
-
+// ---------------------------------------------------------------------------
+// Header
 
 .headerContainer
 {
-	 //@include container;
-	 //background: $bsClr;
-	 @include clearfix();
-	 @include rem('margin-bottom', 20px);
-	 
+	/* Box */
+	// @include rem('margin-bottom', 20px);
 
-	 header
-	 {
-	 	padding: .5em;
+	header
+	{
+	 	/* Box */
 	 	float: left;
+	 	padding: 0 $gtr;
 	 	width: 100%;
-	 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
-	 }
 
-	 #logo, .nav
-	 {
-	 	margin-bottom: .5em;
-	 }
+	 	/* Background */
+	 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
+	}
+
+	#logo, .nav
+	{
+		margin-bottom: .5em;
+	}
 
 	#logo
 	{
-		//@include span-columns(3,6);
 		float: left;
+		//@include span-columns(3,6);
+		line-height: 3em;
 		
 		a
 		{
 			color: $white;
 	    	text-decoration: none;
 
+
 	    	h1
 			{
+				/* Box */
 				margin: 0;
 				padding: 0;
-				// @include adjust-font-size-to(20px);
-				// background: url("../img/base/logo-jason.png") left center no-repeat;
-				//   	@include image-2x("../img/base/logo-jason@2x.png", 37px, 75px);
-				//   	padding: .7em 0 .7em 50px; 
-		  		@include hide-text();
+		    	
+		    	/* Text */
+		    	color: white;
 		    	vertical-align: middle;
-		    	background: black;
-		    	width: 100px;
-		    	height: 30px;
+
+		    	// width: 100px;
+		    	// height: 30px;
+				// background: url("../img/base/logo-jason.png") left center no-repeat;
+		    	// background: black;
+				//   	padding: .7em 0 .7em 50px;
+				// @include adjust-font-size-to(20px);
+				//   	@include image-2x("../img/base/logo-jason@2x.png", 37px, 75px); 
+		  		// @include hide-text();
 			}
 		}
+	}
+}
+
+	// ---------------------------------------------------------------------------
+	// Main Menu Dropdown
+	
+	.dropdown-wrap
+	{
+		float: right;
+		position: relative;
+		@include rem('width', 150px);
+
 	}
 
 	// Dropdown Toggle
 	a.toggleMenu
 	{
-		@extend %btn;
-
 		/* Box */
-		@include rem('max-width', 65px);
+		display: block;
+		@include rem('width', 66px);
 		float: right;
-		margin-right: -$gutter-width;
-		// margin-top: 1.5em;
-		padding: .1em .6em .2em .6em;
 
-		/* Border */
-		border: 1px solid darken($bsClr, 10%);
-		@include border-radius(3px);
-
-		/* Background */
-		@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
-
-		/* Text */
-		color: $white;
-		text-decoration: none;
-		text-shadow: 0 -1px $blackTransperntMed;
+		// margin-top: -.2em;
+		padding: .1em .6em .1em .6em;
+		margin-top: .5em;
+		line-height: 1.8em;
+		
 
 		/* Other */
+		@extend %btn-smpl;
+		@extend %btn;
+	}
+
+	.js nav[role=navigation]
+	{
+		overflow: hidden;
+		max-height: 0;
+	}
+
+	nav[role=navigation]
+	{
+		clear:both;
+		position: absolute;
+		z-index: $z-drpDwn;
+		width: 0;
+		top: 3em;
+		@include drop-shadow(full);
+		background-origin: left;
 		@extend %df-trnsfrm;
 
-		&:hover
+		&.active 
 		{
-			@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
+			max-height: 15em;
+			width: 100%;
 		}
-	}
 
-	.nav
-	{
-		@extend %hidden;
-
-		float: right;
-		
 		ul
 		{
-			padding-top: 1.3em;
-				
-			li
-			{
-				display: inline;
-				margin-left: $gutter-width;
-
-				a
-				{
-					font-weight: 600;
-					padding: .4em .7em;
-					
-					// Font Styles
-					color: snow;
-					text-decoration: none;
-					text-transform: uppercase;
-					text-shadow: 0 -1px rgba( 99,114,131, .5 );
-
-					// Other
-					@extend %df-trnsfrm;
-				}
-
-				a.btnTransparent
-				{
-				  position: relative;
-				  @include border-radius();
-				  background: rgba( 188,198,206, .5 );
-				  @include box-shadow( 0 4px rgba(168,180,191, .5) );
-				  
-				    &:hover
-				    {
-				       background: lighten( rgba( 188,198,206, .5 ), 10% );
-				    }
-				  
-				    &:active
-				    {
-				       box-shadow: none;
-				       top: 3px;
-				    }
-				}
-			}
+			@extend %reset-ul;
+			display: block;
+			background: $grayLighter;
+			@include border-bottom-radius($default-border-radius);
+			border: 1px solid $bsClr;
+			vertical-align: middle;
 		}
-	}
 
-}
-
-
-// iPad Portrait
-@include at-breakpoint($ipad-portrait 10) 
-{
-	.content
-	{
-		//@include container;
-	}
-
-	header
-	{
-	
-	}
-
-	header
-	{
-		.nav
+		li a
 		{
-		
-			
-			ul
+			display: block;
+			text-align: right;
+			width: 100%;
+			padding-right: $gtr;
+			padding: .5em;
+			text-decoration: none;
+			text-align: center;
+			color: $bsClr;
+			font-weight: bold;
+
+
+
+
+			&:hover, &:active, &:focus
 			{
-			
-					
-				li
-				{
-	
-
-					a
-					{
-					
-					}
-
-					a.btnTransparent
-					{
-						// @extend %btnTrans;
-					}
-				}
+				background: tint( $grayLighter, 50%);
 			}
+
 		}
+	
 	}
-}
+
+
+
+
+
+	// Main Menu Dropdown ------
+
+
+// Header ------
 
 

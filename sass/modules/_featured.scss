@@ -1,141 +1,258 @@
 
 
-.int
-{
-	padding: $gtr;
-
-	#int-img
-	{
-		// background: url(../img/www-globe-smal.png) no-repeat;
-		// width: 147px;
-		// height: 126px;
-		// margin: 0 auto;
-		// @include margin-leader(-.5);
-	}
-
-	h2.int-txt
-	{ 
-	    cursor: default;
-	    margin-bottom: 0;
-	    margin-top: 0;
-	    display: block;
-	    
-	 
-
-	    // .ln-two
-	    .int-em, .scrpt-txt
-	    {
-	    	// display: block;
-	    	// text-align: center;
-	    }
-
-	    .int-em
-	    {
-	    	@include adjust-font-size-to(14px, .5, 16px);
-	    	color: $grayDark;
-	    	font-weight: 700;
-	    	// background: $bsClr;
-	    	// padding: 0 .3em;
-	    }
-
-	  	.scrpt-txt
-	  	{
-	  		// background: lighten($bsClr, 10%);
-	  		// font-family: $script-stack;
-	  		color: $bsClr;
-	  		@include adjust-font-size-to(10px, .5, 14px);
-	    
-
-	  		&:first-child
-	  		{
-
-	  			// @include border-top-radius();
-	  		}
-
-	  		&:last-child
-	  		{
-	  			// margin-left: $gutter-width;
-	  		}
-	  	}
-	}
-
-	em
-	{
-		//@extend %hidden;
-		// @include adjust-font-size-to(22px, 1.8, 16px);
-		// color: $bsClr;
-		// display: block;
-		// text-align: center;
-		// background: lighten($bsClr, 30%);
-		// @include border-bottom-radius();
-		
-	}
-}
-
-
-
-
-
-
-
 // .int
 // {
+// 	padding: $gtr;
+
 // 	#int-img
 // 	{
-// 		background: url(../img/www-globe-smal.png) no-repeat;
-
-// 		width: 147px;
-// 		height: 126px;
-// 		margin: 0 auto;
-// 		@include margin-leader(-.5);
+// 		// background: url(../img/www-globe-smal.png) no-repeat;
+// 		// width: 147px;
+// 		// height: 126px;
+// 		// margin: 0 auto;
+// 		// @include margin-leader(-.5);
 // 	}
 
 // 	h2.int-txt
 // 	{ 
 // 	    cursor: default;
 // 	    margin-bottom: 0;
+// 	    margin-top: 0;
+// 	    display: block;
+	    
+	 
 
-
-// 	    .ln-two
+// 	    // .ln-two
+// 	    .int-em, .scrpt-txt
 // 	    {
-// 	    	display: block;
+// 	    	// display: block;
+// 	    	// text-align: center;
 // 	    }
 
 // 	    .int-em
 // 	    {
-// 	    	@include adjust-font-size-to(22px, 1.5, 16px);
-	
-// 	    	color: $white;
+// 	    	@include adjust-font-size-to(14px, .5, 16px);
+// 	    	color: $grayDark;
 // 	    	font-weight: 700;
-// 	    	background: $bsClr;
-// 	    	padding: 0 .3em;
+// 	    	// background: $bsClr;
+// 	    	// padding: 0 .3em;
 // 	    }
 
 // 	  	.scrpt-txt
 // 	  	{
-// 	  		font-family: $script-stack;
+// 	  		// background: lighten($bsClr, 10%);
+// 	  		// font-family: $script-stack;
 // 	  		color: $bsClr;
-// 	  		@include adjust-font-size-to(18px, 1.5, 22px);
+// 	  		@include adjust-font-size-to(10px, .5, 14px);
 	    
 
 // 	  		&:first-child
 // 	  		{
-// 	  			display: block;
+
+// 	  			// @include border-top-radius();
 // 	  		}
 
 // 	  		&:last-child
 // 	  		{
-// 	  			margin-left: $gutter-width;
+// 	  			// margin-left: $gutter-width;
 // 	  		}
 // 	  	}
 // 	}
 
 // 	em
 // 	{
-// 		@include adjust-font-size-to(22px, 1.5, 16px);
+// 		//@extend %hidden;
+// 		// @include adjust-font-size-to(22px, 1.8, 16px);
+// 		// color: $bsClr;
+// 		// display: block;
+// 		// text-align: center;
+// 		// background: lighten($bsClr, 30%);
+// 		// @include border-bottom-radius();
+		
 // 	}
 // }
 
 
+// ---------------------------------------------------------------------------
+// Intro
 
+	.content
+	{
+		.sctn-inner
+		{
+			/* Box */
+			@include rem('margin-left', 10px);
+			@include rem('margin-right', 10px);
+			@include rem('padding-bottom', 20px);
+			@include rem('padding-top', 20px);
+			
+			/* Text */
+			color: $white;
+			
+
+			h2
+			{
+				margin: 0;
+				line-height: 1.8rem;
+				color: $white;
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+			em
+			{
+				color: $white;
+				text-align: center;
+				display: block;
+			}
+		}	
+	}
+
+// Intro ------
+
+
+// iPad Portrait
+@include at-breakpoint($ipad-portrait 10) 
+{
+
+// ---------------------------------------------------------------------------
+// Intro
+
+	.int
+	{
+		@include clearfix();
+		@include padding-trailer(1);
+
+
+		.int-img-wrppr
+		{
+			float: left;
+			width: 40%;
+			//background: black;
+		}
+
+		.int-txt-wrppr
+		{
+			float: left;
+			width: 60%;
+			//background: white;
+		}
+
+
+		#int-img
+		{
+			// Block
+			display: block;
+			margin: 0 auto;
+			width: 221px;
+			height: 188px;
+
+			// Background
+			background: url(../img/int-globe-med.png) no-repeat;
+		}
+
+
+		h2.int-txt
+		{ 
+			// reset
+			background: none;
+			text-transform: none;
+
+			// Box
+		    margin: 0 auto;
+		    margin-bottom: 0;
+		    width: 335px;
+		    
+		    // Text
+		    text-align: left;
+
+		    // Other
+		    cursor: default;
+
+
+		    .ln-two
+		    {
+		    	// Block
+		    	display: block;
+		    	float: left;
+		    	width: 100%;
+		    }
+
+		    .int-em
+		    {
+		    	@include adjust-font-size-to(22px, 1.5, 16px);
+		    	color: $white;
+		    	text-transform: capitalize;
+		    	background: $bsClrShade;
+		    	padding: 0 .3em;
+		    }
+
+		  	.scrpt-txt
+		  	{
+		  		font-family: $script-stack;
+		  		font-weight: normal;
+		  		color: $bsClrShade;
+		  		@include adjust-font-size-to(18px, 1.2, 22px);
+		    
+
+		  		&:first-child
+		  		{
+		  			// reset
+		  			text-align: left;
+
+		  			display: block;
+		  		}
+
+		  		&:last-child
+		  		{
+		  			margin-left: $gutter-width;
+		  			margin-left: 2.2%;
+		  		}
+		  	}
+		}
+
+		em
+		{
+			@include adjust-font-size-to(22px, 1.5, 16px);
+			color: $white;
+		}
+	}
+}
+
+
+// iPad landscape
+@include at-breakpoint($ipad-landscape 12) 
+{
+
+	// ---------------------------------------------------------------------------
+	// Intro
+	
+		.int
+		{
+			.int-img-wrppr
+			{
+				width: 50%;
+
+				#int-img
+				{
+					float: right;
+					margin-right: $gtr * 2;
+				}
+			}
+
+			.int-txt-wrppr
+			{
+				width: 50%;
+
+				h2.int-txt, em
+				{
+					float: left;
+					padding-left: $gtr * 2;
+				} 
+			}
+		}
+	
+	// Intro ------
+
+}
 

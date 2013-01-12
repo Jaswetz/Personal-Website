@@ -44,7 +44,7 @@ $blackTransperntLow 		: transparentize($black, .30);
 $blackTransperntVeryLow 	: transparentize($black, .10);
 
 // Colors
-$red 						: #e35d5b ;
+$red 						: #E70502 ;
 $orange 					: #e8632c ;
 $yellow 					: #e8b000 ;
 $green 						: #b1cc00 ;
@@ -152,7 +152,7 @@ $default-border-radius		: 3px;
 // Z-index master list
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
-$zindexDropdown				: 1000 ;
+$z-drpDwn				: 1000 ;
 $zindexPopover				: 1010 ;
 $zindexTooltip				: 1020 ;
 $zindexFixedNavbar			: 1030 ;

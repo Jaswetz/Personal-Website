@@ -15,3 +15,40 @@
 
 // Styles
 
+// Buttons
+
+	%btn
+	{
+		/* Box */
+		display: inline-block;
+
+		/* Text */
+		text-decoration: none;
+
+		/* Other */
+		@extend %df-trnsfrm;
+	}
+
+
+	%btn-smpl
+	{
+		/* Border */
+		border: 1px solid darken($bsClr, 10%);
+		@include border-radius(3px);
+
+		/* Background */
+		@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
+
+		/* Text */
+		color: $white;
+		text-decoration: none;
+		text-shadow: 0 -1px $blackTransperntMed;
+
+		/* Other */
+		@extend %df-trnsfrm;
+
+		&:hover
+		{
+			@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
+		}
+	}

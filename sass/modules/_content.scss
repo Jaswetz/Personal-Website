@@ -1,5 +1,8 @@
 .content 
 { 
+	// Reset
+	@include clearfix();
+
 	/* Box */
 	@include rem('margin-top', -10px);
 	@include rem('margin-right', 10px);
@@ -15,7 +18,7 @@
 	/* Text */
 	color: $bsTxtClr;
 
-	section
+	section:first-child
 	{
 		background: url(../img/base/intro-ptrn@2x.png);
 	}
@@ -32,25 +35,6 @@
 		border-top-color: $white;
 	}
 
-	.sctn-inner
-	{
-		/* Box */
-		@include rem('margin-left', 10px);
-		@include rem('margin-right', 10px);
-		@include rem('padding-bottom', 20px);
-		@include rem('padding-top', 30px);
-		
-		/* Text */
-		color: $white;
-		text-align: center;
-
-		h2
-		{
-			margin: 0;
-			background: $bsClr;
-			line-height: 2.2rem;
-		}
-	}
 }
 
 

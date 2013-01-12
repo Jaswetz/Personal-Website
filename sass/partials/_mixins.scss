@@ -3,11 +3,6 @@
 // custom mixins
 //----------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------
-// mixins.scss
-//----------------------------------------------------------------------------
-
-
 // ---------------------------------------------------------------------------
 // Media Queries
 
@@ -56,10 +51,16 @@
 	}
 }
 
+// ---------------------------------------------------------------------------
+// Calculate EMs
+
 @function em($px, $base: $base-font-size)
 {
 	@return ($px / $base) * 1em;
-}
+}	
+
+// Calculate EMs ------
+
 
 // ---------------------------------------------------------------------------
 // REMs
@@ -215,12 +216,12 @@ $baseline-px: 16px;
 
 	@if $direction == "light"
 	{
-		@include box-shadow(0 0 0 10px $whiteTransperntMed);
+		@include box-shadow(0 0 0 10px $bsClr);
 	}
 
 	@if $direction == "glow"
 	{
-		@include box-shadow(0 0 $default-box-shadow-blur 4px $whiteTransperntLight inset);
+		@include box-shadow(0 0 $default-box-shadow-blur 4px $bsClr inset);
 	}
 }
 
@@ -279,6 +280,13 @@ $baseline-px: 16px;
 
 // ---------------------------------------------------------------------------
 // Helper Functions
+
+%reset-ul
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
 
 // image replacement
 %hide-text 

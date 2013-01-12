@@ -1,0 +1,123 @@
+//----------------------------------------------------------------------------
+// skills.scss  
+// Skills and Proficiencies
+//----------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Global
+
+.sctn-dsgn-icn
+{
+	width: 100%;
+}
+
+.icn-dsgn
+{
+	/* Box */
+	display: block;
+	float: right;
+	width: 82px;
+	height: 97px;
+
+	/* Background */
+	background-image: url(../img/icn-mbl-dsgn.png);
+}
+
+.skls > article
+{
+	hgroup
+	{
+		// Other
+		@include clearfix();
+
+		// Box
+		margin: 0 auto;
+		width: 10.4em;
+		height: 6em;
+	}
+
+	h3
+	{
+		/* Box */
+		float: left;
+		margin-top: 2em;
+		width: 4.5em;
+
+		/* Background */
+		background: $red;
+
+		/* Text */
+		color: white;
+		text-align: center;
+
+		/* Other */		
+		@include single-box-shadow($default-box-shadow-color, -1px, 0, $default-box-shadow-blur, $default-box-shadow-spread, true);
+	}
+
+	p
+	{
+		margin-left: 1em;
+		margin-right: 1em;
+		margin-bottom: 1.5em;
+	}
+}
+
+
+.prfc
+{
+	a
+	{
+		/* Includes and Mixins */
+		@extend %btn;
+		@extend %btn-smpl;
+
+		/* Box */
+		position: relative;
+		padding: .4em .8em;
+		width: 100%;
+
+		/* Text */
+		text-align: left;
+		font-weight: bold;
+
+		// Arrow
+		&:after
+		{
+			/* Other */
+			content: "";
+
+			/* Box */
+			position: absolute;
+			top: .4em;
+			right: .7em;
+			width: 0;
+			height: 0;
+
+			/* Border */
+			border: 8px solid transparent;
+			border-bottom: 8px solid white;
+		}
+	}
+
+}
+
+// Global ------
+
+// ---------------------------------------------------------------------------
+// Design
+
+.dsgn
+{
+
+}
+	
+// Design ------
+
+
+
+// iPad Portrait
+@include at-breakpoint($ipad-portrait 10) 
+{
+	
+
+}
