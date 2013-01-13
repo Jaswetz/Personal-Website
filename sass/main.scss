@@ -14,11 +14,11 @@
 @import "pages/global-layout";
 
 // Modules
-@import "modules/blocks";
-@import "modules/header";
-@import "modules/content";
-@import "modules/featured";
-@import "modules/skills";
+// @import "modules/blocks";
+// @import "modules/header";
+// @import "modules/content";
+// @import "modules/featured";
+// @import "modules/skills";
 
 // ----------------------------------------------------------------------------
 // Type Settings
@@ -27,5 +27,5 @@
 // ---------------------------------------------------------------------------
 // @Responsive
 
-//@import "modules/ipad";
+@import "modules/ipad";
 

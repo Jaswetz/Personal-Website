@@ -4,9 +4,13 @@
 
 $(document).ready(function() {
 
-	$('#main-toggle').click(function(){
-		$('#nav').toggleClass('active');
+	$('header #nav').removeClass('active');
+
+	$('header #main-toggle').click(function(){
+		$('header #nav').toggleClass('active');
+		// alert("Pressed");
 		return false;
 	});
 
 });
+

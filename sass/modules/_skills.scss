@@ -3,139 +3,147 @@
 // Skills and Proficiencies
 //----------------------------------------------------------------------------
 
+
+
+
+
+
+
+
 // ---------------------------------------------------------------------------
 // Global
 
-.sctn-dsgn-icn
+.skls
 {
-	width: 100%;
-}
-
-.icn-dsgn
-{
-	/* Box */
-	display: block;
-	width: 82px;
-	height: 97px;
-	margin: 0 auto;
-
-	/* Background */
-	background-image: url(../img/icn-mbl-dsgn.png);
-}
-
-.skls > article
-{
-
-	h3
+	.sctn-inner
 	{
-		text-align: center;
+		padding: 2em;
 	}
 
-	p
+	article
 	{
-		margin-left: 1em;
-		margin-right: 1em;
-		margin-bottom: 1.5em;
-	}
-}
 
-
-.prfc
-{
-	a
-	{
-		/* Includes and Mixins */
-		@extend %btn;
-		@extend %btn-smpl;
-
-		/* Box */
-		position: relative;
-		padding: .4em .8em;
-		width: 100%;
-
-		/* Text */
-		text-align: left;
-		font-weight: bold;
-
-		// Arrow
-		&:after
+		p, h4
 		{
-			/* Other */
-			content: "";
+			text-align: center;
+		}
 
+		.icn
+		{
 			/* Box */
-			position: absolute;
-			top: .4em;
-			right: .7em;
-			width: 0;
-			height: 0;
+			width: 120px;
+			border: none;
+			margin: 0 auto;
+		}
+	}
+}
 
-			/* Border */
-			border: 8px solid transparent;
-			border-bottom: 8px solid white;
+@media screen and (min-width: 45em) 
+{
+	%clear-row
+	{
+		&:before, 
+		&:after 
+		{
+			content: " ";
+			display: table;
+		}
+
+		&:after 
+		{
+			clear: both;
+		}
+	}
+
+	%col-3
+	{
+	  display: block;
+	  float: left;
+	  width: 33.333333333%;
+	  padding-right: 2em;
+
+	  &:last-child
+	  {
+	  	padding-right: 0;
+	  }
+	}
+
+	.skls
+	{
+		@extend %clear-row;
+
+		.sctn-inner
+		{
+			padding: 2em;
+			@extend %clear-row;
+		}
+
+		article
+		{
+			@extend %col-3;
+		
+			.icn
+			{
+				/* Box */
+				width: 200px;
+				border: none;
+				height: auto;
+			}			
+
+			p, h4
+			{
+				text-align: left;
+			}
+
 		}
 	}
 }
 
 // Global ------
 
-// ---------------------------------------------------------------------------
-// Design
-
-.dsgn
-{
-
-}
-	
-// Design ------
-
-
 
 // iPad Portrait
-@include at-breakpoint($ipad-portrait 10) 
-{
+// @include at-breakpoint($ipad-portrait 10) 
+// {
 
-	.icn-dsgn
-	{
-		float: left;
+// 	.icn-dsgn
+// 	{
+// 		float: left;
 
-		/* Background */
-		background-image: url(../img/icn-dsk-dsgn.png);
-		width: 108px;
-		height: 127px;
-		width: 15.07%;
+// 		/* Background */
+// 		background-image: url(../img/icn-dsgn.png);
 
-		p
-		{
-			margin: 0 4em;
-		}
-	}
+// 		p
+// 		{
+// 			margin: 0 1em;
+// 		}
+// 	}
 
-	.skls-text
-	{
-		float: left;
-		width: 74.93%;
-	}
+// 	.skls-text
+// 	{
+// 		float: left;
+// 		width: 74.93%;
+// 	}
 
-	.prfc
-	{
-		a
-		{
-			/* Includes and Mixins */
-			@extend %btn;
-			@extend %btn-smpl;
+// 	.prfc
+// 	{
+// 		a
+// 		{
+// 			/* Includes and Mixins */
+// 			@extend %btn;
+// 			@extend %btn-smpl;
 
-			/* Box */
-			position: relative;
-			float: right;
-			padding: .4em .8em;
-			width: 10%;
+// 			/* Box */
+// 			position: relative;
+// 			float: right;
+// 			padding: .4em .8em;
+// 			width: 10%;
 
-			/* Text */
-			text-align: left;
-			font-weight: bold;
+// 			/* Text */
+// 			text-align: left;
+// 			font-weight: bold;
 
-		}
-	}
+// 		}
+// 	}
 
-}
+// }

@@ -39,40 +39,36 @@
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 
-        <div class="page">
-
-        <!-- /HEADER -->
-        <div class="headerContainer">
-            <header id="main" class="wrapper">  
-                <!-- /NAVIGATION -->
-                <div id="logo">
-                    <a href="#" >
-                        <h1>Jason Swetzoff</h1>
-                    </a>
-                </div><!-- /main -->
-                <div class="dropdown-wrap">
-                    <a href="#" id="main-toggle" class="toggleMenu">Menu</a>   
-                    <nav role="navigation" id="nav" class="nav primary">
-                        <ul>
-                            <li><a href="#">Resume</a></li>
-                            <li><a href="#" class="btnTransparent">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div> 
-                <!-- \NAVIGATION -->    
+                <!-- /HEADER -->
+            <header id="main" class="primary-header">  
+                <div class="header-inner">
+                    <!-- /NAVIGATION -->
+                    <div id="logo">
+                        <a href="#" >
+                            <h1>Jason Swetzoff</h1>
+                        </a>
+                    </div><!-- /main -->
+                    <div class="dropdown-wrap">
+                        <a href="#" id="main-toggle" class="toggleMenu"><span class="mobile-menu"></span><span class="hide-text">Menu</span></a>   
+                        <nav role="navigation" id="nav" class="nav primary active">
+                            <ul>
+                                <li><a href="#">Resume</a></li>
+                                <li><a href="#" class="btnTransparent">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div> 
+                    <!-- \NAVIGATION -->    
+                </div><!-- /header-container -->
             </header>   
-        </div><!-- /header-container -->
-        <!-- \HEADER -->    
+        <!-- \HEADER -->  
 
-        <div class="clearfix"></div>
+        <div class="page-wrap">  
 
         <div class="content">
 
         <!-- /INTRO -->
-            <section class="int">
-                <!-- <div class="sec-ttl frst"><h3>Jason Swetzoff</h3><div class="arrw-dwn"></div></div> -->
-                <div class="sctn-inner">
-
+            <section class="int container">
+                
                 <div class="int-img-wrppr">
                     <span id="int-img"></span>
                 </div>
@@ -85,40 +81,56 @@
                         </span>
                         <span class="int-em">front-end developer</span>
                     </h2>
-                        <em>...and that's what this site is about</em>
-                    </div>
+                    <em>...and that's what this site is about</em>
                 </div>
+
             </section>
         <!-- \INTRO -->
 
         <!-- /SKILLS AND PROFICIENCIES -->
-            <section class="skls">
+            <section class="skls container row-clear">
 
                 <div class="sec-ttl frst">
                     <h3>Skills and Proficiencies</h3>
                     <div class="arrw-dwn"></div>
                 </div>
 
-                <article class="dsgn">
-                    <div class="sctn-inner">
-                        <div class="sctn-dsgn-icn"><span class="icn-dsgn"></span></div>
-                        <div class="skls-text">
-                            <h3>Design</h3>
-                            <div class="sctn-dsgn-text">
-                                <p>With a love for aesthetics and a focus on readibility, interface and user expeirence, I have a good set of digital design skills with experience in mobile, web, kiosks, and responsive design.</p>
-                            </div>
+                <div class="container-inner">
+
+                    <div class="dsgn grid-unit">
+                        <div class="icn">
+                            <img src="img/icn-dsgn.png" alt="Design Icon"/>
                         </div>
-                        <div class="prfc">
-                            <a href="#">Proficiencies</a>
-                        </div>
+                        <h4>Design</h4>
+                        <p>With a love for aesthetics and a focus on readibility, interface and user expeirence, I have a good set of digital design skills with experience in mobile, web, kiosks, and responsive design.</p>
                     </div>
-                </article> 
+
+                    <div class="dvlp grid-unit">
+                        <div class="icn">
+                            <img src="img/icn-dvlp.png" alt="Development Icon" />
+                        </div>
+                        <h4>Front-End</h4>
+                        <p>With a love for aesthetics and a focus on readibility, interface and user expeirence, I have a good set of digital design skills with experience in mobile, web, kiosks, and responsive design.</p>
+                    </div>
+
+                    <div class="dvlp grid-unit">
+                        <div class="icn">
+                            <img src="img/icn-ux.png" alt="User Experience Icon"/>
+                        </div>
+                        <h4>User Experience</h4>
+                        <p>With a love for aesthetics and a focus on readibility, interface and user expeirence, I have a good set of digital design skills with experience in mobile, web, kiosks, and responsive design.</p>
+                    </div>    
+
+                </div><!-- \container-inner -->
 
             </section>
         <!-- \SKILLS AND PROFICIENCIES -->
 
         <!-- /BLOCKS -->    
-            <div id="blocks">   
+            <div class="blocks container row-clear">   
+                <div class="dvlp grid-unit"><h1>hello</h1></div>
+                <div class="dvlp grid-unit"><h1>hello</h1></div>
+                <div class="dvlp grid-unit"><h1>hello</h1></div>                
             </div><!-- /end #blocks -->
         <!-- \BLOCKS -->
         
@@ -126,11 +138,11 @@
         <!-- \content -->
             
         <!-- /FOOTER -->    
-            <footer id="primary-foot">
-            
-                <section id="info">
-                </section>
-            
+            <footer id="primary-footer">
+                <div class="inner">
+                <p>Vivamus sollicitudin facilisis augue, in lacinia elit malesuada sit amet. Donec tincidunt dolor sed libero sollicitudin elementum.</p>
+                </div>
+                
             </footer>
         <!-- \FOOTER -->    
        
@@ -141,6 +153,20 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <!-- Load respond.js if browser does not support mediaqueries -->
+        <script>
+        Modernizr.load([
+          {
+            // The test: does the browser understand Media Queries?
+            test : Modernizr.mq('only all'),
+            // If not, load the respond.js file
+            nope : '/js/respond.min.js'
+          }
+        ]);
+        </script>
+
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

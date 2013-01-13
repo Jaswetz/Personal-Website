@@ -1,7 +1,356 @@
+//----------------------------------------------------------------------------
+// Global Layout  
+//----------------------------------------------------------------------------
 
 
-.page
+// ---------------------------------------------------------------------------
+// Wireframe Styles
+
+// .container, footer, header
+// {
+// 	background: $grayLighter;
+// }
+
+// .grid-unit
+// {
+// 	background: $grayLight;
+// }
+
+// #logo
+// {
+// 	background: $gray;
+// }
+
+// nav
+// {
+// 	background: $grayDark;
+	
+// 	ul
+// 	{
+// 		border: 1px solid $red;
+
+// 		li
+// 		{
+// 			border: 1px solid $yellow;
+
+// 			a
+// 			{
+// 				background: $grayLight;
+// 			}
+// 		}
+// 	}
+// }
+
+// Wireframe Styles ------
+
+
+// ---------------------------------------------------------------------------
+// Main Layout Components
+
+.page-wrap
 {
-	max-width: 1100px;
-	margin: 0 auto;
+	background: $white;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:1400px;
+	*zoom:1;
 }
+
+//gutter
+.container
+{
+	padding: 0 5%;
+}
+
+.grid-unit 
+{
+	display: block;
+	position: relative;
+	margin-left: 0;
+	width: 100%;
+	float: left;
+	display: inline; 
+	margin-bottom: 2em;
+}
+
+.row-clear:after 
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+%row-clear-extended
+{
+	&:before, 
+	&:after 
+	{
+		content: " ";
+		display: table;
+	}
+
+	&:after 
+	{
+		clear: both;
+	}
+}	
+
+// Main Layout Components ------
+
+/////////////////////
+// Layouts
+/////////////////////
+
+// ---------------------------------------------------------------------------
+// Header
+
+.primary-header
+{
+	background: $headerColor;
+	@extend %row-clear-extended;
+	@include rhythm(0, 1, 1, 0, 32px);
+
+	.header-inner
+	{
+		@extend .page-wrap;
+	}
+
+	#logo
+	{
+		float: left;
+		display: inline;
+		margin-left: $gtr;
+
+		h1, a
+		{
+			padding-top: 0;
+		}
+	}
+
+	// ------ Main Nav ----->
+		
+	.hide-text
+	{
+		display: block;
+		@include hide-text();
+	}
+
+
+	.dropdown-wrap
+	{
+		position: relative;
+		width: 100%;
+	}
+
+
+	a.toggleMenu
+	{
+		display: block;
+		right: 0;
+		position: absolute;
+		margin-top: .35em;
+		margin-right: $gtr;
+		padding: .5em .5em .25em .5em;
+
+		max-width: 2.4em;
+		background: $orange;
+
+
+		.mobile-menu
+		{
+			background: $red;
+			width: 1.3em;
+			height: .28em;
+			display: block;
+			float:right;
+		}
+
+		.mobile-menu
+		{			
+
+			&:before
+			{
+				content: "";
+				@extend .mobile-menu;
+				margin-top: .45em;
+			}
+
+			&:after
+			{
+				content: "";
+				@extend .mobile-menu;
+				margin-top: .21em;
+			}
+
+
+		}
+	}
+
+	nav[role=navigation]
+	{
+		max-height: 0;
+		width: 100%;
+		overflow: hidden;
+
+		&.active
+		{
+			max-height: 15em;
+		}
+
+		ul
+		{
+			li
+			{
+				text-align: right;
+
+				a
+				{
+
+				}
+			}
+		}
+	}
+
+	// <----- Main Nav ------
+}// Header ------
+
+// ---------------------------------------------------------------------------
+// Intro / Featured
+
+.int
+{
+	text-align: center;
+}	
+
+// Intro / Featured ------
+
+// ---------------------------------------------------------------------------
+// Skills
+
+.grid-unit
+{
+	.icn
+	{
+		margin: 0 auto;
+		max-width: 200px;
+	}
+}
+
+// Skills ------
+
+
+//iPad Portrait
+@include at-breakpoint($ipad-portrait 10) 
+{
+
+	// ---------------------------------------------------------------------------
+	// Extends
+	
+	// hide from both screenreaders and browsers: h5bp.com/u
+	
+	%hidden 
+	{
+	    display: none !important;
+	    visibility: hidden;
+	}
+	
+	// Extends ------
+
+	// ---------------------------------------------------------------------------
+	// Main Layout Components
+	
+	.page-wrap
+	{
+		width: 88%;
+	}
+	
+	// 3 Columns
+	%columns
+	{
+		width: 30%;
+		margin-right: 5%;
+
+		&:last-child
+		{
+			margin-right: 0;
+		}
+	}
+
+	// Main Layout Components ------
+
+	//////////////////
+	// Layouts
+	//////////////////
+
+	.skls
+	{
+		.grid-unit
+		{
+			@extend %columns;
+		}
+	}
+
+	.primary-header
+	{
+
+	}
+
+
+	// ---------------------------------------------------------------------------
+	// Header
+
+	.primary-header
+	{	
+
+		#logo
+		{
+			h1
+			{
+				@include rem('line-height', 58px);
+			}
+		}
+
+		// ------ Main Nav ----->
+
+		a.toggleMenu
+		{
+			display: none;
+		}
+
+		.dropdown-wrap
+		{
+			width: auto;
+		}
+
+		nav[role=navigation]
+		{
+			width: auto;
+			overflow: auto;
+			max-height: 15em;
+			float: right;
+
+			ul
+			{
+				li
+				{
+					display: inline;
+
+					a
+					{
+
+					}
+				}
+			}
+		}
+
+	// <----- Main Nav ------
+}
+
+// Header ------
+
+}/* End iPad-Portrait */
+
+
+
+

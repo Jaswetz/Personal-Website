@@ -76,18 +76,20 @@
 // ---------------------------------------------------------------------------
 // Intro
 
-	.content
+	section.int
 	{
-		.sctn-inner
-		{
+			display: block;
 			/* Box */
-			@include rem('margin-left', 10px);
-			@include rem('margin-right', 10px);
+			
 			@include rem('padding-bottom', 20px);
 			@include rem('padding-top', 20px);
 			
 			/* Text */
 			color: $white;
+			border-top: $gtr solid $white;
+			border-right: $gtr solid $white;
+			border-left: $gtr solid $white;
+
 			
 
 			h2
@@ -105,7 +107,6 @@
 				text-align: center;
 				display: block;
 			}
-		}	
 	}
 
 // Intro ------
@@ -118,10 +119,26 @@
 // ---------------------------------------------------------------------------
 // Intro
 
-	.int
+	section.int
 	{
-		@include clearfix();
+
 		@include padding-trailer(1);
+
+		width: 100%;
+		float: left;
+
+		&:before, 
+		&:after 
+		{
+			content: " ";
+			display: table;
+		}
+
+		&:after 
+		{
+			clear: both;
+		}
+		
 
 
 		.int-img-wrppr
