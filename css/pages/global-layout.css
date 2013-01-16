@@ -1,9 +1,9 @@
 /*
-Syntax error: Undefined variable: "$white".
-        on line 52 of /Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss
+Syntax error: Undefined variable: "$bg1".
+        on line 106 of /Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss
 
 Backtrace:
-/Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss:52
+/Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss:106
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/script/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/script/node.rb:40:in `perform'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.3/lib/sass/../sass/tree/visitors/perform.rb:296:in `visit_prop'
@@ -79,4 +79,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$white\".\A         on line 52 of /Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss"; }
+  content: "Syntax error: Undefined variable: \"$bg1\".\A         on line 106 of /Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss"; }
