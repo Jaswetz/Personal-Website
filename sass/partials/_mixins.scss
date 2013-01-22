@@ -315,7 +315,8 @@ $baseline-px: 16px;
 
 // hide only visually, but have it available for screenreaders: h5bp.com/v
 // element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-@mixin element-invisible {
+%element-invisible 
+{
 	position: absolute !important;
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -324,9 +325,6 @@ $baseline-px: 16px;
 	width: 1px;
 	height: 1px;
 	border: 0;
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
-  }
 }
 
 

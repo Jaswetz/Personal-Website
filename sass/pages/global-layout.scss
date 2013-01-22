@@ -3,6 +3,71 @@
 //----------------------------------------------------------------------------
 
 
+//reset
+nav > ul > li
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+//----------------------------------------------------------------------------
+// Icons  
+//----------------------------------------------------------------------------
+
+.grid-icon
+{
+	.icn-fw
+	{
+		background: url(../img/tool-icons/icn-fw.png);
+		background-size: 50px 50px;
+	}
+
+	.icn-ai
+	{
+		background: url(../img/tool-icons/icn-ai.png);
+		background-size: 50px 50px;
+	}
+
+	.icn-ps
+	{
+		background: url(../img/tool-icons/icn-ps.png);
+		background-size: 50px 50px;
+	}
+
+
+	.icn-git
+	{
+		background: url(../img/tool-icons/icn-git.png);
+		background-size: 50px 50px;
+	}
+
+	.icn-html
+	{
+		background: url(../img/tool-icons/icn-html.png);
+		background-size: 50px 50px;
+	}
+
+	.icn-jq
+	{
+		background: url(../img/tool-icons/icn-jq.png);
+		background-size: 50px 50px;
+	}
+}
+
+
+.grid-icon span
+{
+	//reset
+	margin-bottom: 0;
+	float:left;
+	width: 50px;
+	height: 50px;
+	margin-right: 5%;
+	margin-bottom: 5%;
+}
+
+
 // ---------------------------------------------------------------------------
 // Wireframe Styles
 
@@ -43,6 +108,30 @@
 
 // Wireframe Styles ------
 
+//////////////////////
+//Typography
+//////////////////////
+
+body
+{
+	font-size: 150%;
+}
+
+p
+{
+	@include adjust-font-size-to(16px, 1.2, 16px);
+}
+
+p.large
+{
+	@include adjust-font-size-to(24px, 1.5, 16px);
+	font-style: italic ;
+}
+
+h3
+{
+}
+
 
 // ---------------------------------------------------------------------------
 // Main Layout Components
@@ -52,7 +141,7 @@
 	width:100%;
 	margin-left:auto;
 	margin-right:auto;
-	max-width:1400px;
+	max-width:1800px;
 	*zoom:1;
 }
 
@@ -70,7 +159,7 @@
 	width: 100%;
 	float: left;
 	display: inline; 
-	margin-bottom: 2em;
+	@include trailer(2, $baseFontSize, margin);
 }
 
 .row-clear:after 
@@ -101,6 +190,7 @@
 // Styles
 /////////////////////
 
+
 body
 {
 	background: $bg1;
@@ -113,43 +203,49 @@ h1, h3
 
 h3
 {
-	width: 100%;
+	@include trailer(2, 16px, margin);
+
+	// // width: 100%;
+	text-align: center;
+	// color: $white;
+	text-shadow: white  0 1px;
 	border-top: 1px solid $grayLighter;
 	border-bottom: 1px solid $grayLighter;
-	
-		@include box-shadow(0 2px 0 $whiteTransperntLight inset);
-	text-align: center;
-	background: $grayLighter;
-	color: $bsClr;
-	text-shadow: white  0 1px;
+	// @include trailer(1, $baseFontSize, margin);
 }
+
+
+
+// ---------------------------------------------------------------------------
+// Global
 
 .page-bckg
 {
 	background: $white;
-	border: 1px solid $grayLighter;
+	//@include debug-vertical-alignment();
+
+	// border: 1px solid $grayLighter;
 	position: relative;
 	z-index: 100;
-	margin-top: -8em;
+	// @include leader(-6, $baseFontSize, margin);
 	@include drop-shadow(full);
 	@include border-radius($default-border-radius);
-}
+	top: -2em;
+}	
+
+// Global ------
+
+
+// ---------------------------------------------------------------------------
+// Header
 
 .primary-header
 {
-		background: $headerColor;
-		height: 15em;
-		border-bottom: 1px solid shade($headerColor, 30%);
-}
+	background: $headerColor;
 
-.divider
-{
-	width: 100%;
-	height: .5em;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
-}
+	height: 8em; 
+	border-bottom: 1px solid shade($headerColor, 30%);
+}	
 
 #logo
 {
@@ -158,27 +254,59 @@ h3
 		color: $white;
 		text-decoration: none;
 	}
-	// @include hide-text();
-	// img
-	// {
-	// 	width: 35%;
-	// 	float: left;
-	// }
 }
 
-.int
+// Header ------
+
+
+.divider
 {
-	// background: url(../img/base/intro-ptrn@2x.png);
-	// background: tint($headerColor, 50%);
+	width: 100%;
+	height:$base-leader ;
+	@include leader(1, $baseFontSize, margin);
+	@include trailer(1.6, $baseFontSize, margin);
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
+}
+
+
+
+.int 
+{
+	@include leader(.5, $baseFontSize, padding);
+	@include trailer(1, $baseFontSize, padding);
+
+	h2
+	{
+		color: $orange;
+		font-size: 3rem;
+		line-height: 4rem;
+		@include trailer(.5, $baseFontSize, margin);
+		// background: tint($headerColor, 50%);
+	}
 }
 
 .img-me img
 {
 
 	border: 1px solid $grayLighter;
+	background: shade(white, 5%);
 	padding: .3em;
 
 }
+
+// ---------------------------------------------------------------------------
+// Skills
+
+.skls
+{
+	// background: $bsClr;
+	// background: url(../img/base/intro-ptrn@2x.png);
+	// 	border-top: 1px solid $bsClr;
+	// border-bottom: 1px solid $bsClr;
+
+}
+
+// Skills ------
 
 /////////////////////
 // Layouts
@@ -197,6 +325,7 @@ h3
 	.header-inner
 	{
 		@extend .page-wrap;
+		position: relative;
 	}
 
 	#logo
@@ -207,6 +336,8 @@ h3
 
 		h1, a
 		{
+		
+			@include leader(.25, $baseFontSize, margin);
 			padding-top: 0;
 		}
 	}
@@ -222,8 +353,11 @@ h3
 
 	.dropdown-wrap
 	{
-		position: relative;
-		width: 100%;
+		@include leader(1, 32px, margin);
+		position: absolute;
+		width: 50%;
+		// float: right;
+		right:0;
 	}
 
 
@@ -285,10 +419,16 @@ h3
 		{
 			li
 			{
-				text-align: right;
 
 				a
 				{
+					// display: block;
+					// width: 100%;
+					padding-left: 1em;
+					text-decoration: none;
+					text-align: center;
+					color: $white;
+					font-weight: bold;
 
 				}
 			}
@@ -309,10 +449,41 @@ h3
 // Intro / Featured ------
 
 // ---------------------------------------------------------------------------
+// About Me
+
+.about-me 
+{
+	@include leader(3, $baseFontSize, margin);
+
+	h3
+	{
+		@extend %element-invisible;
+
+	}
+
+	p
+	{
+		//reset
+		margin-top: 0;
+
+		span
+		{
+			background: tint($bsClr, 80%);
+		}
+	}
+}
+
+// About Me ------
+
+// ---------------------------------------------------------------------------
 // Skills
 
 .skls
 {
+	@include box-shadow(0 2px 0 $whiteTransperntLight inset);
+
+		
+
 	.grid-unit
 	{
 		.icn
@@ -323,21 +494,33 @@ h3
 	}
 }
 
-.grid-icon
-{
-	//reset
-	margin-bottom: 0;
 
-	background: $gray;
-	width: 50px;
-	height: 50px;
-	margin-right: 5%;
-	margin-bottom: 5%;
-
-}
 
 // Skills ------
 
+// ---------------------------------------------------------------------------
+// Footer
+
+	#primary-footer 
+	{
+		
+		p
+		{
+		text-align: center;
+		@include leader(.5, $baseFontSize, padding);
+		@include trailer(.5, $baseFontSize, padding);
+		width: 100%;
+		margin: 0;
+		background: $bsClr;
+		color: $white;
+		@include adjust-font-size-to(14px, 1, 16px);
+		}
+
+	}
+
+
+
+// Footer ------
 
 //iPad Portrait
 @include at-breakpoint($ipad-portrait 10) 
@@ -391,8 +574,6 @@ h3
 			margin-left: 5%;
 		}
 	}
-
-
 
 
 
