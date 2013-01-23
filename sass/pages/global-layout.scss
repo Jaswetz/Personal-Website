@@ -3,8 +3,13 @@
 //----------------------------------------------------------------------------
 
 
+
+
+
+
+
 //reset
-nav > ul > li
+nav > ul, nav ul > li
 {
 	margin: 0;
 	padding: 0;
@@ -128,16 +133,20 @@ p.large
 	font-style: italic ;
 }
 
-h3
-{
-}
-
 
 // ---------------------------------------------------------------------------
 // Main Layout Components
 
+.main-wrap
+{
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
 .page-wrap
 {
+
 	width:100%;
 	margin-left:auto;
 	margin-right:auto;
@@ -193,7 +202,8 @@ h3
 
 body
 {
-	background: $bg1;
+	// background: $bg1;
+	background: $white;
 }
 
 h1, h3
@@ -228,35 +238,15 @@ h3
 	position: relative;
 	z-index: 100;
 	// @include leader(-6, $baseFontSize, margin);
-	@include drop-shadow(full);
-	@include border-radius($default-border-radius);
-	top: -2em;
+	// @include drop-shadow(full);
+	// @include border-radius($default-border-radius);
+	// top: -2em;
 }	
 
 // Global ------
 
 
-// ---------------------------------------------------------------------------
-// Header
 
-.primary-header
-{
-	background: $headerColor;
-
-	height: 8em; 
-	border-bottom: 1px solid shade($headerColor, 30%);
-}	
-
-#logo
-{
-	h1, a
-	{
-		color: $white;
-		text-decoration: none;
-	}
-}
-
-// Header ------
 
 
 .divider
@@ -312,131 +302,6 @@ h3
 // Layouts
 /////////////////////
 
-// ---------------------------------------------------------------------------
-// Header
-
-.primary-header
-{
-
-	@extend %row-clear-extended;
-	@include rhythm(0, 1, 1, 0, 32px);
-	
-
-	.header-inner
-	{
-		@extend .page-wrap;
-		position: relative;
-	}
-
-	#logo
-	{
-		float: left;
-		display: inline;
-		margin-left: $gtr;
-
-		h1, a
-		{
-		
-			@include leader(.25, $baseFontSize, margin);
-			padding-top: 0;
-		}
-	}
-
-	// ------ Main Nav ----->
-		
-	.hide-text
-	{
-		display: block;
-		@include hide-text();
-	}
-
-
-	.dropdown-wrap
-	{
-		@include leader(1, 32px, margin);
-		position: absolute;
-		width: 50%;
-		// float: right;
-		right:0;
-	}
-
-
-	a.toggleMenu
-	{
-		display: block;
-		right: 0;
-		position: absolute;
-		margin-top: .35em;
-		margin-right: $gtr;
-		padding: .5em .5em .25em .5em;
-
-		max-width: 2.4em;
-		background: $orange;
-
-
-		.mobile-menu
-		{
-			background: $red;
-			width: 1.3em;
-			height: .28em;
-			display: block;
-			float:right;
-		}
-
-		.mobile-menu
-		{			
-
-			&:before
-			{
-				content: "";
-				@extend .mobile-menu;
-				margin-top: .45em;
-			}
-
-			&:after
-			{
-				content: "";
-				@extend .mobile-menu;
-				margin-top: .21em;
-			}
-
-
-		}
-	}
-
-	nav[role=navigation]
-	{
-		max-height: 0;
-		width: 100%;
-		overflow: hidden;
-
-		&.active
-		{
-			max-height: 15em;
-		}
-
-		ul
-		{
-			li
-			{
-
-				a
-				{
-					// display: block;
-					// width: 100%;
-					padding-left: 1em;
-					text-decoration: none;
-					text-align: center;
-					color: $white;
-					font-weight: bold;
-
-				}
-			}
-		}
-	}
-
-	// <----- Main Nav ------
-}// Header ------
 
 // ---------------------------------------------------------------------------
 // Intro / Featured
@@ -503,17 +368,20 @@ h3
 
 	#primary-footer 
 	{
-		
+		background: $bsClr;
+		position: relative;
+		height: 5em;
+
 		p
 		{
-		text-align: center;
-		@include leader(.5, $baseFontSize, padding);
-		@include trailer(.5, $baseFontSize, padding);
-		width: 100%;
-		margin: 0;
-		background: $bsClr;
-		color: $white;
-		@include adjust-font-size-to(14px, 1, 16px);
+			text-align: center;
+			@include leader(.5, $baseFontSize, padding);
+			@include trailer(.5, $baseFontSize, padding);
+			width: 100%;
+			margin: 0;
+			
+			color: $white;
+			@include adjust-font-size-to(14px, 1, 16px);
 		}
 
 	}
@@ -542,10 +410,10 @@ h3
 	// ---------------------------------------------------------------------------
 	// Main Layout Components
 	
-	.page-wrap
-	{
-		width: 88%;
-	}
+	// .page-bckg
+	// {
+	// 	width: 88%;
+	// }
 	
 	// 3 Columns
 	%columns-3
@@ -608,52 +476,52 @@ h3
 	// ---------------------------------------------------------------------------
 	// Header
 
-	.primary-header
-	{	
+// 	.primary-header
+// 	{	
 
-		#logo
-		{
-			h1
-			{
-				@include rem('line-height', 58px);
-			}
-		}
+// 		#logo
+// 		{
+// 			h1
+// 			{
+// 				@include rem('line-height', 58px);
+// 			}
+// 		}
 
-		// ------ Main Nav ----->
+// 		// ------ Main Nav ----->
 
-		a.toggleMenu
-		{
-			display: none;
-		}
+// 		a.toggleMenu
+// 		{
+// 			display: none;
+// 		}
 
-		.dropdown-wrap
-		{
-			width: auto;
-		}
+// 		.dropdown-wrap
+// 		{
+// 			width: auto;
+// 		}
 
-		nav[role=navigation]
-		{
-			width: auto;
-			overflow: auto;
-			max-height: 15em;
-			float: right;
+// 		nav[role=navigation]
+// 		{
+// 			width: auto;
+// 			overflow: auto;
+// 			max-height: 15em;
+// 			float: right;
 
-			ul
-			{
-				li
-				{
-					display: inline;
+// 			ul
+// 			{
+// 				li
+// 				{
+// 					display: inline;
 
-					a
-					{
+// 					a
+// 					{
 
-					}
-				}
-			}
-		}
+// 					}
+// 				}
+// 			}
+// 		}
 
-	// <----- Main Nav ------
-}
+// 	// <----- Main Nav ------
+// }
 
 // Header ------
 
