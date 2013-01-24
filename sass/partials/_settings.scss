@@ -24,10 +24,11 @@ $gtr : 0.625rem;
 
 // GRAYS
 $black						: rgb(0,0,0) ;
+$grayDarker					: lighten($black, 15%) ;
 $grayDark					: lighten($black, 25%) ;
 $gray 						: lighten($black, 50%) ;
 $grayLight 					: lighten($black, 75%) ;
-$grayLighter				: lighten($black, 90%) ;
+$grayLighter				: lighten($black, 95%) ;
 $white						: snow     ;
 
 // Transparents
@@ -64,8 +65,8 @@ $linkColorFocus 			: darken($linkColorVisited, 10);
 
 // Color Scheme
 $bsClr              		: slategray;
-$bsClrTint 					: tint($bsClr, 30%);
-$bsClrShade 				: shade($bsClr, 20%);
+$bsClrTint 					: tint($bsClr, 85%);
+$bsClrShade 				: shade($bsClr, 40%);
 
 // Typogrphy
 $bg1					    : whitesmoke;

@@ -7,14 +7,41 @@
 // Layouts
 /////////////////////
 
-.primary-header
+header
+{
+	position:relative;
+	z-index: $zindexFixedNavbar;
+
+}
+
+.divider
+{
+	width: 100%;
+	height:$base-leader ;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+.header-inner
 {
 	@extend %row-clear-extended;
-	@include rhythm(0, 1, 1, 0, 32px);
+	@include rhythm(0, .5, .5, 0, 32px);
+	// position: fixed;
+	background: $white;
+	width: 100%;
 
 	#logo
 	{
-		text-align: center;
+		max-height: 3em;
+		text-align: left;
+		
+		img
+		{
+			height: 2.6em;
+		}
 
 		h1
 		{
@@ -25,35 +52,40 @@
 	// ------ Main Nav ----->
 	nav[role=navigation]
 	{
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 15em;
+		width: 100%;
+		margin:0 auto;
+		@include leader(.2, $baseFontSize, margin);	
+		padding-left: 5%;
+		padding-right: 5%;
 
 		ul li
 		{
 			display: inline;
 			float: left;
-			width: 33.333333333%;
+			width: 25%;
 			text-align: center;
-
-				::after
-				{
-					content: "/";
-					position: relative;
-					right: 0;
-					color: white;
-					padding-left: 20%;
-				}	
-
+			@include trailer(.4, $baseFontSize, margin);		
+	
 			a
 			{
 				display: block;		
+				
+			}
 
-				background: tint($bsClr, 50%);
-				@include leader(1, $baseFontSize, padding);		
-				@include trailer(1, $baseFontSize, padding);	
+			// TODO: Sort out these nth-childs
 
+			&:nth-child(2) a, &:nth-child(3) a
+			{
+				margin-right: $base-leader ;
+			}
 
+			&:nth-child(2) a, &:nth-child(3) a, &:nth-child(4) a
+			{
+				@include leader(.5, $baseFontSize, padding);		
+				@include trailer(.5, $baseFontSize, padding);
+				text-decoration: none;
+				border: 1px solid $bsClrTint;
+				color: $bsClrShade;
 			}
 		}
 	}
@@ -66,9 +98,14 @@
 // Style
 ////////////
 
+.decoration
+{
+	border-top: 8px solid $orange;
+}
+
 .primary-header
 {
-	background: $headerColor;
+	// background: $headerColor;
 
 	#logo
 	{
