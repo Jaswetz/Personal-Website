@@ -1,0 +1,61 @@
+//----------------------------------------------------------------------------
+// Layouts  
+// Extends for shared layouts
+//----------------------------------------------------------------------------
+
+///////////////
+// Clearfix's
+///////////////
+
+%clr
+{
+	&:before, 
+	&:after 
+	{
+		content: " ";
+		display: table;
+	}
+
+	&:after 
+	{
+		clear: both;
+	}
+}	
+
+/////////////
+// Hides
+/////////////
+
+// hide from both screenreaders and browsers: h5bp.com/u
+%hidden 
+{
+    display: none !important;
+    visibility: hidden;
+}
+
+//////////
+// Grid
+//////////
+
+%col-wrap
+{
+	display: block;
+	position: relative;
+	margin-left: 0;
+	width: 100%;
+	float: left;
+	display: inline; 
+}
+
+
+//////////
+// Padding
+///////////
+
+%section-spacing
+{
+	@include leader(1, $baseFontSize, margin);
+	@include leader(2, $baseFontSize, padding);
+	@include trailer(1, $baseFontSize, margin);
+	@include trailer(2, $baseFontSize, padding);
+}

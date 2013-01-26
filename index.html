@@ -39,14 +39,13 @@
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 
+    <div>
     <div class="primary-wrap">
 
             <!-- /HEADER -->
             <header class="primary-header">  
-                <div class="decoration"></div>
                 <div class="header-inner">
                     <!-- /NAVIGATION -->
-                  
                 
                         <nav role="navigation">
                             <ul>
@@ -59,7 +58,6 @@
                         </nav>
             
                     <!-- \NAVIGATION -->    
-
                     <div class="divider"></div>
                 </div><!-- /header-container -->
 
@@ -67,6 +65,8 @@
 
             </header>   
         <!-- \HEADER -->  
+                    
+        
 
         <div class="content-wrap">  
 
@@ -116,10 +116,7 @@
         <!-- /SKILLS AND PROFICIENCIES -->
             <section class="skls container row-clear">
 
-                <div class="sec-ttl frst">
-                    <h3>What I do.</h3>
-                    <div class="arrw-dwn"></div>
-                </div>
+                <h3>What I do.</h3>
 
                 <div class="container-inner">
 
@@ -128,14 +125,8 @@
                             <img src="img/icn-dsgn.png" alt="Design Icon"/>
                         </div>
                         <div class="text-wrap">
-                        <h4>Design</h4>
-                        <p>I design aesthetically pleasing, readable, browsable, and responsive content. I like to use an iterative process, I start fantastical and then strip the design down to only the optimal.</p>
-                        </div>
-
-                        <div class="grid-icon">
-                            <span class="icn-fw"></span>
-                            <span class="icn-ai"></span>
-                            <span class="icn-ps"></span>
+                            <h4>Design</h4>
+                            <p>I design aesthetically pleasing, readable, browsable, and responsive content. I like to use an iterative process, I start fantastical and then strip the design down to only the optimal.</p>
                         </div>
                     </div>
 
@@ -148,25 +139,19 @@
                             <h4>Front-End</h4>
                             <p>I build accessible interactive content that solves problems. I keep code semantic and optimized by following best practices. </p>
                         </div>
-                        
-                        <div class="grid-icon grid-unit">
-                            <span class="icn-git"></span>
-                            <span class="icn-html"></span>
-                            <span class="icn-jq"></span>
-                            <span class="icn-sass"></span>
-                            <span class="icn-drupal"></span>
-                            <span class="icn-css"></span>
-                        </div>
             
                     </div>
 
                     <div class="ux grid-unit">
+
                         <div class="icn">
                             <img src="img/icn-ux.png" alt="User Experience Icon"/>
                         </div>
 
-                        <h4>User Experience</h4>
-                        <p>I strive to create a better relationship between humans and technology by creating an intuitive experience. My goal is not to dazzle or force the user but allow the user to follow their own flow.  </p>
+                        <div class="text-wrap">
+                            <h4>User Experience</h4>
+                            <p>I strive to create a better relationship between humans and technology by creating an intuitive experience. My goal is not to dazzle or force the user but allow the user to follow their own flow.  </p>
+                        </div>
 
                     </div>    
 
@@ -183,13 +168,49 @@
 
             <!-- /FOOTER -->    
         <footer id="primary-footer">
-            <div class="social"></div>
+            <div class="top">
+                <!--Contact Form--> 
+                <form action="php/contact-process.php" method="POST" class="contact">
+                    <fieldset class="contact-inner">
+                    <p>
+                        <label for="visitors-name">
+                            <span>Name</span>
+                            <input placeholder="What's your name?" type="text" name="visitors-name" tabindex="1">
+                            <i class="icn-name icn-large"></i>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <span class="label-text">eMail</span>
+                            <span class="message-wrap">
+                               
+                                <input type="email" placeholder="Where shall I reply to?" name="visitors-email" tabindex="2">
+                                <i class="icn-mail icn-large"></i>
+                            </span>
+                             <span class="message-text">Please enter a valid email address</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <span>Message</span>
+                            <textarea name="visitors-message" placeholder="Talk to me." tabindex="3"></textarea>
+                        </label>
+                    </p>
+                    <p class="contact-submit">
+                     <input type="submit" value="Send Message" tabindex="4">
+                  </p>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="bottom">
                 <p>© 2013 Jason Swetzoff</p>    
+            </div>
         </footer>
         <!-- \FOOTER -->
         
         </div>
         <!-- primary-wrap -->
+
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

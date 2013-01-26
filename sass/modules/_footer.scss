@@ -1,0 +1,35 @@
+//----------------------------------------------------------------------------
+// Footer  
+//----------------------------------------------------------------------------
+
+#primary-footer > .bottom
+{
+	background: $ftrClr;
+}
+
+#primary-footer > .top
+{
+	background: $orange;
+  position: relative;
+  padding: 0 20%;
+
+}
+
+#primary-footer 
+{
+	
+	position: relative;
+
+	p
+	{
+		text-align: center;
+		@include leader(.5, $baseFontSize, padding);
+		@include trailer(.5, $baseFontSize, padding);
+		width: 100%;
+		margin: 0;
+		
+		color: $white;
+		@include adjust-font-size-to(14px, 1, 16px);
+	}
+
+}

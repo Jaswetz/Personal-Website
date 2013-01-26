@@ -32,11 +32,11 @@ $grayLighter				: lighten($black, 95%) ;
 $white						: snow     ;
 
 // Transparents
-$whiteTransperntVeryLight   : transparentize($white, .90);
-$whiteTransperntLight       : transparentize($white, .70);
-$whiteTransperntMed			: transparentize($white, .50);
-$whiteTransperntLow         : transparentize($white, .30);
-$whiteTransperntVeryLow     : transparentize($white, .10);
+$whiteTransparentVeryLight   : transparentize($white, .90);
+$whiteTransparentLight       : transparentize($white, .70);
+$whiteTransparent			: transparentize($white, .50);
+$whiteTransparentLow         : transparentize($white, .30);
+$whiteTransparentVeryLow     : transparentize($white, .10);
 
 $blackTransperntVeryLight 	: transparentize($black, .90);
 $blackTransperntLight 		: transparentize($black, .70);
@@ -65,27 +65,30 @@ $linkColorFocus 			: darken($linkColorVisited, 10);
 
 // Color Scheme
 $bsClr              		: slategray;
+$ftrClr						: $grayDarker;
 $bsClrTint 					: tint($bsClr, 85%);
 $bsClrShade 				: shade($bsClr, 40%);
 
 // Typogrphy
-$bg1					    : whitesmoke;
-$bgBrdr                     : snow;
+$bg1					    : $white;
+$ftrTxtClr					: $white;
 $bsTxtClr				    : $grayDark;
-$headerColor				: $bsClr;
+$headerColor				: $bg1;
 
-$highlightColor				: $bsClr;
-$highlightTextColor			: darken($highlightColor, 80%);
+$highlightColor				: $orange;
+$highlightTextColor			: tint($bsClr, 80%);
 
 // UI
-$borderColor				: darken($bsClr, 40%);
+$borderColor				: #e9ebee;
 
-//Buttons
+// Buttons
 $primaryBtnBckgrnd          : $grayLighter;
 $secondaryBtnBckgrnd        : lighten($grayLighter, 5%);
 $btnBorderStyle				: solid;
 $btnBorderWidth				: 1px;
 
+// Forms
+$placeholderClr: tint($orange, 50%);
 
 // ---------------------------------------------------------------------------
 // TYPOGRAPHY
@@ -193,6 +196,7 @@ $large-screens 				: 1824px;
 
 // Imports
 @import "mixins"; //custom mixins
+@import "layouts";
 @import "styles";
 @import "utility";
 

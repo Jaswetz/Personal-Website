@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------------------
+// About Me
+// ---------------------------------------------------------------------------
+
+.about-me 
+{
+	//styles
+	background-color: $white;
+	@extend %inset-border;
+	@extend %dot-pattern;
+	@extend %borders-top-bottom;
+
+	> .grid-unit
+	{
+		@extend %columns-2;
+	}
+
+	p
+	{
+		//reset
+		margin-top: 0;
+
+		span
+		{
+			background: $highlightTextColor;
+		}
+	}
+}
+

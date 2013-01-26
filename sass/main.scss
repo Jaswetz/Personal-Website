@@ -9,6 +9,8 @@
 // Base
 @import "base/fonts";
 @import "base/root";
+@import "base/type";
+@import "base/icons";
 
 // Pages
 @import "pages/global-layout";
@@ -16,9 +18,15 @@
 // Modules
 // @import "modules/blocks";
 @import "modules/header";
-// @import "modules/content";
-// @import "modules/featured";
-// @import "modules/skills";
+@import "modules/intro";
+@import "modules/about";
+@import "modules/skills";
+@import "modules/footer";
+
+
+@import "modules/contact";
+
+
 
 // ----------------------------------------------------------------------------
 // Type Settings

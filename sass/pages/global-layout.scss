@@ -2,140 +2,55 @@
 // Global Layout  
 //----------------------------------------------------------------------------
 
-
-
-
-
-
-
-//reset
-nav > ul, nav ul > li
-{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-//----------------------------------------------------------------------------
-// Icons  
-//----------------------------------------------------------------------------
-
-.grid-icon
-{
-	.icn-fw
-	{
-		background: url(../img/tool-icons/icn-fw.png);
-		background-size: 50px 50px;
-	}
-
-	.icn-ai
-	{
-		background: url(../img/tool-icons/icn-ai.png);
-		background-size: 50px 50px;
-	}
-
-	.icn-ps
-	{
-		background: url(../img/tool-icons/icn-ps.png);
-		background-size: 50px 50px;
-	}
-
-
-	.icn-git
-	{
-		background: url(../img/tool-icons/icn-git.png);
-		background-size: 50px 50px;
-	}
-
-	.icn-html
-	{
-		background: url(../img/tool-icons/icn-html.png);
-		background-size: 50px 50px;
-	}
-
-	.icn-jq
-	{
-		background: url(../img/tool-icons/icn-jq.png);
-		background-size: 50px 50px;
-	}
-}
-
-
-.grid-icon span
-{
-	//reset
-	margin-bottom: 0;
-	float:left;
-	width: 50px;
-	height: 50px;
-	margin-right: 5%;
-	margin-bottom: 5%;
-}
-
-
-// ---------------------------------------------------------------------------
-// Wireframe Styles
-
-// .container, footer, header
+// html > body 
 // {
-// 	background: $grayLighter;
-// }
+// 	@include debug-vertical-alignment();
+// 	position: relative;
+// 	z-index: 5000;
 
-// .grid-unit
-// {
-// 	background: $grayLight;
-// }
-
-// #logo
-// {
-// 	background: $gray;
-// }
-
-// nav
-// {
-// 	background: $grayDark;
-	
-// 	ul
+// 	section.container, header > div
 // 	{
-// 		border: 1px solid $red;
-
-// 		li
-// 		{
-// 			border: 1px solid $yellow;
-
-// 			a
-// 			{
-// 				background: $grayLight;
-// 			}
-// 		}
+// 		background: none !important;
 // 	}
 // }
 
-// Wireframe Styles ------
+//////////
+// Clears
+//////////
 
-//////////////////////
-//Typography
-//////////////////////
-
-body
+header, footer, .row-clear
 {
-	font-size: 150%;
+	@extend %clr;
 }
 
-p
+
+//////////
+// Hide
+//////////
+
+// Keep visible for screenreaders
+section h3
 {
-	@include adjust-font-size-to(16px, 1.2, 16px);
+	@extend %element-invisible;
 }
 
-p.large
+
+////////////
+// Styles
+////////////
+
+body, .page-bckg
 {
-	@include adjust-font-size-to(24px, 1.5, 16px);
-	font-style: italic ;
+	background: $bg1;
 }
 
 
 // ---------------------------------------------------------------------------
 // Main Layout Components
+
+///////////
+// Spacing
+///////////
 
 .main-wrap
 {
@@ -154,326 +69,33 @@ p.large
 	*zoom:1;
 }
 
+.page-bckg
+{
+	position: relative;
+}	
+
+
+section.container
+{
+	@extend %section-spacing;
+}
+
 //gutter
 .container
 {
 	padding: 0 5%;
+
 }
 
 .grid-unit 
 {
-	display: block;
-	position: relative;
-	margin-left: 0;
-	width: 100%;
-	float: left;
-	display: inline; 
-	@include trailer(2, $baseFontSize, margin);
+	@extend %col-wrap;
 }
 
-.row-clear:after 
-{
-	content: "";
-	display: table;
-	clear: both;
-}
-
-%row-clear-extended
-{
-	&:before, 
-	&:after 
-	{
-		content: " ";
-		display: table;
-	}
-
-	&:after 
-	{
-		clear: both;
-	}
-}	
-
-// Main Layout Components ------
-
-/////////////////////
-// Styles
-/////////////////////
-
-
-body
-{
-	// background: $bg1;
-	background: $white;
-}
-
-h1, h3
-{
-	font-family: $header-stack;
-}
-
-	h3
-	{
-		@extend %element-invisible;
-
-	}
-
-// h3
-// {
-// 	@include trailer(2, 16px, margin);
-
-// 	// // width: 100%;
-// 	text-align: center;
-// 	// color: $white;
-// 	text-shadow: white  0 1px;
-// 	border-top: 1px solid $grayLighter;
-// 	border-bottom: 1px solid $grayLighter;
-// 	// @include trailer(1, $baseFontSize, margin);
-// }
-
-
-
-// ---------------------------------------------------------------------------
-// Global
-
-.page-bckg
-{
-	background: $white;
-	//@include debug-vertical-alignment();
-
-	// border: 1px solid $grayLighter;
-	position: relative;
-	z-index: 100;
-	// @include leader(-6, $baseFontSize, margin);
-	// @include drop-shadow(full);
-	// @include border-radius($default-border-radius);
-	// top: -2em;
-}	
-
-// Global ------
-
-
-
-// Skls
-
-
-.dsgn, .dvlp, .ux
-{
-	&.grid-unit > p
-	{
-	}
-
-	$test: transparentize(#e9ebee, .50);
-
-	&.grid-unit
-	{
-		background: $white;
-		@include leader(1, $baseFontSize, margin);
-		padding: 1%;
-
-	}
-
-	h4
-	{
-		border-bottom: 1px solid #e9ebee;
-		@include trailer(.3, $baseFontSize, padding);
-	}
-
-	.text-wrap
-	{
-		min-height: 12em;
-	}
-
-	.grid-icon
-	{
-		padding: 5%;
-		border: 1px solid shade(#e9ebee, 5%);
-		@include single-box-shadow($white, 1px, 1px, 4px, 0, true);
-		background:#e9ebee;
-	}
-}
-
-		.dsgn > h4
-		{
-			color: $red;
-		}
-
-		.dvlp > h4
-		{
-			color: $blue;
-		}
-
-		.ux > h4
-		{
-			color: $yellow;
-		}
-
-
-
-
-
-.int 
-{
-	@include leader(.5, $baseFontSize, padding);
-	@include trailer(1, $baseFontSize, padding);
-	// @include leader(1, $baseFontSize, margin);
-
-	h2
-	{
-		color: $orange;
-		font-size: 3rem;
-		line-height: 4rem;
-		@include trailer(.5, $baseFontSize, margin);
-		// background: tint($headerColor, 50%);
-	}
-}
-
-.img-me img
-{
-
-	border: 1px solid #e9ebee;
-	background: $white;
-	padding: .3em;
-
-}
-
-// ---------------------------------------------------------------------------
-// Skills
-
-.skls
-{
-	margin-right: 5%;
-	margin-left: 5%;
-	p
-	{
-		display: inline-block;
-	}
-	// background: $bsClr;
-	// 	border-top: 1px solid $bsClr;
-	// border-bottom: 1px solid $bsClr;
-
-}
-
-// Skills ------
-
-/////////////////////
-// Layouts
-/////////////////////
-
-
-// ---------------------------------------------------------------------------
-// Intro / Featured
-
-.int
-{
-	text-align: center;
-}	
-
-// Intro / Featured ------
-
-// ---------------------------------------------------------------------------
-// About Me
-
-.about-me 
-{
-	@include leader(1, $baseFontSize, margin);
-	@include leader(2, $baseFontSize, padding);
-	background-color: white;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGklEQVQIW2NkQAKMIPbL1+/+i4sKMYI5MAAATXkEBOSqHasAAAAASUVORK5CYII=);
-
-	border-top: 1px solid shade($white, 5%);
-	border-bottom: 1px solid shade($white, 5%);
-	
-
-
-
-	p
-	{
-		//reset
-		margin-top: 0;
-
-		span
-		{
-			background: tint($bsClr, 80%);
-		}
-	}
-}
-
-// About Me ------
-
-// ---------------------------------------------------------------------------
-// Skills
-
-.skls
-{
-	@include box-shadow(0 2px 0 $whiteTransperntLight inset);
-
-		
-
-	.grid-unit
-	{
-		.icn
-		{
-			margin: 0 auto;
-			max-width: 200px;
-		}
-	}
-}
-
-
-
-// Skills ------
-
-// ---------------------------------------------------------------------------
-// Footer
-
-	#primary-footer 
-	{
-		background: $grayDarker;
-		position: relative;
-		height: 5em;
-
-		p
-		{
-			text-align: center;
-			@include leader(.5, $baseFontSize, padding);
-			@include trailer(.5, $baseFontSize, padding);
-			width: 100%;
-			margin: 0;
-			
-			color: $white;
-			@include adjust-font-size-to(14px, 1, 16px);
-		}
-
-	}
-
-
-
-// Footer ------
 
 //iPad Portrait
 @include at-breakpoint($ipad-portrait 10) 
 {
-
-	// ---------------------------------------------------------------------------
-	// Extends
-	
-	// hide from both screenreaders and browsers: h5bp.com/u
-	
-	%hidden 
-	{
-	    display: none !important;
-	    visibility: hidden;
-	}
-	
-	// Extends ------
-
-	// ---------------------------------------------------------------------------
-	// Main Layout Components
-	
-	// .page-bckg
-	// {
-	// 	width: 88%;
-	// }
 	
 	// 3 Columns
 	%columns-3
@@ -504,31 +126,13 @@ h1, h3
 	}
 
 
-
-	// Main Layout Components ------
-
 	//////////////////
 	// Layouts
 	//////////////////
 
-	.skls
-	{
-		.dsgn, .dvlp, .ux
-		{
-			&.grid-unit
-			{
-				@extend %columns-3;
-			}
-		}
-	}
 
-	.about-me
-	{
-		.grid-unit
-		{
-			@extend %columns-2;
-		}
-	}
+
+
 
 
 

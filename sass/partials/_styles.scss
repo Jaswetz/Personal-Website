@@ -7,11 +7,46 @@
 {
 	@include transition();
 }
+
 // Shadows
+
+%inset-border
+{
+	@include box-shadow(0 2px 0 $white inset);
+}
 
 // Borders
 
+%hlght-brdr-top
+{
+	border-top: 8px solid $orange;
+}
+
+%border-bottom
+{
+	border-bottom: 1px solid $borderColor;
+	@include trailer(.3, $baseFontSize, padding);
+}
+
+%borders-top-bottom
+{
+	border-top: 1px solid $borderColor;
+	border-bottom: 1px solid $borderColor;
+}
+
+%border
+{
+	border: 1px solid $borderColor;
+}
+
 // Gradients
+
+// Elements and Figures
+
+%dot-pattern
+{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGklEQVQIW2NkQAKMIPbL1+/+i4sKMYI5MAAATXkEBOSqHasAAAAASUVORK5CYII=) repeat;
+}
 
 // Styles
 
