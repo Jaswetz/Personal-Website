@@ -2,10 +2,36 @@
 // Styles  
 //----------------------------------------------------------------------------
 
-// Animations
-%df-trnsfrm
+// Resets
+
+%ul-reset
 {
-	@include transition();
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+// Animations
+%df-trans
+{
+	@include transition-property(all);
+	@include transition-duration(.4s);
+	@include transition-timing-function(ease-in);
+}
+
+%logo-trans
+{
+	@include transition-property(background);
+	@include transition-duration(.2s);
+	@include transition-timing-function(ease-in-out);
+}
+
+// Shapes
+
+%circle
+{
+	@include border-radius(50%);
 }
 
 // Shadows
@@ -19,7 +45,7 @@
 
 %hlght-brdr-top
 {
-	border-top: 8px solid $orange;
+	border-top: $base-half-leader  solid $orange;
 }
 
 %border-bottom
@@ -49,6 +75,14 @@
 }
 
 // Styles
+
+.text-highlight
+{
+	background: $highlightTextColor;
+	color: shade($highlightTextColor, 60%);
+	@include border-radius($default-border-radius);
+	padding: .2em .1em;
+}
 
 // Buttons
 

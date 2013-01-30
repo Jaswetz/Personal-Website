@@ -33,9 +33,47 @@
     visibility: hidden;
 }
 
+// image replacement
+%img-repl
+{
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+
+    &:before 
+	{
+    	content: "";
+    	display: block;
+    	width: 0;
+    	height: 100%;
+	}
+}
+
+// hide only visually, but have it available for screenreaders: h5bp.com/v
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+%element-invisible 
+{
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+}
+
 //////////
 // Grid
 //////////
+
+%max-width
+{
+	max-width: $large-screens;
+}
 
 %col-wrap
 {

@@ -2,21 +2,9 @@
 // Global Layout  
 //----------------------------------------------------------------------------
 
-// html > body 
-// {
-// 	@include debug-vertical-alignment();
-// 	position: relative;
-// 	z-index: 5000;
-
-// 	section.container, header > div
-// 	{
-// 		background: none !important;
-// 	}
-// }
-
-//////////
+////////////
 // Clears
-//////////
+////////////
 
 header, footer, .row-clear
 {
@@ -59,14 +47,19 @@ body, .page-bckg
 	overflow: hidden;
 }
 
-.page-wrap
-{
+// .content-wrap
+// {
 
-	width:100%;
-	margin-left:auto;
-	margin-right:auto;
-	max-width:1800px;
-	*zoom:1;
+// 	width:100%;
+// 	margin-left:auto;
+// 	margin-right:auto;
+// 	max-width:1800px;
+// 	*zoom:1;
+// }
+
+.content-wrap
+{
+	margin-top: 8em;
 }
 
 .page-bckg

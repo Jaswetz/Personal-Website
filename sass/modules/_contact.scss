@@ -21,23 +21,27 @@ form
 {
     @include leader(2, $baseFontSize, padding);
     @include trailer(2, $baseFontSize, padding);
-
     // for icons
-    p
+   
+   .icn-wrap
     {
       position: relative;
-    }
-    
-    p i
+
+      i
     {
       //position
-       left: 16px;
-       top: 65px;
+       // left: 16px;
+       top: 0;
        position: absolute;
+
 
        // Style
        line-height: 48px;
     }
+    }
+    
+    
+
 }
 
 input[type="text"],
@@ -45,7 +49,7 @@ input[type="email"],
 textarea
 {
   width: 100%;
-  padding: 1em .5em;
+  padding: .5em .5em;
   display: block;
   
   // style

@@ -16,8 +16,10 @@ $column-width       : 6.063rem;
 $gutter-width       : 0rem;
 $grid-padding       : $gutter-width;
 
-$gtr : 0.625rem;
-
+$gtr : $base-leader ;
+$gtr-large: $base-leader * 2;
+$gtr-full: 5%;
+$gtr-oversized: 15%;
 
 // ---------------------------------------------------------------------------
 // @COLORS
@@ -66,7 +68,7 @@ $linkColorFocus 			: darken($linkColorVisited, 10);
 // Color Scheme
 $bsClr              		: slategray;
 $ftrClr						: $grayDarker;
-$bsClrTint 					: tint($bsClr, 85%);
+$bsClrTint 					: tint($bsClr, 75%);
 $bsClrShade 				: shade($bsClr, 40%);
 
 // Typogrphy
@@ -100,9 +102,9 @@ $mono-stack   : Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "D
 $script-stack : "Androgyne Medium";
 $header-stack : "audimatbold";
 	
-$baseFontSize 				: 16px;
+$baseFontSize 				: 14px;
 $baseFontFamily 			: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$baseLineHeight 			: 24px;
+$baseLineHeight 			: 20px;
 
 $altFontFamily              : "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $altLineHeight              : 1.35em;

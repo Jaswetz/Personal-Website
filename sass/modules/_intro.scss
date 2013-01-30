@@ -20,10 +20,3 @@ section.int
 		@include trailer(.5, $baseFontSize, margin);
 	}
 }
-
-.img-me img
-{
-	border: 1px solid #e9ebee;
-	background: $whiteTransparentLight;
-	padding: .3em;
-}

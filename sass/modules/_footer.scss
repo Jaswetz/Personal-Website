@@ -5,6 +5,8 @@
 #primary-footer > .bottom
 {
 	background: $ftrClr;
+	@extend %clr;
+	padding: 0 5%;
 }
 
 #primary-footer > .top
@@ -20,16 +22,27 @@
 	
 	position: relative;
 
-	p
+
+	.copywrite, .social
 	{
-		text-align: center;
 		@include leader(.5, $baseFontSize, padding);
 		@include trailer(.5, $baseFontSize, padding);
-		width: 100%;
-		margin: 0;
-		
 		color: $white;
-		@include adjust-font-size-to(14px, 1, 16px);
+
+		
+	}
+
+	.copywrite
+	{
+		float: left;
+		margin: 0;
+		@include adjust-font-size-to(10px, 1, 16px);
+		
+	}
+
+	.social
+	{
+		float: right;
 	}
 
 }
