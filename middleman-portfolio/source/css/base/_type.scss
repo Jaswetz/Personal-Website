@@ -1,0 +1,78 @@
+//----------------------------------------------------------------------------
+// type  
+// Base Type Styles Using Modular Scale 
+//----------------------------------------------------------------------------
+
+body
+{
+  font-size: 150%;
+}
+
+p
+{
+  @include adjust-font-size-to(16px, 1.2, 16px);
+  position: inline-block;
+}
+
+p.large
+{
+  @include adjust-font-size-to(24px, 1.5, 16px);
+  font-style: italic ;
+}
+
+
+ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,th,td 
+ {
+  color: $grayDark;
+ }
+
+
+h1, h2, h3, h4, h5, h6 
+{
+  margin: 0;
+  font-weight: $headingsFontWeight;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1, h3
+{
+  font-family: $header-stack;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1
+{ 
+  @include leader(2, 32px, padding);
+  @include adjust-font-size-to(32px);  
+}
+
+h2 
+{ 
+    @include leader(1, 24px, margin);
+    @include adjust-font-size-to(24px); 
+}
+
+h3 
+{
+    @include leader(1, 21px, margin);
+    @include adjust-font-size-to(21px); 
+}
+
+h4 
+{
+    @include leader(1, 18px, margin);
+    @include adjust-font-size-to(18px); 
+}
+
+h5 
+{
+    @include leader(1, 16px, margin);
+    @include adjust-font-size-to(16px); 
+}
+
+h6 
+{
+    @include leader(1, 14px, margin);
+    @include adjust-font-size-to(14px); 
+}
+

@@ -1,0 +1,385 @@
+//----------------------------------------------------------------------------
+// Mixins  
+// custom mixins
+//----------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Media Queries
+
+@mixin respond-to($val, $query)
+{
+	@media ($val: $query)
+	{
+		@content
+	}
+}
+
+// Retina Images
+// Reference: http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+// Debuggin Media Queries
+
+@mixin debugmessage($message, $color )
+{ 
+	@if $DEBUGMEDIA == true
+	{ 
+		&::before
+		{ 
+			content: $message; 
+			font-weight: bold; 
+			display: block; 
+			text-align: center; 
+			color: darken($color, 30%);
+			background: #{$color}; 
+			position: absolute; 
+			right: 0; 
+			left: 0; 
+			top: 0; 
+			z-index: 99; 
+		} 
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Calculate EMs
+
+@function em($px, $base: $base-font-size)
+{
+	@return ($px / $base) * 1em;
+}	
+
+// Calculate EMs ------
+
+
+// ---------------------------------------------------------------------------
+// REMs
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: 16px;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: unquote("");
+    @each $value in $px-values {
+      // If the value is zero, return 0
+      @if $value == 0 {
+        $rem-values: append($rem-values, $value); }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); } }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values; } }
+
+
+// ---------------------------------------------------------------------------
+// Header Style
+
+@mixin heading($style)
+{
+  @if $style == "drop-outline"
+  {
+     h1 
+     {
+        text-shadow: 
+          0 2px $bodyBackground,
+          0 3px $headingsColor;
+
+        font-weight: normal;
+        text-transform: uppercase;
+     }
+
+     h2
+     {
+        font-weight: normal;
+     }
+
+     h3
+     {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight:normal;
+        font-style: italic;
+     }
+
+     h4
+     {
+        font-weight: normal; }
+  }
+
+  @if $style == "two-corners"
+  {
+    h1
+    {   
+      @include box-shadow (
+        inset 0 0 0 1px complement( rgba($baseColor, .4) ),
+        inset 0 0 0 1px complement( rgba($baseColor, .5) ),
+        inset -285px 0 35px $white );
+      position: relative;
+      padding: 15px 15px 15px 15%;
+      
+      font-weight: 600;
+
+      background: #fff url('../img/ivan.jpeg') no-repeat center left;
+    }
+
+    h2
+    {
+      font-weight: normal;
+      position: relative;
+      text-shadow: 0 -1px $font-shadow-inset;
+      background: complement($baseColor);
+      background: complement( rgba($baseColor, .8) );
+      border: 1px solid $white;
+    }
+  }
+}
+
+
+// %valley
+// {
+// 	position: relative;
+// 	overflow: hidden;
+
+// 	&:before,
+// 	&:after
+// 	{
+// 		content: '';
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 	}
+
+// 	&:before
+// 	{
+// 		@extend %lip;
+// 		top: 0;
+// 	}
+
+// 	&:after
+// 	{
+// 		@extend %reversed-lip;
+// 		bottom: 0;
+// 	}
+// }
+
+
+// ---------------------------------------------------------------------------
+// Drop Shadow
+
+@mixin drop-shadow($direction)
+{
+	@if $direction == "top"
+	{
+		@include box-shadow( 0 (-$default-box-shadow-v-offset) ($default-box-shadow-v-offset / 2) (-($default-box-shadow-v-offset / 2)) $default-box-shadow-color );
+	}
+
+	@if $direction == "bottom"
+	{
+		@include box-shadow( 0 $default-box-shadow-v-offset ($default-box-shadow-v-offset / 2) (-($default-box-shadow-v-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "right"
+	{
+		@include box-shadow( $default-box-shadow-h-offset 0 ($default-box-shadow-h-offset / 2) (-($default-box-shadow-h-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "left"
+	{
+		@include box-shadow( (-$default-box-shadow-h-offset) 0 ($default-box-shadow-h-offset / 2) (-($default-box-shadow-h-offset / 2)) $default-box-shadow-color ); 
+	}
+
+	@if $direction == "full"
+	{
+		@include box-shadow(0 0 $default-box-shadow-blur 2px $default-box-shadow-color);
+	}
+
+	@if $direction == "light"
+	{
+		@include box-shadow(0 0 0 10px $bsClr);
+	}
+
+	@if $direction == "glow"
+	{
+		@include box-shadow(0 0 $default-box-shadow-blur 4px $bsClr inset);
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Emphasis Boxes
+
+@mixin emphasize($style, $color: $baseColor, $borderRadius: $defaultBorderRadius)
+{
+	@if $style == "dark"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(full);
+		background: $color;
+	}
+
+	@if $style == "light"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(light);
+		background: $color;
+	}
+
+	@if $style == "glow"
+	{
+		@include border-radius($borderRadius);
+		@include drop-shadow(glow);
+		background: $color;
+	}
+}
+
+
+// ---------------------------------------------------------------------------
+// Emboss
+
+@mixin emboss($style, $color: $baseColor, $borderRadius: $defaultBorderRadius)
+{
+	@if $style == "light"
+	{
+		@include border-radius($borderRadius);
+		border: 1px solid $color;
+		@include box-shadow(0 1px 0 $whiteTransperntLight inset);
+	}
+
+	@if $style == "heavy"
+	{
+		@include border-radius($borderRadius);
+		border: 1px solid $color;
+		@include box-shadow 
+		(
+			0 2px 3px $whiteTransperntLight inset,
+			0 -2px 3px  $blackTransperntLight inset,
+			0 1px 1px $whiteTransperntLow
+		);
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Helper Functions
+
+%reset-ul
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+// image replacement
+%img-repl
+{
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+
+    &:before 
+	{
+    	content: "";
+    	display: block;
+    	width: 0;
+    	height: 100%;
+	}
+}
+
+// hide from both screenreaders and browsers: h5bp.com/u
+%hidden 
+{
+    display: none !important;
+    visibility: hidden;
+}
+
+// hide only visually, but have it available for screenreaders: h5bp.com/v
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+%element-invisible 
+{
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+}
+
+
+// extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+@mixin vh($expanded: false)
+{
+	.visuallyHidden
+	{
+	    border: 0;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+
+	    @if $expanded == "true"
+	    {
+			&.focusable
+			{
+				&:active, &:focus
+				{
+				    clip: auto;
+				    height: auto;
+				    margin: 0;
+				    overflow: visible;
+				    position: static;
+				    width: auto;
+			    }
+			}
+		}
+	}
+}
+
+
+// hide visually and from screenreaders, but maintain layout
+%invisible 
+{
+    visibility: hidden;
+}
+
+
+// responsive images
+@mixin responsive()
+{
+	.responsive 
+	{
+	  max-width: 100%;
+	}
+
+	img.responsive 
+	{
+	  height: auto;
+	}
+}
+

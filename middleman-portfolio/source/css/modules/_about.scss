@@ -1,0 +1,37 @@
+// ---------------------------------------------------------------------------
+// About Me
+// ---------------------------------------------------------------------------
+
+.about-me 
+{
+	//styles
+	background-color: $white;
+	@extend %dot-pattern;
+	@extend %borders-top-bottom;
+
+	> .grid-unit
+	{
+		@extend %columns-2;
+	}
+
+	.img-me img
+	{
+		border: 1px solid #e9ebee;
+		background: $white;
+		padding: .3em;
+	}
+
+	p
+	{
+		//reset
+		margin-top: -0.32em;
+		@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
+	}
+
+	small
+	{
+		@include adjust-font-size-to(10px, 1, 16px);
+		color: $gray;
+	}
+}
+

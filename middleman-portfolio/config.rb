@@ -2,9 +2,12 @@
 # Compass
 ###
 
+# Normalize
+require 'compass-normalize'
+
 # Susy grids in Compass
 # First: gem install susy
-# require 'susy'
+require 'susy'
 
 # Change Compass configuration
 # compass_config do |config|

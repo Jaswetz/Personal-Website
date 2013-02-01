@@ -1,0 +1,47 @@
+//----------------------------------------------------------------------------
+// skills.scss  
+// Skills and Proficiencies
+//----------------------------------------------------------------------------
+
+.dsgn, 
+.dvlp, 
+.ux
+{
+	h4
+	{
+		@extend %border-bottom;
+	}
+
+	.text-wrap
+	{
+		// Keep cols same height
+		min-height: 12em;
+	}
+
+	&.grid-unit
+	{
+		@extend %columns-3;
+
+		.icn
+		{
+			margin: 0 auto;
+			max-width: 200px;
+		}
+	}
+}
+
+
+.dsgn > .text-wrap > h4
+{
+	color: $red;
+}
+
+.dvlp > .text-wrap > h4
+{
+	color: $blue;
+}
+
+.ux > .text-wrap > h4
+{
+	color: $yellow;
+}

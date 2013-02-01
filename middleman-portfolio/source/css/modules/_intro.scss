@@ -1,0 +1,22 @@
+//----------------------------------------------------------------------------
+// Intro  
+//----------------------------------------------------------------------------
+
+section.int
+{
+	//type
+	text-align: center;
+
+	//position
+	@include leader(.5, $baseFontSize, padding);
+	@include trailer(1.5, $baseFontSize, padding);
+
+	h2
+	{
+		margin-top: 0;
+		color: $highlightColor;
+		font-size: 3rem;
+		line-height: 4rem;
+		@include trailer(.5, $baseFontSize, margin);
+	}
+}

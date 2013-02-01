@@ -1,0 +1,115 @@
+//----------------------------------------------------------------------------
+// Icons  
+//----------------------------------------------------------------------------s
+
+/////////
+// UI
+////////
+
+
+.icn-mail
+{
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxLzI2LzEzYKFFuQAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAAWdJREFUaIHtmdutgzAQRIdbASWkBEpIKZSQklxCSqGUdOD7kaAggr2za8PKkkfynx/n2GaFYIgxouX8eQOUpgt4pwt4p3mBAUDTdbT5E+gC3mleAHg/xFKbHbhmko3qFAGEC+GDgovueJWEBj4psGQGLADGE8BHYl1agJnsVhH+Rqw3agTwGfDMTPoCMFWAnz5zpdZ54nviKoE1QZC4F8DfBfiw628SAIBHZpEIW5mdhTkfB2PMAtYFU7FuSJEAoD/yo4TMeOlKFgsA8kMXcFxmRwJeKgpVBAC+7G3ha5TlagKrRO4eL3jv6CTARxK+qoC0o9trkbtuqRM7VYCF1zZGoljgLHhWokhAgp/BvcNL/XISZgEGfk2qzO7LpEXCJKCBT0mkarxWQi1ggd+Ple61RkIlUAK/lWDKIytBC9SA14aRoAWuhmclaAEPeEbip/WPu97pAt5pXmDoP7qd0wW80wW807zAP7SHfG/chJZCAAAAAElFTkSuQmCC);
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5)
+{
+
+	.icn-mail
+	{
+		width: 48px;
+		height: 48px;
+	}
+
+}
+
+
+
+// .grid-icon
+// {
+// 	.icn-fw
+// 	{
+// 		background: url(../img/tool-icons/icn-fw.png);
+// 		background-size: 50px 50px;
+// 	}
+
+// 	.icn-ai
+// 	{
+// 		background: url(../img/tool-icons/icn-ai.png);
+// 		background-size: 50px 50px;
+// 	}
+
+// 	.icn-ps
+// 	{
+// 		background: url(../img/tool-icons/icn-ps.png);
+// 		background-size: 50px 50px;
+// 	}
+
+
+// 	.icn-git
+// 	{
+// 		background: url(../img/tool-icons/icn-git.png);
+// 		background-size: 50px 50px;
+// 	}
+
+// 	.icn-html
+// 	{
+// 		background: url(../img/tool-icons/icn-html.png);
+// 		background-size: 50px 50px;
+// 	}
+
+// 	.icn-jq
+// 	{
+// 		background: url(../img/tool-icons/icn-jq.png);
+// 		background-size: 50px 50px;
+// 	}
+// }
+
+
+// .grid-icon span
+// {
+// 	//reset
+// 	margin-bottom: 0;
+// 	float:left;
+// 	width: 50px;
+// 	height: 50px;
+// 	margin-right: 5%;
+// 	margin-bottom: 5%;
+// }
+
+// 	$test: transparentize(#e9ebee, .50);
+
+// 	&.grid-unit
+// 	{
+// 		background: $white;
+// 		@include leader(1, $baseFontSize, margin);
+// 		padding: 1%;
+
+// 	}
+
+// 		.grid-icon
+// 	{
+// 		padding: 5%;
+// 		border: 1px solid shade(#e9ebee, 5%);
+// 		@include single-box-shadow($white, 1px, 1px, 4px, 0, true);
+// 		background:#e9ebee;
+// 	}
+
+
+//                         // <div class="grid-icon">
+//                         //     <span class="icn-fw"></span>
+//                         //     <span class="icn-ai"></span>
+//                         //     <span class="icn-ps"></span>
+//                         // </div>
+                        
+//                         // <div class="grid-icon grid-unit">
+//                         //     <span class="icn-git"></span>
+//                         //     <span class="icn-html"></span>
+//                         //     <span class="icn-jq"></span>
+//                         //     <span class="icn-sass"></span>
+//                         //     <span class="icn-drupal"></span>
+//                         //     <span class="icn-css"></span>
+//                         // </div>
