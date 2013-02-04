@@ -90,7 +90,8 @@ $btnBorderStyle				: solid;
 $btnBorderWidth				: 1px;
 
 // Forms
-$placeholderClr: tint($orange, 50%);
+$placeholderClr:  shade($orange, 25%);
+$formClr: shade($orange, 5%);
 
 // ---------------------------------------------------------------------------
 // TYPOGRAPHY

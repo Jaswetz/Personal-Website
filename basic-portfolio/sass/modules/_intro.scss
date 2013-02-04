@@ -19,4 +19,11 @@ section.int
 		line-height: 4rem;
 		@include trailer(.5, $baseFontSize, margin);
 	}
+
+	em
+	{
+		line-height: 2rem;
+	}
 }
+
+

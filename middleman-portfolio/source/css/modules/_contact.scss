@@ -16,6 +16,10 @@
    color: $placeholderClr;  
 }
 
+.success
+{
+  display: none;
+}
 
 form
 {
@@ -28,21 +32,29 @@ form
       position: relative;
 
       i
-    {
+     {
       //position
        // left: 16px;
+       @include background(linear-gradient(bottom, darken($formClr, 1%) 50%,lighten($formClr, 1%) 51%));
        top: 0;
        position: absolute;
-
-
        // Style
-       line-height: 48px;
-    }
-    }
-    
-    
+       line-height: 52px;
 
+       padding-right: .5em;
+       padding-left: .5em;
+       border: 1px solid shade($formClr, 5%);
+       // color: shade($orange, 40%);
+         // text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+         @include single-box-shadow(tint($formClr, 5%) , -1px, 0, 0, 0, true);
+       
+          color: $white;
+  text-shadow: 0 2px shade($orange, 15%);
+       }
+    }
 }
+
+
 
 input[type="text"],
 input[type="email"],
@@ -51,18 +63,22 @@ textarea
   width: 100%;
   padding: .5em .5em;
   display: block;
+  padding-left: 2.8em;
+
   
   // style
   border: none;
   @include border-radius($default-border-radius);
-  background: shade($orange, 10%);
+  background: $formClr;
   @include adjust-font-size-to(16px);
   font-weight: 400;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  @include background(linear-gradient(bottom, tint($formClr, 5%), $formClr));
 
   @include box-shadow(
-    0 -2px 0 $whiteTransparentVeryLight inset,
-    0 2px 0 shade($orange, 15%) inset
+    0 -1px 0 tint($formClr, 12%) inset,
+    0 1px 0 shade($formClr, 12%) inset
 
     );
 
@@ -70,23 +86,52 @@ textarea
   outline: none;
 }
 
+#contact button[type="submit"]
+{
+    cursor:pointer;
+    width:100%;
+    border: none;
+    
+
+    display: inline-block;
+    padding: .8em;
+    border-radius: 2px;
+    background: shade($orange, 5%);
+    border: 1px solid shade($orange, 10%);
+    @include background(linear-gradient(top, tint($orange, 2%), shade($orange, 5%)));
+    @include single-box-shadow(tint($orange, 12%), 0, 1px, 0, 0, inset);
+
+  
+  // Font Styles
+  color: $white;
+  text-shadow: 0 2px shade($orange, 15%);
+  text-decoration: none;
+
+  letter-spacing: 1px;
+  @include adjust-font-size-to(16px, 1, 16px);
+
+  
+  // Other
+  @include transition( all 0.1s ease-in );
+}
+
 label 
 { 
   cursor: pointer; 
   display: block; 
 
-  span
-  {
-      display: block;
-      @extend %border-bottom;
-      border-color: shade($orange, 10%);
-      @include trailer(.5, $baseFontSize, margin);
-      @include adjust-font-size-to(15px, .5, 16px);
-      text-transform: uppercase;
-      font-weight: bold;
-      text-align: left;
-      color: shade($orange, 30%);
-  }
+  // span
+  // {
+  //     display: block;
+  //     @extend %border-bottom;
+  //     border-color: shade($orange, 10%);
+  //     @include trailer(.5, $baseFontSize, margin);
+  //     @include adjust-font-size-to(15px, .5, 16px);
+  //     text-transform: uppercase;
+  //     font-weight: bold;
+  //     text-align: left;
+  //     color: shade($orange, 30%);
+  // }
 }
  
 

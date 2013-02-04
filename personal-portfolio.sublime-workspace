@@ -1,0 +1,457 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tr",
+				"transition	transition"
+			],
+			[
+				"tran",
+				"transition	transition"
+			],
+			[
+				"text",
+				"text-shadow	text-shadow"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"sha",
+				"text-shadow:   (property)"
+			],
+			[
+				"email",
+				"email_body"
+			],
+			[
+				"font",
+				"font size	adjust-font-size"
+			],
+			[
+				"cmnt",
+				"cmnt head	comment-head"
+			],
+			[
+				"cmn",
+				"cmnt head	comment-head"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"a",
+				"after"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 49.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"snippet: bas",
+				"Snippet: basic-unit"
+			],
+			[
+				"packages",
+				"Preferences: Browse Packages"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"bra",
+				"Bracket Highlighter: Select Bracket Content"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 160.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jasonds/Sites/personal/portfolio/sass/partials/_layouts.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/partials/_mixins.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_footer.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/base/_fonts.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_about.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/partials/_styles.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_header.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_intro.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/main.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/base/_icons.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_contact.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/partials/_settings.scss",
+		"/Users/jasonds/Sites/personal/portfolio/index.html",
+		"/etc/paths",
+		"/Users/jasonds/.rvm/log/ruby-1.9.3-p374/make.log",
+		"/Users/jasonds/.rvmrc",
+		"/usr/local/project/path/.rvmrc",
+		"/Users/jasonds/Sites/personal/portfolio/fonts/audimat/specimen_files/specimen_stylesheet.css",
+		"/Users/jasonds/Sites/personal/portfolio/js/main.js",
+		"/Users/jasonds/Sites/personal/portfolio/sass/pages/global-layout.scss",
+		"/Users/jasonds/Sites/personal/portfolio/sass/base/_type.scss",
+		"/Users/jasonds/Sites/personal/portfolio/php/contact-thanks.php",
+		"/Users/jasonds/Sites/personal/portfolio/php/contact-process.php",
+		"/Users/jasonds/Sites/personal/portfolio/sass/modules/_skills.scss",
+		"/Users/jasonds/Sites/personal/portfolio/css/pages/global-layout.css",
+		"/Users/jasonds/Sites/personal/portfolio/sass/base/_base.scss",
+		"/Users/jasonds/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/jasonds/Files/Dropbox/my-docs/torrents/Fringe/Fringe S05E11.torrent",
+		"/Users/jasonds/Sites/personal/portfolio/css/main.css"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"iP",
+			"iphone-landscape",
+			"inner",
+			"62",
+			" icn-large",
+			"/font/",
+			"li",
+			"a ",
+			"debug",
+			"nav",
+			"trans",
+			"Transpernt",
+			"48px",
+			"24px",
+			"48px",
+			"icon",
+			"icn",
+			"0px",
+			"form",
+			"section",
+			"html",
+			"int",
+			"col-wr",
+			"grid-unit",
+			"header",
+			"row",
+			"background",
+			"icn",
+			"img",
+			"about",
+			"skls",
+			"icn",
+			"styles",
+			"skls",
+			"h3",
+			"grid",
+			"container",
+			"img",
+			"h3"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"head",
+				"sass/modules/_header.scss"
+			],
+			[
+				"l",
+				"sass/partials/_layouts.scss"
+			],
+			[
+				"sett",
+				"sass/partials/_settings.scss"
+			],
+			[
+				"sty",
+				"sass/partials/_styles.scss"
+			],
+			[
+				"iph",
+				"fonts/audimat/specimen_files/specimen_stylesheet.css"
+			],
+			[
+				"stye",
+				"sass/partials/_styles.scss"
+			],
+			[
+				"hea",
+				"sass/modules/_header.scss"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"lay",
+				"sass/partials/_layouts.scss"
+			],
+			[
+				"layout",
+				"sass/partials/_layouts.scss"
+			],
+			[
+				"mix",
+				"sass/partials/_mixins.scss"
+			],
+			[
+				"mixin",
+				"sass/partials/_mixins.scss"
+			],
+			[
+				"header",
+				"sass/modules/_header.scss"
+			],
+			[
+				"about",
+				"sass/modules/_about.scss"
+			],
+			[
+				"cont",
+				"sass/modules/_contact.scss"
+			],
+			[
+				"footer",
+				"sass/modules/_footer.scss"
+			],
+			[
+				"font",
+				"sass/base/_fonts.scss"
+			],
+			[
+				"fonts",
+				"sass/base/_fonts.scss"
+			],
+			[
+				"main",
+				"sass/main.scss"
+			],
+			[
+				"in",
+				"sass/modules/_intro.scss"
+			],
+			[
+				"he",
+				"sass/modules/_header.scss"
+			],
+			[
+				"type",
+				"sass/base/_type.scss"
+			],
+			[
+				"glob",
+				"sass/pages/global-layout.scss"
+			],
+			[
+				"intro",
+				"sass/modules/_intro.scss"
+			],
+			[
+				"skil",
+				"sass/modules/_skills.scss"
+			],
+			[
+				"intr",
+				"sass/modules/_intro.scss"
+			],
+			[
+				"set",
+				"sass/partials/_settings.scss"
+			],
+			[
+				"heade",
+				"sass/modules/_header.scss"
+			],
+			[
+				"globa",
+				"sass/pages/global-layout.scss"
+			],
+			[
+				"layou",
+				"sass/partials/_layouts.scss"
+			],
+			[
+				"icon",
+				"sass/base/_icons.scss"
+			],
+			[
+				"contac",
+				"sass/modules/_contact.scss"
+			],
+			[
+				"js",
+				"js/main.js"
+			],
+			[
+				"foot",
+				"sass/modules/_footer.scss"
+			],
+			[
+				"man",
+				"sass/main.scss"
+			],
+			[
+				"int",
+				"sass/modules/_intro.scss"
+			],
+			[
+				"glo",
+				"sass/pages/global-layout.scss"
+			],
+			[
+				"abou",
+				"sass/modules/_about.scss"
+			],
+			[
+				"g",
+				"sass/pages/global-layout.scss"
+			],
+			[
+				"sk",
+				"sass/modules/_skills.scss"
+			],
+			[
+				"mixi",
+				"sass/partials/_mixins.scss"
+			],
+			[
+				"se",
+				"sass/partials/_settings.scss"
+			],
+			[
+				"typ",
+				"sass/base/_type.scss"
+			],
+			[
+				"base",
+				"sass/base/_base.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true
+}

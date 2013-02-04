@@ -76,12 +76,12 @@
 
 // Styles
 
-.text-highlight
+%text-em
 {
 	background: $highlightTextColor;
 	color: shade($highlightTextColor, 60%);
 	@include border-radius($default-border-radius);
-	padding: .2em .1em;
+	padding: .2em .5em;
 }
 
 // Buttons

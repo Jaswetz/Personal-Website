@@ -16,7 +16,7 @@
 %df-trans
 {
 	@include transition-property(all);
-	@include transition-duration(.4s);
+	@include transition-duration(.2s);
 	@include transition-timing-function(ease-in);
 }
 
@@ -76,48 +76,48 @@
 
 // Styles
 
-.text-highlight
+%text-em
 {
 	background: $highlightTextColor;
 	color: shade($highlightTextColor, 60%);
 	@include border-radius($default-border-radius);
-	padding: .2em .1em;
+	padding: .2em .5em;
 }
 
 // Buttons
 
-	%btn
-	{
-		/* Box */
-		display: inline-block;
+	// %btn
+	// {
+	// 	/* Box */
+	// 	display: inline-block;
 
-		/* Text */
-		text-decoration: none;
+	// 	/* Text */
+	// 	text-decoration: none;
 
-		/* Other */
-		@extend %df-trnsfrm;
-	}
+	// 	/* Other */
+	// 	@extend %df-trnsfrm;
+	// }
 
 
-	%btn-smpl
-	{
-		/* Border */
-		border: 1px solid darken($bsClr, 10%);
-		@include border-radius(3px);
+	// %btn-smpl
+	// {
+	// 	/* Border */
+	// 	border: 1px solid darken($bsClr, 10%);
+	// 	@include border-radius(3px);
 
-		/* Background */
-		@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
+	// 	/* Background */
+	// 	@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
 
-		/* Text */
-		color: $white;
-		text-decoration: none;
-		text-shadow: 0 -1px $blackTransperntMed;
+	// 	/* Text */
+	// 	color: $white;
+	// 	text-decoration: none;
+	// 	text-shadow: 0 -1px $blackTransperntMed;
 
-		/* Other */
-		@extend %df-trnsfrm;
+	// 	/* Other */
+	// 	@extend %df-trnsfrm;
 
-		&:hover
-		{
-			@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
-		}
-	}
+	// 	&:hover
+	// 	{
+	// 		@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
+	// 	}
+	// }

@@ -7,6 +7,9 @@
 .dvlp, 
 .ux
 {
+
+	@include leader(1, $baseFontSize, margin);
+
 	h4
 	{
 		@extend %border-bottom;
@@ -44,4 +47,35 @@
 .ux > .text-wrap > h4
 {
 	color: $yellow;
+}
+
+
+
+@include at-breakpoint($ipad-portrait 10) 
+{
+	
+	// 3 Columns
+	%columns-3
+	{
+		width: 100%;
+
+	}
+
+}
+
+@include at-breakpoint($ipad-landscape 10) 
+{
+		
+	// 3 Columns
+	%columns-3
+	{
+		width: 30%;
+		margin-right: 5%;
+
+		&:last-child
+		{
+			margin-right: 0;
+		}
+	}
+
 }

@@ -2,12 +2,19 @@
 // About Me
 // ---------------------------------------------------------------------------
 
+
+.about-me.container
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .about-me 
 {
 	//styles
 	background-color: $white;
 	@extend %dot-pattern;
-	@extend %borders-top-bottom;
+	// @extend %borders-top-bottom;
 
 	> .grid-unit
 	{
@@ -24,8 +31,8 @@
 	p
 	{
 		//reset
-		margin-top: -0.32em;
-		@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
+		@include leader(1, $baseFontSize, margin);
+		@include single-text-shadow(0, 1px, 0, $default-text-shadow-spread, $white);
 	}
 
 	small
@@ -33,5 +40,32 @@
 		@include adjust-font-size-to(10px, 1, 16px);
 		color: $gray;
 	}
+
+	em
+	{
+  		@extend %text-em;
+	}
+
+	span
+	{
+		color: $orange;
+		padding-left: .1em;
+	}
+}
+
+
+@media only screen and (min-width: $ipad-portrait)
+{
+
+.about-me
+{
+	p
+	{
+		//reset
+		margin-top: -0.32em;
+		@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
+	}
+}
+
 }
 

@@ -76,3 +76,17 @@ h6
     @include adjust-font-size-to(14px); 
 }
 
+
+// Elements
+
+hr
+{
+  height: 1px;
+  margin: 0;
+  @include background(linear-gradient(left, rgba(112,128,144,0), rgba(112,128,144,.3), rgba(112,128,144,.0)));
+  border: 0;
+}
+
+em
+{
+}

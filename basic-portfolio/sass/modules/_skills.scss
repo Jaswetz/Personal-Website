@@ -7,6 +7,9 @@
 .dvlp, 
 .ux
 {
+
+	@include leader(1, $baseFontSize, padding);
+
 	h4
 	{
 		@extend %border-bottom;

@@ -96,12 +96,6 @@ header #logo .inner {
   padding-bottom: 0.42857em;
 }
 
-/* line 58, ../sass/partials/_styles.scss */
-.about-me {
-  border-top: 1px solid #e9ebee;
-  border-bottom: 1px solid #e9ebee;
-}
-
 /* line 64, ../sass/partials/_styles.scss */
 header #logo .outer, header #logo .inner, header #logo .triangle {
   border: 1px solid #e9ebee;
@@ -113,7 +107,7 @@ header #logo .outer, header #logo .inner, header #logo .triangle {
 }
 
 /* line 80, ../sass/partials/_styles.scss */
-.text-highlight {
+.about-me em {
   background: #e2e5e8;
   color: #5a5b5c;
   -webkit-border-radius: 3px;
@@ -121,7 +115,7 @@ header #logo .outer, header #logo .inner, header #logo .triangle {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  padding: .2em .1em;
+  padding: 0.2em 0.5em;
 }
 
 @font-face {
@@ -289,6 +283,18 @@ h6 {
   line-height: 1.42857em;
 }
 
+/* line 83, ../sass/base/_type.scss */
+hr {
+  height: 1px;
+  margin: 0;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(112, 128, 144, 0)), color-stop(50%, rgba(112, 128, 144, 0.3)), color-stop(100%, rgba(112, 128, 144, 0)));
+  background: -webkit-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: -moz-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: -o-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  border: 0;
+}
+
 /* line 21, ../sass/base/_root.scss */
 body {
   margin: 0;
@@ -306,12 +312,12 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-/* line 61, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 61, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html {
   font-size: 87.5%;
 }
 
-/* line 64, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 64, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 14px;
   line-height: 1.42857em;
@@ -381,7 +387,7 @@ video {
   display: none;
 }
 
-/* line 14, ../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.5/sass/susy/_grid.scss */
+/* line 14, ../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.5/sass/susy/_grid.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -478,6 +484,18 @@ h6 {
   line-height: 1.42857em;
 }
 
+/* line 83, ../sass/base/_type.scss */
+hr {
+  height: 1px;
+  margin: 0;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(112, 128, 144, 0)), color-stop(50%, rgba(112, 128, 144, 0.3)), color-stop(100%, rgba(112, 128, 144, 0)));
+  background: -webkit-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: -moz-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: -o-linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  background: linear-gradient(left, rgba(112, 128, 144, 0), rgba(112, 128, 144, 0.3), rgba(112, 128, 144, 0));
+  border: 0;
+}
+
 /* line 11, ../sass/base/_icons.scss */
 .icn-mail {
   width: 24px;
@@ -493,62 +511,68 @@ h6 {
     height: 48px;
   }
 }
-/* line 31, ../sass/pages/global-layout.scss */
+/* line 31, ../sass/pages/_global-layout.scss */
 body, .page-bckg {
   background: snow;
 }
 
-/* line 44, ../sass/pages/global-layout.scss */
+/* line 44, ../sass/pages/_global-layout.scss */
 .main-wrap {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
 }
 
-/* line 61, ../sass/pages/global-layout.scss */
+/* line 61, ../sass/pages/_global-layout.scss */
 .content-wrap {
-  margin-top: 8em;
+  margin-top: 3.5em;
 }
 
-/* line 66, ../sass/pages/global-layout.scss */
+/* line 66, ../sass/pages/_global-layout.scss */
 .page-bckg {
   position: relative;
 }
 
-/* line 78, ../sass/pages/global-layout.scss */
+/* line 78, ../sass/pages/_global-layout.scss */
 .container {
   padding: 0 5%;
 }
 
 @media (min-width: 768px) {
-  /* line 95, ../sass/pages/global-layout.scss */
+  /* line 95, ../sass/pages/_global-layout.scss */
   .dsgn.grid-unit,
   .dvlp.grid-unit,
   .ux.grid-unit {
     width: 30%;
     margin-right: 5%;
   }
-  /* line 100, ../sass/pages/global-layout.scss */
+  /* line 100, ../sass/pages/_global-layout.scss */
   .dsgn.grid-unit:last-child,
   .dvlp.grid-unit:last-child,
   .ux.grid-unit:last-child {
     margin-right: 0;
   }
 
-  /* line 107, ../sass/pages/global-layout.scss */
+  /* line 107, ../sass/pages/_global-layout.scss */
   .about-me > .grid-unit {
     width: 45%;
   }
-  /* line 111, ../sass/pages/global-layout.scss */
+  /* line 111, ../sass/pages/_global-layout.scss */
   .about-me > .grid-unit:first-child {
     margin-right: 5%;
   }
-  /* line 116, ../sass/pages/global-layout.scss */
+  /* line 116, ../sass/pages/_global-layout.scss */
   .about-me > .grid-unit:last-child {
     margin-left: 5%;
   }
 }
 /* End iPad-Portrait */
+@media only screen and (min-width: 768px) {
+  /* line 192, ../sass/pages/_global-layout.scss */
+  .content-wrap {
+    margin-top: 5em;
+  }
+}
 /* line 6, ../sass/modules/_header.scss */
 header {
   z-index: 1030;
@@ -750,29 +774,51 @@ section.int h2 {
   line-height: 4rem;
   margin-bottom: 0.71429em;
 }
+/* line 24, ../sass/modules/_intro.scss */
+section.int em {
+  line-height: 2rem;
+}
 
-/* line 6, ../sass/modules/_about.scss */
+/* line 7, ../sass/modules/_about.scss */
+.about-me.container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 13, ../sass/modules/_about.scss */
 .about-me {
   background-color: snow;
 }
-/* line 18, ../sass/modules/_about.scss */
+/* line 25, ../sass/modules/_about.scss */
 .about-me .img-me img {
   border: 1px solid #e9ebee;
   background: snow;
   padding: .3em;
 }
-/* line 25, ../sass/modules/_about.scss */
+/* line 32, ../sass/modules/_about.scss */
 .about-me p {
-  margin-top: -0.32em;
+  margin-top: 1.42857em;
   text-shadow: 0 2px 0 snow;
 }
-/* line 32, ../sass/modules/_about.scss */
+/* line 39, ../sass/modules/_about.scss */
 .about-me small {
   font-size: 0.625em;
   line-height: 2em;
   color: gray;
 }
+/* line 50, ../sass/modules/_about.scss */
+.about-me span {
+  color: #e8632c;
+  padding-left: .1em;
+}
 
+@media only screen and (min-width: 768px) {
+  /* line 63, ../sass/modules/_about.scss */
+  .about-me p {
+    margin-top: -0.32em;
+    text-shadow: 0 2px 0 snow;
+  }
+}
 /* line 16, ../sass/modules/_skills.scss */
 .dsgn .text-wrap,
 .dvlp .text-wrap,
@@ -880,7 +926,7 @@ input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   display: block;
   border: none;
   -webkit-border-radius: 3px;

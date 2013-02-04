@@ -2,367 +2,93 @@
 // Global Layout  
 //----------------------------------------------------------------------------
 
+////////////
+// Clears
+////////////
 
-// ---------------------------------------------------------------------------
-// Wireframe Styles
+header, footer, .row-clear
+{
+	@extend %clr;
+}
 
-// .container, footer, header
-// {
-// 	background: $grayLighter;
-// }
 
-// .grid-unit
-// {
-// 	background: $grayLight;
-// }
+//////////
+// Hide
+//////////
 
-// #logo
-// {
-// 	background: $gray;
-// }
+// Keep visible for screenreaders
+section h3
+{
+	@extend %element-invisible;
+}
 
-// nav
-// {
-// 	background: $grayDark;
-	
-// 	ul
-// 	{
-// 		border: 1px solid $red;
 
-// 		li
-// 		{
-// 			border: 1px solid $yellow;
+////////////
+// Styles
+////////////
 
-// 			a
-// 			{
-// 				background: $grayLight;
-// 			}
-// 		}
-// 	}
-// }
-
-// Wireframe Styles ------
+body, .page-bckg
+{
+	background: $bg1;
+}
 
 
 // ---------------------------------------------------------------------------
 // Main Layout Components
 
-.page-wrap
+///////////
+// Spacing
+///////////
+
+.main-wrap
 {
-	width:100%;
-	margin-left:auto;
-	margin-right:auto;
-	max-width:1400px;
-	*zoom:1;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+// .content-wrap
+// {
+
+// 	width:100%;
+// 	margin-left:auto;
+// 	margin-right:auto;
+// 	max-width:1800px;
+// 	*zoom:1;
+// }
+
+.content-wrap
+{
+	margin-top: $base-leader  * 7;
+}
+
+.page-bckg
+{
+	position: relative;
+}	
+
+
+section.container
+{
+	@extend %section-spacing;
 }
 
 //gutter
 .container
 {
 	padding: 0 5%;
+
 }
 
 .grid-unit 
 {
-	display: block;
-	position: relative;
-	margin-left: 0;
-	width: 100%;
-	float: left;
-	display: inline; 
-	margin-bottom: 2em;
+	@extend %col-wrap;
 }
-
-.row-clear:after 
-{
-	content: "";
-	display: table;
-	clear: both;
-}
-
-%row-clear-extended
-{
-	&:before, 
-	&:after 
-	{
-		content: " ";
-		display: table;
-	}
-
-	&:after 
-	{
-		clear: both;
-	}
-}	
-
-// Main Layout Components ------
-
-/////////////////////
-// Styles
-/////////////////////
-
-body
-{
-	background: $bg1;
-}
-
-h1, h3
-{
-	font-family: $header-stack;
-}
-
-h3
-{
-	width: 100%;
-	border-top: 1px solid $grayLighter;
-	border-bottom: 1px solid $grayLighter;
-	
-		@include box-shadow(0 2px 0 $whiteTransperntLight inset);
-	text-align: center;
-	background: $grayLighter;
-	color: $bsClr;
-	text-shadow: white  0 1px;
-}
-
-.page-bckg
-{
-	background: $white;
-	border: 1px solid $grayLighter;
-	position: relative;
-	z-index: 100;
-	margin-top: -8em;
-	@include drop-shadow(full);
-	@include border-radius($default-border-radius);
-}
-
-.primary-header
-{
-		background: $headerColor;
-		height: 15em;
-		border-bottom: 1px solid shade($headerColor, 30%);
-}
-
-.divider
-{
-	width: 100%;
-	height: .5em;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABBAAAAAHCAYAAACx+b7AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxMi85LzEyaP0nDwAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAArJJREFUeJztnFuOgzAMRU3V2VDZ/xLaJZH5mFZTRXnYjhMncI9UFUiwHZMirqFs+76TJc/nk4iIjuOgbdu2RJd4m6aPhY1edr1iQw6QAwAAAAAAUCcU1rVtq9k901h69Z1hLCK7Kfltrfe3fd9/iOhGf0Jk+1q+ffoUPhQtU7Sd811ri/vU1jn+cjY09jm2Un0kebEktl+Kydpfyn+tj3U8GnIxjzpmPSj9HlYelwWS3EjOIQAAAMYSX2in2nLfXDtnIyVUzpCb3LhSY/MeE1dMSgSpRTyxv94548xFaQy1XEryWPo9cM8vHH+cMUv8xvM+9yEiOt7Lx9f24/7V+BFE4f39vU0i+rkihCNOuEKyJkq59nPt2v1L/TRCuoVaQYS734g4vIWX9TxbgdHzcSVq563W8wMAAIA+5C7+a+LDW0B6oRGqK1ESXvFybj8PanGn1i19ltpHFC5KPluKWpLzg2b/nC3uPJPYr/mVFGBKRYVARHSn/0LBp3DwIVU4aCkKSO/Q1/ZpLTrU2qT2WsWC9AkJKz+j/HL8ryJYV4w5xxmOxwikhaIr5woAAGZCelfSWyx6UhIwvQVrbyRjm4VZjgdHpPd+AsHKT6t45/bRFAO0Nrj7aIoNyX73EMIRvavASkBY3Nm28Ce9kNfY0YoFD5Hhcbd0VLFnBN4FmFGcdVxarnLcAQDgzHgJoVXoIdhmYKXj3luUtjLTUxpan5Ica31Z2GktYrT6SxYcQghBdMH7eDxE/TMvUZTiJc5HiYGZ/IwUQKsIsJEFJW9WjXsEq8xXAAAAfM4qmHuxam5GCMYReM9XC0FrxSp+ehQ5eAZCENl4vV7s/rgAriAtmmgwKrRY4RXLTDlIMXt8VlxlnBxa3nECAABgXlr/I31FrpKL2cfpFd80eZEKYw0SMX1FfgG3nipIUcN6zgAAAABJRU5ErkJggg==) no-repeat bottom center;
-}
-
-#logo
-{
-	h1, a
-	{
-		color: $white;
-		text-decoration: none;
-	}
-	// @include hide-text();
-	// img
-	// {
-	// 	width: 35%;
-	// 	float: left;
-	// }
-}
-
-.int
-{
-	// background: url(../img/base/intro-ptrn@2x.png);
-	// background: tint($headerColor, 50%);
-}
-
-.img-me img
-{
-
-	border: 1px solid $grayLighter;
-	padding: .3em;
-
-}
-
-/////////////////////
-// Layouts
-/////////////////////
-
-// ---------------------------------------------------------------------------
-// Header
-
-.primary-header
-{
-
-	@extend %row-clear-extended;
-	@include rhythm(0, 1, 1, 0, 32px);
-	
-
-	.header-inner
-	{
-		@extend .page-wrap;
-	}
-
-	#logo
-	{
-		float: left;
-		display: inline;
-		margin-left: $gtr;
-
-		h1, a
-		{
-			padding-top: 0;
-		}
-	}
-
-	// ------ Main Nav ----->
-		
-	.hide-text
-	{
-		display: block;
-		@include hide-text();
-	}
-
-
-	.dropdown-wrap
-	{
-		position: relative;
-		width: 100%;
-	}
-
-
-	a.toggleMenu
-	{
-		display: block;
-		right: 0;
-		position: absolute;
-		margin-top: .35em;
-		margin-right: $gtr;
-		padding: .5em .5em .25em .5em;
-
-		max-width: 2.4em;
-		background: $orange;
-
-
-		.mobile-menu
-		{
-			background: $red;
-			width: 1.3em;
-			height: .28em;
-			display: block;
-			float:right;
-		}
-
-		.mobile-menu
-		{			
-
-			&:before
-			{
-				content: "";
-				@extend .mobile-menu;
-				margin-top: .45em;
-			}
-
-			&:after
-			{
-				content: "";
-				@extend .mobile-menu;
-				margin-top: .21em;
-			}
-
-
-		}
-	}
-
-	nav[role=navigation]
-	{
-		max-height: 0;
-		width: 100%;
-		overflow: hidden;
-
-		&.active
-		{
-			max-height: 15em;
-		}
-
-		ul
-		{
-			li
-			{
-				text-align: right;
-
-				a
-				{
-
-				}
-			}
-		}
-	}
-
-	// <----- Main Nav ------
-}// Header ------
-
-// ---------------------------------------------------------------------------
-// Intro / Featured
-
-.int
-{
-	text-align: center;
-}	
-
-// Intro / Featured ------
-
-// ---------------------------------------------------------------------------
-// Skills
-
-.skls
-{
-	.grid-unit
-	{
-		.icn
-		{
-			margin: 0 auto;
-			max-width: 200px;
-		}
-	}
-}
-
-.grid-icon
-{
-	//reset
-	margin-bottom: 0;
-
-	background: $gray;
-	width: 50px;
-	height: 50px;
-	margin-right: 5%;
-	margin-bottom: 5%;
-
-}
-
-// Skills ------
 
 
 //iPad Portrait
 @include at-breakpoint($ipad-portrait 10) 
 {
-
-	// ---------------------------------------------------------------------------
-	// Extends
-	
-	// hide from both screenreaders and browsers: h5bp.com/u
-	
-	%hidden 
-	{
-	    display: none !important;
-	    visibility: hidden;
-	}
-	
-	// Extends ------
-
-	// ---------------------------------------------------------------------------
-	// Main Layout Components
-	
-	.page-wrap
-	{
-		width: 88%;
-	}
 	
 	// 3 Columns
 	%columns-3
@@ -393,33 +119,13 @@ h3
 	}
 
 
-
-
-
-	// Main Layout Components ------
-
 	//////////////////
 	// Layouts
 	//////////////////
 
-	.skls
-	{
-		.dsgn, .dvlp, .ux
-		{
-			&.grid-unit
-			{
-				@extend %columns-3;
-			}
-		}
-	}
 
-	.about-me
-	{
-		.grid-unit
-		{
-			@extend %columns-2;
-		}
-	}
+
+
 
 
 
@@ -427,52 +133,52 @@ h3
 	// ---------------------------------------------------------------------------
 	// Header
 
-	.primary-header
-	{	
+// 	.primary-header
+// 	{	
 
-		#logo
-		{
-			h1
-			{
-				@include rem('line-height', 58px);
-			}
-		}
+// 		#logo
+// 		{
+// 			h1
+// 			{
+// 				@include rem('line-height', 58px);
+// 			}
+// 		}
 
-		// ------ Main Nav ----->
+// 		// ------ Main Nav ----->
 
-		a.toggleMenu
-		{
-			display: none;
-		}
+// 		a.toggleMenu
+// 		{
+// 			display: none;
+// 		}
 
-		.dropdown-wrap
-		{
-			width: auto;
-		}
+// 		.dropdown-wrap
+// 		{
+// 			width: auto;
+// 		}
 
-		nav[role=navigation]
-		{
-			width: auto;
-			overflow: auto;
-			max-height: 15em;
-			float: right;
+// 		nav[role=navigation]
+// 		{
+// 			width: auto;
+// 			overflow: auto;
+// 			max-height: 15em;
+// 			float: right;
 
-			ul
-			{
-				li
-				{
-					display: inline;
+// 			ul
+// 			{
+// 				li
+// 				{
+// 					display: inline;
 
-					a
-					{
+// 					a
+// 					{
 
-					}
-				}
-			}
-		}
+// 					}
+// 				}
+// 			}
+// 		}
 
-	// <----- Main Nav ------
-}
+// 	// <----- Main Nav ------
+// }
 
 // Header ------
 
@@ -480,4 +186,11 @@ h3
 
 
 
+@media only screen and (min-width: $ipad-portrait)
+{
+	.content-wrap
+	{
+		margin-top: $base-leader  * 10;
+	}
+}
 
