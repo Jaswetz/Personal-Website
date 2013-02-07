@@ -21,8 +21,10 @@ $(document).ready(function(){
 // Form Submissions //
 //////////////////////
 $(function() {
-	$("#contact .button").click(function() {
+	$("#contact .button").click(function(e) {
 		// console.log("Submitted form pushed");
+
+		e.preventDefault();
 
 		var name = $("#visitors-name").val();
 		var email = $("#visitors-email").val();
