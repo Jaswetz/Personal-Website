@@ -1,5 +1,3 @@
-// Contact Form
-
 <?php
 
 if($_POST){
@@ -14,10 +12,12 @@ if($_POST){
 	$email_body = $email_body . "Mesage: " . $message . "\n";
 
 	//send email
-	if (mail("dfobox@gmail.com", "subject", $email_body)) {
-	    echo 'Main Sent';
+	if (mail("swetzoff@gmail.com", "Shapes Like Water contact form", $email_body)) {
+	    	echo 'Mail Sent';
+	} else {
+		echo 'Mail Not Sent';
 	}
 
 		
 }
-?>
+
