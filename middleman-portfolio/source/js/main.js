@@ -1,51 +1,52 @@
 
+$(document).ready(function(){
 
-// $(document).ready(function(){
+///////////////////////
+// Feature Detection //
+///////////////////////
 
-// ///////////////////////
-// // Feature Detection //
-// ///////////////////////
+// // Create input element for testing
+// var input = document.createElement('input');
 
-// // // Create input element for testing
-// // var input = document.createElement('input');
+// // Create the supports object
+// var supports = {};
 
-// // // Create the supports object
-// // var supports = {};
-
-// // supports.autofocus   = 'autofocus' in input;
-// // supports.required    = 'required' in input;
-// // supports.placeholder = 'placeholder' in input;
+// supports.autofocus   = 'autofocus' in input;
+// supports.required    = 'required' in input;
+// supports.placeholder = 'placeholder' in input;
 
 
-// //////////////////////
-// // Form Submissions //
-// //////////////////////
-// $(function() {
-// 	$("#contact .button").click(function() {
-// 		// console.log("Submitted form pushed");
+//////////////////////
+// Form Submissions //
+//////////////////////
+$(function() {
+	$("#contact .button").click(function(e) {
+		// console.log("Submitted form pushed");
 
-// 		var name = $("#visitors-name").val();
-// 		var email = $("#visitors-email").val();
-// 		var text = $("#visitors-message").val();
+		e.preventDefault();
 
-// 		var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
+		var name = $("#visitors-name").val();
+		var email = $("#visitors-email").val();
+		var text = $("#visitors-message").val();
 
-// 		$.ajax({
+		var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
 
-// 		type: "POST",
-// 		url: "../php/contact.php",
-// 		data: dataString,
-// 		success: function(){
+		$.ajax({
 
-// 			$('.success').fadeIn(1000);
+		type: "POST",
+		url: "../php/contact.php",
+		data: dataString,
+		success: function(){
 
-// 		}
-// 		});
+			$('.success').fadeIn(1000);
 
-// 	});
+		}
+		});
 
-// 	return false;
+	});
 
-// });
+	return false;
 
-// });
+});
+
+});

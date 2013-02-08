@@ -14,8 +14,9 @@ if($_POST){
 	$email_body = $email_body . "Mesage: " . $message . "\n";
 
 	//send email
-	mail("swetzoff@gmail.com", "subject",
-	$email_body, "from:" . $email);
+	if (mail("dfobox@gmail.com", "subject", $email_body)) {
+	    echo 'Main Sent';
+	}
 
 		
 }
