@@ -2,14 +2,14 @@
 
 if($_POST){
 
-	$name  = $_POST['name'];
-	$email = $_POST['email'];
-	$text  = $_POST['text'];
+	$name = $_POST['visitors-name'];
+	$email = $_POST['visitors-email'];
+	$message  = $_POST['visitors-message'];
 	$email_body = "";
 
 	$email_body = $email_body . "Name: " . $name . "\n";
-	$email_body = $email_body . "eMail: " . $email . "\n";
-	$email_body = $email_body . "Mesage: " . $message . "\n";
+	$email_body = $email_body . "email: " . $email . "\n";
+	$email_body = $email_body . "Message: " . $message . "\n";
 
 	//send email
 	if (mail("swetzoff@gmail.com", "Shapes Like Water contact form", $email_body)) {
@@ -17,7 +17,6 @@ if($_POST){
 	} else {
 		echo 'Mail Not Sent';
 	}
-
 		
 }
 
