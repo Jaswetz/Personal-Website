@@ -10,17 +10,24 @@ $(function() {
 
 		e.preventDefault();
 
-		$.ajax({
+		if (($("#visitors-name").val() == "") or 
+		    ($("#visitors-email").val() == "") or 
+		    ($("#visitors-message").val() == "")) { 
+                    alert("You forgot one of the fields, please make sure they are all filled out."); 
+		} else {
 
-			type: "POST",
-			url: "../php/contact.php",
-			data: form.serialize(),
-			success: function(){
+			$.ajax({
 
-				$('.success').fadeIn(1000);
+				type: "POST",
+				url: "../php/contact.php",
+				data: form.serialize(),
+				success: function(){
 
-			}
-		});
+					$('.success').fadeIn(1000);
+
+				}
+			});
+		}
 
 	});
 
