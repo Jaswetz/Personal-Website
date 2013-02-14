@@ -10,10 +10,10 @@ $(function() {
 
 		e.preventDefault();
 
-		if (($("#visitors-name").val() == "") or 
-		    ($("#visitors-email").val() == "") or 
+		if (($("#visitors-name").val() == "") || 
+		    ($("#visitors-email").val() == "") || 
 		    ($("#visitors-message").val() == "")) { 
-                    alert("You forgot one of the fields, please make sure they are all filled out."); 
+                    alert("Please make sure all the fields are filled out."); 
 		} else {
 
 			$.ajax({
