@@ -1,6 +1,8 @@
 #Livereload
 # activate :livereload
 
+
+
 ###
 # Compass
 ###
@@ -44,7 +46,7 @@ require 'susy'
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -81,8 +83,11 @@ configure :build do
   # Compress PNGs after build
   # First: gem install middleman-smusher
   # require "middleman-smusher"
-  # activate :smusher
+  activate :smusher
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+  
+  # Middleman Favicon Maker
+  activate :favicon_maker
 end

@@ -51,7 +51,7 @@
 %border-bottom
 {
 	border-bottom: 1px solid $borderColor;
-	@include trailer(.3, $baseFontSize, padding);
+	// @include trailer(.3, $baseFontSize, padding);
 }
 
 %borders-top-bottom

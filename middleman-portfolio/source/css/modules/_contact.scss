@@ -25,30 +25,28 @@ form
 {
     @include leader(2, $baseFontSize, padding);
     @include trailer(2, $baseFontSize, padding);
-    // for icons
    
    .icn-wrap
     {
       position: relative;
 
       i
-     {
+      {
         //position
         // left: 16px;
-        @include background(linear-gradient(bottom, darken($formClr, 1%) 50%,lighten($formClr, 1%) 51%));
+        @include background(linear-gradient(bottom, darken($formClr, 2%) 50%,lighten($formClr, 1%) 51%));
         position: absolute;
         height: 2.64em;
         width: 2em;
         top: 0em;
         left: 0em;
 
-
         // Style
         line-height: 52px;
         padding-right: .75em;
         padding-left: .26em;
         // border-radius: 50%;
-        border: 1px solid darken($formClr, 1);
+        border: 1px solid darken($formClr, 2);
         // color: shade($orange, 40%);
         // text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
         @include single-box-shadow(tint($formClr, 8%) , -1px, 0, 0, 0, true);
@@ -56,13 +54,9 @@ form
         color: $white;
         text-shadow: 0 2px shade($orange, 15%);
 
-
-
         &.icon-edit
         {
-  
-            
-            @include border-corner-radius( bottom, right, 50%);
+              @include border-corner-radius( bottom, right, 50%);
         }
     
       }
@@ -96,8 +90,9 @@ textarea
   @extend %df-trans;
 
   @include box-shadow(
-    0 -1px 0 lighten($formClr, 2) inset,
-    0 1px 0 lighten($formClr, 1) inset
+    0 -.05em 0 lighten($formClr, 3) inset,
+    0 .05em 0 darken($formClr, 1) inset
+    
     );
 
   //reset
@@ -105,14 +100,12 @@ textarea
 
   &:hover
   {
-    
     border-color: darken($formClr, 3);
     background: saturate(darken($formClr, 1), 6);
   }
 
     &:active
   {
-
     border-color: darken($formClr, 5);
   }
 
@@ -130,7 +123,6 @@ textarea
     cursor:pointer;
     width:100%;
     border: none;
-    
 
     display: inline-block;
     padding: .8em;
@@ -140,49 +132,33 @@ textarea
     @include background(linear-gradient(top, tint($orange, 2%), shade($orange, 5%)));
     @include single-box-shadow(tint($orange, 12%), 0, 1px, 0, 0, inset);
 
-  
-  // Font Styles
-  color: $white;
-  text-shadow: 0 2px shade($orange, 15%);
-  text-decoration: none;
+    // Font Styles
+    color: $white;
+    text-shadow: 0 2px shade($orange, 15%);
+    text-decoration: none;
 
-  letter-spacing: 1px;
-  @include adjust-font-size-to(16px, 1, 16px);
+    letter-spacing: 1px;
+    @include adjust-font-size-to(16px, 1, 16px);
 
-  
-  // Other
- @extend %df-trans;
+    // Other
+    @extend %df-trans;
 
-  &:hover
-  {
-    @include background(linear-gradient(top, tint($orange, 4%), shade($orange, 7%)));
-     border: 1px solid shade($orange, 5%);
-  }
+    &:hover
+    {
+      @include background(linear-gradient(top, tint($orange, 4%), shade($orange, 7%)));
+       border: 1px solid shade($orange, 5%);
+    }
 
-  &:active
-  {
-    @include background(linear-gradient(top, $orange, shade($orange, 2%)));
-  }
-
+    &:active
+    {
+      @include background(linear-gradient(top, $orange, shade($orange, 2%)));
+    }
 }
 
 label 
 { 
   cursor: pointer; 
   display: block; 
-
-  // span
-  // {
-  //     display: block;
-  //     @extend %border-bottom;
-  //     border-color: shade($orange, 10%);
-  //     @include trailer(.5, $baseFontSize, margin);
-  //     @include adjust-font-size-to(15px, .5, 16px);
-  //     text-transform: uppercase;
-  //     font-weight: bold;
-  //     text-align: left;
-  //     color: shade($orange, 30%);
-  // }
 }
  
 
@@ -202,12 +178,51 @@ select
 { 
   width: 100%; 
 }
-	
-////////////
-// Styles
-///////////
-	
+		
+@media only screen and (max-width: $ipad-landscape)
+{
+    .my-email
+    {
+        width: 100%;
+        text-align: center;
+        @include leader(1, $baseFontSize, padding);
+        @include trailer(1, $baseFontSize, padding);
 
+        p
+        {
+            margin-top: 0;
+            color: $white;
+        }
+
+        p:first-child
+        {
+          font-weight: bold;
+        }
+
+        p:last-child
+        {
+            font-style: italic; 
+        }
+        
+        a
+        {
+          color: $white;
+        }
+    }
+
+    #contact
+    {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: $ipad-landscape)
+{
+  #contact
+  { 
+    display: block;
+  }
+}
 
 
 

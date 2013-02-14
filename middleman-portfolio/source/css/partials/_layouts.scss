@@ -9,6 +9,8 @@
 
 %clr
 {
+	clear: both;
+
 	&:before, 
 	&:after 
 	{
@@ -20,7 +22,20 @@
 	{
 		clear: both;
 	}
-}	
+}
+
+/////////////
+// Spacing
+/////////////
+
+%gtr-padding
+{
+	// @include rem(padding-left, $gtr-large);
+	// @include rem(padding-right, $gtr-large);
+	padding-right: $gtr;
+	padding-left: $gtr;
+}
+
 
 /////////////
 // Hides

@@ -11,15 +11,21 @@ $DEBUG: true;
 // ----------------------------------------------------------------------------
 // Grid
 
-$total-columns      : 3;
+$total-columns      : 12;
 $column-width       : 6.063rem;
 $gutter-width       : 0rem;
 $grid-padding       : $gutter-width;
 
-$gtr : $base-leader ;
-$gtr-large: $base-leader * 2;
+$gtr : $base-leader * 5 ;
+$gtr-large: $base-leader * 4;
 $gtr-full: 5%;
 $gtr-oversized: 15%;
+
+$spc: 1rem;
+$spc-large: 1rem * 2;
+$spc-full: 5%;
+$spc-oversized: 15%;
+
 
 // ---------------------------------------------------------------------------
 // @COLORS
@@ -81,7 +87,7 @@ $highlightColor				: $orange;
 $highlightTextColor			: tint($bsClr, 80%);
 
 // UI
-$borderColor				: #e9ebee;
+$borderColor				: darken(#e9ebee, 10%);
 
 // Buttons
 $primaryBtnBckgrnd          : $grayLighter;
