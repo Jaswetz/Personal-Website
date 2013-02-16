@@ -11,15 +11,17 @@ $DEBUG: true;
 // ----------------------------------------------------------------------------
 // Grid
 
-$total-columns      : 3;
-$column-width       : 6.063rem;
-$gutter-width       : 0rem;
-$grid-padding       : $gutter-width;
+$total-columns      : 16;
+$column-width       : 4.9342105%;
+$gutter-width       : 1.4035088%;
+$grid-padding       : 0;
 
 $gtr : $base-leader ;
 $gtr-large: $base-leader * 2;
 $gtr-full: 5%;
 $gtr-oversized: 15%;
+
+$bs-unit: 1rem;
 
 // ---------------------------------------------------------------------------
 // @COLORS

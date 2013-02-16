@@ -2,26 +2,38 @@
 // About Me
 // ---------------------------------------------------------------------------
 
+/////////////////
+// Scaffolding //
+/////////////////
 
-.about-me.container
-{
-	margin-top: 0;
-	margin-bottom: 0;
-}
+
 
 .about-me 
 {
+	padding: 0;
+
 	//styles
 	background-color: $white;
 	@extend %dot-pattern;
-	// @extend %borders-top-bottom;
 
-	> .grid-unit
+	hr:first-child
 	{
-		@extend %columns-2;
+		display: block;
+		@include trailer(2, $baseFontSize, margin);
 	}
 
-	.img-me img
+	hr:last-child
+	{
+		display: block;
+		@include leader(2, $baseFontSize, margin);
+	}
+
+	.about-me-.wrap
+	{
+
+	}
+
+	.about-me-.img
 	{
 		border: 1px solid #e9ebee;
 		background: $white;
@@ -54,18 +66,31 @@
 }
 
 
-@media only screen and (min-width: $ipad-portrait)
+//iPad Portrait
+@include at-breakpoint($ipad-portrait 16) 
 {
 
-.about-me
-{
-	p
+	.about-me
 	{
-		//reset
-		margin-top: -0.32em;
-		@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
-	}
-}
+		.about-me-.img
+		{
+			@include span-columns(7.5,16);
+		}
 
-}
+		.about-me-.copy
+		{
+			@include span-columns(7.5 omega,16);
+		}
+
+		p
+		{
+			//reset
+			margin-top: -.32em;
+			@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
+		}
+	}
+
+}/* End iPad-Portrait*/
+
+
 

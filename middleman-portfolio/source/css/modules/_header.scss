@@ -2,12 +2,13 @@
 // Header  
 //----------------------------------------------------------------------------
 
-header
+.primary-header
 {
 	z-index: $zindexFixedNavbar;
 	border-bottom: 1px solid;
 	//for fixed nav bar
 	position:relative;
+	width: 100%;
 
 	#logo
 	{
@@ -84,7 +85,12 @@ header
 // 	bottom: 0;
 // }
 
-.header-inner
+.primary-header-.wrap
+{
+	overflow: visible;
+}
+
+.primary-header-inner
 {
 	// Reset
 	@extend %clr;
@@ -101,8 +107,8 @@ header
 	@include rhythm(0, .5, .5, 0, 16px);
 
 	width: 100%;
-	padding-left: $gtr;
-	padding-right: $gtr;
+	// padding-left: $gtr;
+	// padding-right: $gtr;
 
 	// ------ Main Nav ----->
 
@@ -161,7 +167,7 @@ header
 
 @media only screen and (min-width: $iphone-landscape)
 {
-	.header-inner
+	.primary-header-inner
 	{
 		padding-left: $gtr-large;
 		padding-right: $gtr-large;
@@ -186,7 +192,7 @@ header
 
 @media only screen and (min-width: $ipad-portrait)
 {
-	header
+	.primary-header
 	{
 		#logo
 		{
@@ -217,7 +223,7 @@ header
 		}
 	}
 
-	.header-inner
+	.primary-header-inner
 	{
 		@include rhythm(0, .5, .5, 0, 16px);
 		padding-left: $gtr-full;
@@ -244,7 +250,7 @@ header
 @media only screen and (min-width: $large-screens)
 {
 
-	header
+	.primary-header
 	{
 		#logo
 		{
@@ -255,7 +261,7 @@ header
 		}
 	}
 
-	.header-inner
+	.primary-header-inner
 	{
 		@include rhythm(0, 1, 1, 0, 16px);
 		padding-left: $gtr-oversized;

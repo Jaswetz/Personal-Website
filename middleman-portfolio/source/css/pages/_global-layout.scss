@@ -36,26 +36,18 @@ body, .page-bckg
 // ---------------------------------------------------------------------------
 // Main Layout Components
 
-///////////
-// Spacing
-///////////
+/////////////////
+// Global Wrap //
+/////////////////
 
 .main-wrap
 {
 	margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
+	width:100%;
+	*zoom:1;
 }
-
-// .content-wrap
-// {
-
-// 	width:100%;
-// 	margin-left:auto;
-// 	margin-right:auto;
-// 	max-width:1800px;
-// 	*zoom:1;
-// }
 
 .content-wrap
 {
@@ -65,125 +57,26 @@ body, .page-bckg
 .page-bckg
 {
 	position: relative;
-}	
+}
 
+///////////////
+// Row Wrap	 //
+///////////////
 
-section.container
+.wrap
+{
+	position: relative;
+	padding: 0 32px;
+	max-width: 1204px; 
+	margin: 0 auto;
+
+	@include clearfix(); 
+}
+
+.about-me
 {
 	@extend %section-spacing;
 }
-
-//gutter
-.container
-{
-	padding: 0 5%;
-
-}
-
-.grid-unit 
-{
-	@extend %col-wrap;
-}
-
-
-//iPad Portrait
-@include at-breakpoint($ipad-portrait 10) 
-{
-	
-	// 3 Columns
-	%columns-3
-	{
-		width: 30%;
-		margin-right: 5%;
-
-		&:last-child
-		{
-			margin-right: 0;
-		}
-	}
-
-	// 2 Columns
-	%columns-2
-	{
-		width: 45%;
-
-		&:first-child
-		{
-			margin-right: 5%;
-		}
-
-		&:last-child
-		{
-			margin-left: 5%;
-		}
-	}
-
-
-	//////////////////
-	// Layouts
-	//////////////////
-
-
-
-
-
-
-
-
-	// ---------------------------------------------------------------------------
-	// Header
-
-// 	.primary-header
-// 	{	
-
-// 		#logo
-// 		{
-// 			h1
-// 			{
-// 				@include rem('line-height', 58px);
-// 			}
-// 		}
-
-// 		// ------ Main Nav ----->
-
-// 		a.toggleMenu
-// 		{
-// 			display: none;
-// 		}
-
-// 		.dropdown-wrap
-// 		{
-// 			width: auto;
-// 		}
-
-// 		nav[role=navigation]
-// 		{
-// 			width: auto;
-// 			overflow: auto;
-// 			max-height: 15em;
-// 			float: right;
-
-// 			ul
-// 			{
-// 				li
-// 				{
-// 					display: inline;
-
-// 					a
-// 					{
-
-// 					}
-// 				}
-// 			}
-// 		}
-
-// 	// <----- Main Nav ------
-// }
-
-// Header ------
-
-}/* End iPad-Portrait */
-
 
 
 @media only screen and (min-width: $ipad-portrait)
