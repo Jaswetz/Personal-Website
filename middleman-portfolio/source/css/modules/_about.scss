@@ -6,11 +6,10 @@
 // Scaffolding //
 /////////////////
 
-
-
 .about-me 
 {
 	padding: 0;
+	margin-top: 0;
 
 	//styles
 	background-color: $white;
@@ -67,7 +66,7 @@
 
 
 //iPad Portrait
-@include at-breakpoint($ipad-portrait 16) 
+@include tablet-portrait-and-up
 {
 
 	.about-me
@@ -85,7 +84,7 @@
 		p
 		{
 			//reset
-			margin-top: -.32em;
+			margin-top: -.285em;
 			@include single-text-shadow(0, 2px, 0, $default-text-shadow-spread, $white);
 		}
 	}

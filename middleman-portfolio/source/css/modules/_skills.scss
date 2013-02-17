@@ -3,48 +3,52 @@
 // Skills and Proficiencies
 //----------------------------------------------------------------------------
 
-.dsgn, 
-.dvlp, 
-.ux
+
+.skills .col-wrap
 {
 
-	@include leader(1, $baseFontSize, margin);
+	@include tablet-landscape-and-below
+	{
+		@include leader(1, $baseFontSize, margin);
+	}
 
 	h4
 	{
 		@extend %border-bottom;
 	}
 
-	.text-wrap
+	.copy
 	{
 		// Keep cols same height
 		min-height: 12em;
+
 	}
+
+	.icn
+	{
+		margin: 0 auto;
+		max-width: 200px;
+	}
+
 
 	&.grid-unit
 	{
 		@extend %columns-3;
-
-		.icn
-		{
-			margin: 0 auto;
-			max-width: 200px;
-		}
 	}
 }
 
 
-.dsgn > .text-wrap > h4
+.design > .copy > h4
 {
 	color: $red;
 }
 
-.dvlp > .text-wrap > h4
+.develop > .copy > h4
 {
 	color: $blue;
 }
 
-.ux > .text-wrap > h4
+.ux > .copy > h4
 {
 	color: $yellow;
 }
@@ -58,24 +62,34 @@
 	%columns-3
 	{
 		width: 100%;
-
 	}
 
 }
 
-@include at-breakpoint($ipad-landscape 10) 
+@include at-breakpoint($ipad-landscape 16) 
 {
 		
-	// 3 Columns
-	%columns-3
-	{
-		width: 30%;
-		margin-right: 5%;
+// 3 Columns
+.skills-.wrap
+{
 
-		&:last-child
-		{
-			margin-right: 0;
-		}
+	.design.col-wrap
+	{
+		@include span-columns(4,16);
+		@include pre(1);
 	}
+
+	.develop.col-wrap
+	{
+		@include span-columns(4,16);
+		@include pre(1);
+	}
+
+	.ux.col-wrap
+	{
+		@include span-columns(4 omega,16);
+		@include post(1);
+	}
+}
 
 }

@@ -19,6 +19,16 @@
 .success
 {
   display: none;
+  @extend %df-trans;
+  width:100%;
+  position: relative;
+  background: darken($green, 5%);
+  padding: .5em;
+  text-align: center;
+  color: shade($green, 50%);
+  border: 1px solid tint($green, 5%);
+  @include border-radius($default-border-radius);
+
 }
 
 form
@@ -26,7 +36,8 @@ form
     @include leader(2, $baseFontSize, padding);
     @include trailer(2, $baseFontSize, padding);
     // for icons
-   
+    position: relative;
+
    .icn-wrap
     {
       position: relative;
@@ -39,8 +50,7 @@ form
         position: absolute;
         height: 2.64em;
         width: 2em;
-        top: 0em;
-        left: 0em;
+        left: 0%;
 
 
         // Style

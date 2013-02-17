@@ -34,3 +34,9 @@ $(function() {
 	return false;
 
 });
+
+
+$(document).ready(function(){
+	$('body').jKit();
+
+});

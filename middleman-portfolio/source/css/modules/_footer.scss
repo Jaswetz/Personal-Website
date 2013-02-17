@@ -37,8 +37,6 @@
 
 	.copywrite
 	{
-		float: left;
-		margin: 0;
 		@include adjust-font-size-to(10px, 1, 16px);
 	}
 
@@ -49,41 +47,72 @@
 
 	ul.social
 	{
-		display: inline-block;
-		float: right;
-	
+		display: inline-block;	
 
-			> li
+		> li
+		{
+			display: inline-block;
+			
+			i, a
 			{
-				display: inline-block;
-				
-				i, a
-				{
-					@extend %df-trans;
-					@include transition-duration(.2s);
-
-				}
-
-				a
-				{
-					margin-left: .5em;
-					border: 1px solid rgba($orange, 0);
-					padding: .5em;
-					@include border-radius($default-border-radius);
-					display: block;
-					color: tint($ftrClr, 25%);
-
-
-					&:hover, &:focus
-					{
-						border: 1px solid $orange;
-						color: $orange;
-						@include border-radius(50%);
-					}
-
-				}
+				@extend %df-trans;
+				@include transition-duration(.2s);
 			}
 
-	}
+			&:first-child a
+			{
+				margin: 0;
+			}
 
+			a
+			{
+				margin-left: .5em;
+				border: 1px solid rgba($orange, 0);
+				padding: .5em;
+				@include border-radius($default-border-radius);
+				display: block;
+				color: tint($ftrClr, 25%);
+
+				&:hover, &:focus
+				{
+					border: 1px solid $orange;
+					color: $orange;
+					@include border-radius(50%);
+				}
+
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: $iphone-landscape)
+{
+	#primary-footer 
+	{
+		.copywrite, ul.social
+		{
+			width: 100%;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+	}
+}
+
+@media only screen and (min-width: $iphone-landscape)
+{
+	#primary-footer 
+	{
+		.copywrite
+		{
+			float: left;
+			margin: 0;
+		}
+
+		ul.social
+		{
+			float: right;
+		}
+	}
 }

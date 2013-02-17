@@ -164,13 +164,37 @@
 
 }// Header ------
 
+div#jkit-tooltip {
+	padding: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	position: fixed;
+}
+
+.mytooltip {
+	background: #333;
+	color: #fff;
+	padding: 6px;
+	padding-bottom: 5px;
+
+	
+	opacity: 0.9;
+	
+	border: 1px #E01B49 solid;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	-webkit-box-shadow:0 0 5px #aaa; 
+	-moz-box-shadow: 0 0 5px #aaa; 
+	box-shadow:0 0 5px #aaa;
+}
 
 @media only screen and (min-width: $iphone-landscape)
 {
 	.primary-header-inner
 	{
-		padding-left: $gtr-large;
-		padding-right: $gtr-large;
+		// padding-left: $gtr-large;
+		// padding-right: $gtr-large;
 
 		nav[role=navigation]
 		{
@@ -190,16 +214,16 @@
 }// End iPhone-landscape ----
 
 
-@media only screen and (min-width: $ipad-portrait)
+@include tablet-portrait-and-up
 {
 	.primary-header
 	{
 		#logo
 		{
-			.outer, .inner, .triangle
-			{
-				top: .7em;
-			}
+			// .outer, .inner, .triangle
+			// {
+			// 	top: .7em;
+			// }
 
 			.outer
 			{
@@ -226,8 +250,8 @@
 	.primary-header-inner
 	{
 		@include rhythm(0, .5, .5, 0, 16px);
-		padding-left: $gtr-full;
-		padding-right: $gtr-full;
+		// padding-left: $gtr-full;
+		// padding-right: $gtr-full;
 
 		nav[role=navigation]
 		{
@@ -247,25 +271,25 @@
 }// End ipad-portrait ----
 
 
-@media only screen and (min-width: $large-screens)
-{
+// @media only screen and (min-width: $large-screens)
+// {
 
-	.primary-header
-	{
-		#logo
-		{
-			.outer, .inner, .triangle
-			{
-				top: 1.2em;
-			}
-		}
-	}
+// 	.primary-header
+// 	{
+// 		#logo
+// 		{
+// 			.outer, .inner, .triangle
+// 			{
+// 				top: 1.2em;
+// 			}
+// 		}
+// 	}
 
-	.primary-header-inner
-	{
-		@include rhythm(0, 1, 1, 0, 16px);
-		padding-left: $gtr-oversized;
-		padding-right: $gtr-oversized;
-	}
+// 	.primary-header-inner
+// 	{
+// 		@include rhythm(0, 1, 1, 0, 16px);
+// 		padding-left: $gtr-oversized;
+// 		padding-right: $gtr-oversized;
+// 	}
 
-}// End ipad-portrait ----
+// }// End ipad-portrait ----

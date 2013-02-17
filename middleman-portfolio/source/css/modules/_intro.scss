@@ -11,6 +11,16 @@
 	@include leader(.5, $baseFontSize, padding);
 	@include trailer(1.5, $baseFontSize, padding);
 
+	@include tablet-portrait-and-up
+	{
+		background: url(../img/banner.jpg);
+		@include image-2x("../img/banner@2x.jpg", 1800px, 360px);
+		
+		//position
+		@include leader(1.8, $baseFontSize, padding);
+		@include trailer(1.2, $baseFontSize, padding);
+	}
+
 	h2
 	{
 		margin-top: 0;
@@ -20,8 +30,31 @@
 		@include trailer(.5, $baseFontSize, margin);
 	}
 
+	@include tablet-portrait-and-up
+	{
+		h2
+		{
+			padding: .5rem;
+			background: $blackTransperntLow;
+			color: $white;
+			// font-size: 3rem;
+			// line-height: 4rem;
+		}
+	}
+
 	em
 	{
 		line-height: 2rem;
+	}
+
+	@include tablet-portrait-and-up
+	{
+		em
+		{
+			padding: .5rem;
+			line-height: 4rem;
+			background: $whiteTransparent;
+			color: $grayDark;
+		}
 	}
 }

@@ -73,17 +73,17 @@ body, .page-bckg
 	@include clearfix(); 
 }
 
-.about-me
+.about-me, .skills
 {
 	@extend %section-spacing;
 }
 
 
-@media only screen and (min-width: $ipad-portrait)
+@include tablet-portrait-and-up
 {
 	.content-wrap
 	{
-		margin-top: $base-leader  * 10;
+		margin-top: $base-leader  * 6;
 	}
 }
 

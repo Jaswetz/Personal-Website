@@ -187,7 +187,7 @@ $iphone-landscape 			: 480px;
 
 // SmartPhones //
 $smartphone-landscape 		: 321px;
-$smartphone-portrait 		: 320px;
+$smartphone-portrait 		: 320px !important;
 
 // iPad //
 $ipad-portrait	  			: 768px;
@@ -198,7 +198,6 @@ $desktop 					: 1224px;
 
 // Large Screens //
 $large-screens 				: 1824px;
-
 
 // Imports
 @import "mixins"; //custom mixins
