@@ -148,6 +148,7 @@
 					{
 						@include single-box-shadow($blackTransperntVeryLight, 0, 3px, $default-box-shadow-blur, $default-box-shadow-spread, $default-box-shadow-inset);
 						@include background(linear-gradient(top, $white, shade($white, 1%)));
+						color: $orange;
 					}
 
 

@@ -17,9 +17,13 @@ header, footer, .row-clear
 //////////
 
 // Keep visible for screenreaders
-section h3
+section.skills, section.about-me, section.intro
 {
-	@extend %element-invisible;
+	h3
+	{
+		@extend %element-invisible;
+	}
+
 }
 
 

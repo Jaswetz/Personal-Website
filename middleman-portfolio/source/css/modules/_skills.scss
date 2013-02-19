@@ -3,6 +3,12 @@
 // Skills and Proficiencies
 //----------------------------------------------------------------------------
 
+.skills
+{
+	
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
 
 .skills .col-wrap
 {
@@ -15,13 +21,19 @@
 	h4
 	{
 		@extend %border-bottom;
+		@include leader(1, $baseFontSize, margin);
+		text-transform: uppercase;
 	}
 
 	.copy
 	{
 		// Keep cols same height
 		min-height: 12em;
+	}
 
+	p
+	{
+		@include adjust-font-size-to(14px, 1, 16px);
 	}
 
 	.icn

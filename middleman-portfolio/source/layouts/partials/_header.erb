@@ -6,19 +6,19 @@
         <div class="primary-header- wrap">
 
             <div id="logo">
-                <a href="#">
+                <% link_to '/index.html' do %>
                     <div class="logo-wrap">
                         <div class="outer"></div>
                         <div class="inner"></div>
                         <div class="triangle"></div>
                     </div>
-                </a>
-            </div>
+                <% end %>
+            </div>           
 
             <nav role="navigation">
                 <ul>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Resume</a></li>
+                    <li><%= link_to 'Resume', '/resume.html' %></li>
                     <li><a href="#contact" data-jkit="[scroll]">Contact</a></li>
                 </ul>
             </nav>

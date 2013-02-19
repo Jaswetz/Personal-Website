@@ -54,20 +54,18 @@ h2
 
 h3 
 {
-    @include leader(1, 21px, margin);
-    @include adjust-font-size-to(21px); 
+    @include adjust-font-size-to(18px); 
 }
 
 h4 
 {
-    @include leader(1, 18px, margin);
-    @include adjust-font-size-to(18px); 
+    @include adjust-font-size-to(15px);
+    font-family: 'audimatbold';
 }
 
 h5 
 {
-    @include leader(1, 16px, margin);
-    @include adjust-font-size-to(16px); 
+    @include adjust-font-size-to(14px); 
 }
 
 h6 

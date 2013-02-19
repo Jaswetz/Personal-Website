@@ -2,16 +2,6 @@
 // Styles  
 //----------------------------------------------------------------------------
 
-// Resets
-
-%ul-reset
-{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-
 // Animations
 %df-trans
 {
@@ -86,38 +76,67 @@
 
 // Buttons
 
-	// %btn
-	// {
-	// 	/* Box */
-	// 	display: inline-block;
+	%btn
+	{
+		/* Box */
+		display: inline-block;
 
-	// 	/* Text */
-	// 	text-decoration: none;
+		/* Text */
+		text-decoration: none;
 
-	// 	/* Other */
-	// 	@extend %df-trnsfrm;
-	// }
+		/* Other */
+		@extend %df-trnsfrm;
+	}
 
 
-	// %btn-smpl
-	// {
-	// 	/* Border */
-	// 	border: 1px solid darken($bsClr, 10%);
-	// 	@include border-radius(3px);
+	%btn-smpl
+	{
+		/* Border */
+		border: 1px solid darken($bsClr, 10%);
+		@include border-radius(3px);
 
-	// 	/* Background */
-	// 	@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
+		/* Background */
+		@include background(linear-gradient(top, lighten($bsClr, 10%), $bsClr));
 
-	// 	/* Text */
-	// 	color: $white;
-	// 	text-decoration: none;
-	// 	text-shadow: 0 -1px $blackTransperntMed;
+		/* Text */
+		color: $white;
+		text-decoration: none;
+		text-shadow: 0 -1px $blackTransperntMed;
 
-	// 	/* Other */
-	// 	@extend %df-trnsfrm;
+		/* Other */
+		@extend %df-trnsfrm;
 
-	// 	&:hover
-	// 	{
-	// 		@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
-	// 	}
-	// }
+		&:hover
+		{
+			@include background(linear-gradient(top, lighten($bsClr, 8%), darken($bsClr, 2%)));
+		}
+	}
+
+$btn-trans-color: lighten($bsClr, 30%);
+
+%btn-trans
+{
+	position: relative;
+	margin: .5em;
+	padding: .4em .8em;
+	border-radius: 2px;
+	background: $btn-trans-color;
+	@include box-shadow( 0 4px darken($btn-trans-color, 5) );
+
+	// Font Styles
+	color: white;
+	text-shadow: 0 -1px shade($btn-trans-color, 2);
+	font-weight: 600;
+	@include adjust-font-size-to(14px, 1, 16px);
+
+    &:hover
+    {
+       background: lighten( $btn-trans-color, 2% );
+    }
+  
+    &:active
+    {
+       box-shadow: none;
+       top: 3px;
+    }
+}
