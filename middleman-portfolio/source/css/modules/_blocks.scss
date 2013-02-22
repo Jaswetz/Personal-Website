@@ -26,8 +26,13 @@
 	.btn
 	{
 		float: right;
+		margin: 1rem auto;
+		text-align: center;
+
 		@extend %btn;
 		@extend %btn-trans;
+
+		@extend %df-trans;
 	}
 
 	p
@@ -37,21 +42,36 @@
 		color: $bsClr;
 	}
 
-	@include tablet-landscape-and-up
+	@include tablet-portrait-and-up
 	{
+		@include leader(2, $baseFontSize, margin);
+		@include trailer(2, $baseFontSize, margin);	
+
+	
+		.inner-wrap
+		{
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+
 		p
 		{
-			line-height: 4.5rem;
+			line-height: 5rem;
+		}
+
+		.btn
+		{
+			margin-right: .7rem;
 		}
 	}
 
-	@include tablet-landscape-and-below
+	@include tablet-portrait-and-below
 	{
 
 		.inner-wrap
 		{
-					padding-top: .5rem;
-		padding-bottom: .5rem;
+			padding-top: .5rem;
+			padding-bottom: .5rem;
 		}
 
 

@@ -190,7 +190,7 @@ div#jkit-tooltip {
 	box-shadow:0 0 5px #aaa;
 }
 
-@media only screen and (min-width: $iphone-landscape)
+@include tablet-portrait-and-up
 {
 	.primary-header-inner
 	{
@@ -215,7 +215,7 @@ div#jkit-tooltip {
 }// End iPhone-landscape ----
 
 
-@include tablet-portrait-and-up
+@include tablet-landscape-and-up
 {
 	.primary-header
 	{

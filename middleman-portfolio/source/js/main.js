@@ -2,7 +2,13 @@
 // Contact form submission //
 /////////////////////////////
 
-$(function() {
+
+
+
+$(document).ready(function(){
+	$('body').jKit();
+
+	$(function() {
 	
 	var form = $('#contact');
 	
@@ -34,9 +40,5 @@ $(function() {
 	return false;
 
 });
-
-
-$(document).ready(function(){
-	$('body').jKit();
 
 });

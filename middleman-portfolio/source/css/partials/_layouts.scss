@@ -91,6 +91,11 @@
 	display: inline; 
 }
 
+%full-width
+{
+	@include span-columns(12,12);
+}
+
 
 //////////
 // Padding

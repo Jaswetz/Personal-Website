@@ -50,7 +50,7 @@ $blackTransperntVeryLow 	: transparentize($black, .10);
 
 // Colors
 $red 						: #E70502 ;
-$orange 					: tomato ;
+$orange 					: tomato  ;
 $yellow 					: #e8b000 ;
 $green 						: #b1cc00 ;
 $cyan						: #0e93a9 ;
@@ -89,12 +89,13 @@ $borderColor				: #e9ebee;
 $primaryBtnBckgrnd          : $grayLighter;
 $secondaryBtnBckgrnd        : lighten($grayLighter, 5%);
 $btnBorderStyle				: solid;
-$btnBorderWidth				: 1px;
+$btnBorderWidth				: .1rem;
 
 // Forms
 
-$formClr: darken($orange, 1);
-$placeholderClr:  lighten($formClr, 14);
+$formClr: tint($orange, 3);
+$formBorderColor: darken($formClr, 3);
+$placeholderClr:  $white;
 
 // ---------------------------------------------------------------------------
 // TYPOGRAPHY
