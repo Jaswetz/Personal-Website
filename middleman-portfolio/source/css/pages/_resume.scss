@@ -1,0 +1,557 @@
+/////////////
+// Global //
+////////////
+
+	@include tablet-landscape-and-up
+	{
+		section.resume
+		{
+			margin-top: -.2rem;
+			@include box-shadow(0 0 .5rem 0 rgba(51, 51, 51, .45));
+		}
+	}
+
+
+
+.resume-.inner
+{
+	@include container(); 
+}
+
+	.block
+	{
+		@extend %block;
+		@extend %full-width;
+	}
+
+	@include tablet-landscape-and-up
+	{
+		.block
+		{
+			@include span-columns(12,12);
+		}
+
+		aside
+		{
+			@include span-columns(8,16);
+		}
+
+		.main-content
+		{
+				@include span-columns(8 omega,16);
+		}
+	}
+	
+	@include desktop-and-up
+	{
+		.resume .name
+		{
+			@include span-columns(7,16);
+			margin-right: 50%;
+			padding: 1rem;
+		}
+
+		aside
+		{
+			@include span-columns(6,16);
+		}
+
+		.main-content
+		{
+			@include span-columns(10 omega,16);
+		}
+	}
+
+.resume
+{
+	position: relative;
+	@include adjust-font-size-to(14px, 1, 16px);
+
+	h1
+	{	
+		padding-top: 1rem;
+		width: 100%;		
+		color: $orange;
+		font-family: 'audimatbold';
+	}
+
+	h3
+	{
+		@include trailer(.5, $baseFontSize, margin);
+		position: relative;
+		padding-left: 1.4rem;
+		color: $gray;
+		text-transform: uppercase;
+		line-height: 1.5rem;
+
+		&:after
+		{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: .3rem;
+			height: 1.5rem;
+			background: $orange;
+			content: "";
+		}
+	}
+
+	.title
+	{
+		@include border-radius(0);
+		display: block;
+		float: left;
+
+		padding-top: .5em;
+		margin-top: 0;
+		width: 100%;
+		border-top: ($btnBorderWidth * 2) solid $blue;
+
+		color: $blue;
+		@include adjust-font-size-to(14px);
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 1.5rem;
+	}
+}
+
+//////////////
+// Sections //
+//////////////
+
+.profile
+{
+	@include leader(.5, $baseFontSize, margin);
+	padding: 1rem;
+
+	@include tablet-landscape-and-up
+	{
+		@include leader(1, $baseFontSize, margin);
+	}
+
+	p
+	{
+		margin: 0;
+		margin-left: 1.5rem;
+	}	
+}
+
+.main-info
+{
+	@include leader(1, $baseFontSize, margin);
+
+	ul 
+	{
+		@extend %ul-reset;
+
+		li
+		{
+			width: 100%;
+			
+			> a
+			{
+				border-bottom: $btnBorderWidth solid #eee;
+			}
+
+			> a
+			{
+				@include leader(.3, $baseFontSize, padding);
+				@include trailer(.3, $baseFontSize, padding);
+				display: inline-block;
+				width: 100%;
+				text-decoration: none;
+
+
+				span.item, i.label
+				{
+					@include adjust-font-size-to(13px, 1, 16px);
+					display: inline-block;
+					
+					color: $bsClr;
+					text-decoration: none;
+					font-weight: bold;
+				}
+
+				&:hover, &:active, &:focus
+				{
+					span.item, i.label
+					{
+						@extend %df-trans;
+							
+					}
+
+					i.label
+					{
+						color: $grayLight;
+					}
+
+					span.item
+					{
+						color: $orange;
+						text-shadow: $blackTransperntVeryLight  0 $btnBorderWidth;
+					}
+				}
+			}
+
+			&.btn
+			{
+				display: block;
+				float: left;
+				width: 49%;
+				@extend %df-trans;
+				text-align: center;
+
+				span.item, i.label
+				{
+					color: white;		
+				}
+
+					i.label
+					{
+						
+						border-radius: 50%;
+						width: 1.5em;
+						height: 1.5em;
+						padding: 0.1em;
+						margin:0 .5em 0 0;
+					}
+
+					&.cv i.icon-download-cloud.label
+					{
+						background: lighten($blue, 10%);
+					}
+
+					&.vcard i.icon-download-cloud.label
+					{
+						background: lighten($orange, 10%);
+					}
+			}
+
+			&.cv
+			{
+				background: $blue;
+
+				&:hover, &:active, &.focus
+				{
+					background: lighten($blue, 5%);
+					
+					span.item, i.label
+					{
+						text-shadow: none;
+						color: white;
+					}
+
+
+				}
+			}
+
+			&.vcard 
+			{
+				float: right;
+				background: $orange;
+
+				&:hover, &:active, &.focus
+				{
+					background: lighten($orange, 5%);
+				
+					span.item, i.label
+					{
+						text-shadow: none;
+						color: white;
+					}
+				
+				}
+			}
+		}
+	}
+
+	i.label
+	{
+		@include adjust-font-size-to(11px, 1, 16px);
+		margin: 0 1em;
+		padding: .2em .6em;
+
+		color: $gray;
+		font-family: 'audimatbold';
+	}
+
+}
+
+$design-color: #fc201c;
+$dev-color: #008cc2;
+$ux-color: #f29c1a;
+
+.resume-skills
+{
+	@include leader(.5, $baseFontSize, margin);
+	padding: 1rem;
+
+	@include tablet-landscape-and-up
+	{
+		@include trailer(1, $baseFontSize, margin);
+	}
+
+	h4
+	{
+		@include trailer(.5, $baseFontSize, margin);
+	    border-bottom: .2rem solid #eee;
+	    color: $design-color;
+	    vertical-align: middle;
+		text-transform: uppercase;
+	    line-height: 1rem;
+
+	    > i
+	    {
+	      @include adjust-font-size-to(10px);
+	      position: relative;
+	      top: -.12rem;
+	      margin-bottom: .5rem;
+	      padding-right: .5rem;
+	      color: $design-color;
+	    }
+	}
+
+	ul, li
+	{
+		@extend %ul-reset;
+	}
+
+	li
+	{
+		&.illus
+		{
+			width: 75%;
+		}
+
+		&.photoshop
+		{
+			width: 60%;
+		}
+
+		&.browser
+		{
+			width: 50%;
+		}
+
+		&:last-child
+		{
+			margin-bottom: .1rem;
+		}
+
+	}
+
+	ul > li > ul
+	{
+		border-left: .3em solid shade($design-color, 12%);
+		height: 100%;
+	}
+
+	ul > li > ul li
+	{
+		@include single-box-shadow(lighten($design-color, 20%), 0, .12rem, 0, $default-box-shadow-spread, inset);
+		@include border-right-radius(1rem);
+		
+		@include adjust-font-size-to(11px, 1.1, 16px);
+		display: inline-block;
+		margin-bottom: .2rem;
+		padding: .2rem;
+		padding-left: .5em;
+		width: 100%;
+		
+		border: $btnBorderWidth solid shade($design-color, 1%);
+		border-bottom: .4rem solid shade($design-color, 12%);
+		
+		background: $design-color;
+		color: white;
+		font-weight: bold;
+	}
+
+	ul > li.front-end 
+	{
+		h4
+		{
+			@include leader(1, $baseFontSize, margin);
+			color: $dev-color;
+
+			> i
+			{
+				color: $dev-color;
+			}
+		}
+
+		> ul
+		{
+			border-left: .3em solid shade($dev-color, 10%);
+		}
+
+		> ul li
+		{
+			@include single-box-shadow(lighten($dev-color, 20%), 0, .12rem, 0, $default-box-shadow-spread, inset);
+			border-color: shade($dev-color, 10%);
+			background: $dev-color;
+		}
+
+		li
+		{
+			&.css, 
+			&.html
+			{
+				width: 90%;
+			}
+
+			&.sass
+			{
+				width: 80%;
+			}
+
+			&.js
+			{
+				margin-right: 90%;
+				width: 10%;
+			}
+
+			&.jquery
+			{
+				margin-right: 85%;
+				width: 15%;
+			}
+
+			&.drupal
+			{
+				width: 50%;
+			}
+
+			&.git
+			{
+				margin-right: 55%;
+				width: 45%;
+			}
+
+			&.svn
+			{
+				margin-right: 75%;
+				width: 25%;
+			}
+		}
+	}
+
+
+	ul > li.ux
+	{
+		h4
+		{
+			@include leader(1, $baseFontSize, margin);
+
+			color: $ux-color;
+
+			> i
+			{
+				color: $ux-color;
+			}
+		}
+
+		> ul li
+		{
+			@include single-box-shadow(lighten($ux-color, 20%), 0, .12rem, 0, $default-box-shadow-spread, inset);
+			border-color: shade($ux-color, 5%);
+			background: $ux-color;
+		}
+
+		> ul
+		{
+			border-left: .3em solid shade($ux-color, 5%);
+		}		
+	}
+
+	li
+	{
+		&.prot
+		{
+			width: 90%;
+		}
+
+		&.sketch
+		{
+			width: 60%;
+		}
+
+		&.omni
+		{
+			width: 30%;
+		}
+
+		&.lucid
+		{
+			width: 80%;
+		}
+
+		&.iterate
+		{
+			width: 60%;
+		}
+	}
+}
+
+.education
+{
+	@include leader(.5, $baseFontSize, margin);
+	padding: 1rem;
+	
+	@include tablet-landscape-and-below
+	{
+		@include trailer(1, $baseFontSize, margin);
+	}
+
+	p
+	{
+		display: inline-block;
+		float: left;
+		margin: 0;
+		margin-left: 1.5rem;
+		width: 93%;
+		font-weight: bold;
+
+		&.school-town
+		{
+			position: relative;
+		}
+	}
+
+	p
+	{
+		margin-bottom: .1rem;
+
+		padding-left: .5rem;
+		border-left: $blue solid .3rem;
+		line-height: 1.8rem;
+
+		&.school-town
+		{
+			@include adjust-font-size-to(11px, 1, 14px);
+			@include trailer(.2, $baseFontSize, margin);
+
+			font-weight: bold;
+		}
+
+		&.education-time
+		{
+			@include adjust-font-size-to(10px, 1, 14px);
+		}
+	}
+}
+
+.experience
+{
+	@include leader(.5, $baseFontSize, margin);
+	padding: 1rem;
+	
+	ul, p, h4, h5
+	{
+		margin-left: 1.5rem;
+	}
+}
+
+
+
+
