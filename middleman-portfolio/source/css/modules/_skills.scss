@@ -38,14 +38,9 @@
 	.icn
 	{
 		margin: 0 auto;
-		max-width: 200px;
+		max-width: 15rem;
 	}
 
-
-	&.grid-unit
-	{
-		@extend %columns-3;
-	}
 }
 
 
@@ -66,18 +61,64 @@
 
 
 
-@include at-breakpoint($ipad-portrait 10) 
+@media only screen and (min-width: $mq-tablet-portrait) and (max-width: $mq-tablet-landscape)
 {
-	
-	// 3 Columns
-	%columns-3
+
+	.skills
 	{
-		width: 100%;
+		padding-top: 0;
 	}
+
+	.skills-.wrap
+	{
+		
+	.icn
+	{
+		@include span-columns(4,16);
+		padding: 2rem;
+	}
+
+	p, h4
+	{
+		@include span-columns(12 omega,16);
+	}
+
+	.develop.col-wrap
+	{
+		.icn
+		{
+			@include span-columns(4 omega,16);
+			
+		}
+
+		p, h4
+		{
+			@include span-columns(12,16);
+		}
+	}
+
+	// .design.col-wrap
+	// {
+	// 	@include span-columns(4,16);
+	// 	@include pre(1);
+	// }
+
+	// .develop.col-wrap
+	// {
+	// 	@include span-columns(4,16);
+	// 	@include pre(1);
+	// }
+
+	// .ux.col-wrap
+	// {
+	// 	@include span-columns(4 omega,16);
+	// 	@include post(1);
+	// }
+}
 
 }
 
-@include at-breakpoint($ipad-landscape 16) 
+@include desktop-and-up
 {
 		
 // 3 Columns

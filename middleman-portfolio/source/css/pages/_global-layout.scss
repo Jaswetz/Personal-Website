@@ -13,7 +13,7 @@ header, footer, .row-clear
 
 
 //////////
-// Hide
+// Hide //
 //////////
 
 // Keep visible for screenreaders
@@ -28,7 +28,7 @@ section.skills, section.about-me, section.intro
 
 
 ////////////
-// Styles
+// Styles //
 ////////////
 
 body, .page-bckg
@@ -67,14 +67,25 @@ body, .page-bckg
 // Row Wrap	 //
 ///////////////
 
+$wrap-padding: 3.75rem;
+$wrap-padding-mobile: ($wrap-padding / 3);
+
 .wrap
 {
 	position: relative;
-	padding: 0 32px;
+	padding: 0 $wrap-padding;
 	max-width: 1204px; 
 	margin: 0 auto;
 
 	@include clearfix(); 
+}
+
+@include mobile-only
+{
+	.wrap
+	{
+		padding: 0 $wrap-padding-mobile;
+	}
 }
 
 .about-me, .skills
@@ -83,11 +94,12 @@ body, .page-bckg
 }
 
 
-@include tablet-portrait-and-up
+@include mobile-only
 {
 	.content-wrap
 	{
 		margin-top: $base-leader  * 6;
 	}
 }
+
 

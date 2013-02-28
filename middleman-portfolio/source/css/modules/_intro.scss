@@ -11,10 +11,10 @@
 	@include leader(.5, $baseFontSize, padding);
 	@include trailer(1.5, $baseFontSize, padding);
 
+	background: $orange;
+
 	@include tablet-portrait-and-up
 	{
-		background: url(../img/banner.jpg);
-		@include image-2x("../img/banner@2x.jpg", 1800px, 360px);
 		
 		//position
 		@include leader(1.8, $baseFontSize, padding);
@@ -24,7 +24,8 @@
 	h2
 	{
 		margin-top: 0;
-		color: $highlightColor;
+		background: darken($orange, 6);
+		color: $white;
 		font-size: 3rem;
 		line-height: 4rem;
 		@include trailer(.5, $baseFontSize, margin);
@@ -35,8 +36,7 @@
 		h2
 		{
 			padding: .5rem;
-			background: $blackTransperntLow;
-			color: $white;
+			
 			// font-size: 3rem;
 			// line-height: 4rem;
 		}
@@ -45,6 +45,8 @@
 	em
 	{
 		line-height: 2rem;
+		color: darken($orange, 8);
+		@include text-shadow(lighten($orange, 8%) 0 1px );
 	}
 
 	@include tablet-portrait-and-up
@@ -53,8 +55,6 @@
 		{
 			padding: .5rem;
 			line-height: 4rem;
-			background: $whiteTransparent;
-			color: $grayDark;
 		}
 	}
 }

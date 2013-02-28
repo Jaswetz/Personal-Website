@@ -36,6 +36,11 @@
 
 form
 {
+    @include desktop-and-up
+    {
+      margin: 0 20%;
+    }
+
     @include leader(2, $baseFontSize, padding);
     @include trailer(2, $baseFontSize, padding);
 
@@ -49,21 +54,21 @@ form
      i
      {
         @include background(linear-gradient(bottom, darken($formClr, 1%) 50%,lighten($formClr, 1%) 51%));
-        @include single-box-shadow(tint($formClr, 8%) , -1px, 0, 0, 0, true);
+        @include single-box-shadow(tint($formClr, 8%) , -$btnBorderWidth, 0, 0, 0, true);
         position: absolute;
         left: $btnBorderWidth /2;
         top: $btnBorderWidth;
         padding-right: .75em;
         padding-left: .26em;
         width: 2em;
-        height: 2.5em;
+        height: 2.55em;
         border: $btnBorderWidth solid darken($formClr, 1);
 
         color: $white;
-        text-shadow: 0 2px shade($orange, 15%);
+        text-shadow: 0 ($btnBorderWidth * 2) shade($orange, 15%);
 
         // Style
-        line-height: 52px;
+        line-height: 3.5rem;
 
         &.icon-edit
         {
@@ -82,6 +87,7 @@ textarea
 {
   @include border-radius($default-border-radius);
   @include adjust-font-size-to(16px);
+  @include single-box-shadow(none);
 
   @extend %df-trans;
 
@@ -104,8 +110,8 @@ textarea
   background: $formClr;
 
   @include box-shadow(
-    0 -1px 0 lighten($formClr, 2) inset,
-    0 1px 0 lighten($formClr, 1) inset
+    0 -$btnBorderWidth 0 lighten($formClr, 2) inset,
+    0 $btnBorderWidth 0 lighten($formClr, 1) inset
     );
 
   &:hover
@@ -123,6 +129,19 @@ textarea
   {
     background: darken($white, 10%);
     color: $grayDark;
+    text-align: left;
+  }
+
+}
+
+textarea
+{
+  padding-left: .5em;
+  text-align: center;
+
+    &:focus
+  {
+     text-align: left;
   }
 
 }
@@ -131,20 +150,20 @@ textarea
 #contact button[type="submit"]
 {
   @include background(linear-gradient(top, tint($orange, 2%), shade($orange, 5%)));
-  @include single-box-shadow(tint($orange, 12%), 0, 1px, 0, 0, inset);
+  @include single-box-shadow(tint($orange, 12%), 0, $btnBorderWidth, 0, 0, inset);
   @include adjust-font-size-to(16px, 1, 16px);
     
   display: inline-block;
   padding: .8em;
   width:100%;
   border: none;
-  border: 1px solid shade($orange, 10%);
-  border-radius: 2px;
+  border: $btnBorderWidth solid shade($orange, 10%);
+  border-radius: .2rem;
   
   // Font Styles
   color: $white;
   text-decoration: none;
-  text-shadow: 0 2px shade($orange, 15%);
+  text-shadow: 0 ($btnBorderWidth * 2) shade($orange, 15%);
 
   letter-spacing: 1px;
   cursor:pointer;
@@ -155,7 +174,7 @@ textarea
   &:hover
   {
     @include background(linear-gradient(top, tint($orange, 4%), shade($orange, 7%)));
-    border: 1px solid shade($orange, 5%);
+    border: $btnBorderWidth solid shade($orange, 5%);
   }
 
   &:active

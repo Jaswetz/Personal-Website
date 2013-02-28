@@ -13,7 +13,12 @@
 {
 	background: $orange;
   position: relative;
-  padding: 0 20%;
+  padding: 0 $wrap-padding;
+}
+
+@include mobile-only
+{
+	 padding: 0 $wrap-padding-mobile;
 }
 
 #primary-footer 
@@ -85,8 +90,49 @@
 	}
 }
 
+@include mobile-only
+{
+  .contact
+  {
+    display: none;
+    visibility: hidden;
+  }
 
-@media only screen and (max-width: $iphone-landscape)
+	#primary-footer 
+	{
+		.bottom
+		{
+			padding: 0;
+		}
+
+		 ul.social
+		{
+			background: $orange;
+
+			> li
+			{
+					a
+			{
+				
+				
+				color: $white;
+
+				&:hover, &:focus
+				{
+					//border: 1px solid $white;
+					color: $white;
+					@include border-radius(50%);
+				}
+
+			}
+			}
+		}
+
+	}
+
+}
+
+@include tablet-portrait-and-below
 {
 	#primary-footer 
 	{
