@@ -29,6 +29,7 @@
 		font-size: 3rem;
 		line-height: 4rem;
 		@include trailer(.5, $baseFontSize, margin);
+		@include text-shadow(lighten(darken($orange, 6), 8%) 0 1px );
 	}
 
 	@include tablet-portrait-and-up
@@ -45,7 +46,7 @@
 	em
 	{
 		line-height: 2rem;
-		color: darken($orange, 8);
+		color: $white;
 		@include text-shadow(lighten($orange, 8%) 0 1px );
 	}
 
