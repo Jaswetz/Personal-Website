@@ -6,12 +6,11 @@
 	{
 		section.resume
 		{
+			margin-top: -3px;
 			margin-top: -.2rem;
 			@include box-shadow(0 0 .5rem 0 rgba(51, 51, 51, .45));
 		}
 	}
-
-
 
 .resume-.inner
 {
@@ -48,6 +47,7 @@
 		{
 			@include span-columns(7,16);
 			margin-right: 50%;
+			padding: 14px;
 			padding: 1rem;
 		}
 
@@ -69,6 +69,7 @@
 
 	h1
 	{	
+		padding-top: 14px;
 		padding-top: 1rem;
 		width: 100%;		
 		color: $orange;
@@ -79,9 +80,11 @@
 	{
 		@include trailer(.5, $baseFontSize, margin);
 		position: relative;
+		padding-left: 20px;
 		padding-left: 1.4rem;
 		color: $gray;
 		text-transform: uppercase;
+		line-height: 20px;
 		line-height: 1.5rem;
 
 		&:after
@@ -90,7 +93,9 @@
 			top: 0;
 			bottom: 0;
 			left: 0;
+			width: 4px;
 			width: .3rem;
+			height: 20px;
 			height: 1.5rem;
 			background: $orange;
 			content: "";
@@ -112,6 +117,7 @@
 		@include adjust-font-size-to(14px);
 		text-transform: uppercase;
 		font-weight: bold;
+		line-height: 20px;
 		line-height: 1.5rem;
 	}
 }
@@ -123,6 +129,7 @@
 .profile
 {
 	@include leader(.5, $baseFontSize, margin);
+	padding: 14px;
 	padding: 1rem;
 
 	@include tablet-landscape-and-up
@@ -133,6 +140,7 @@
 	p
 	{
 		margin: 0;
+		margin-left: 20px;
 		margin-left: 1.5rem;
 	}	
 }
@@ -285,6 +293,7 @@ $ux-color: #f29c1a;
 .resume-skills
 {
 	@include leader(.5, $baseFontSize, margin);
+	padding: 14px;
 	padding: 1rem;
 
 	@include tablet-landscape-and-up
@@ -295,17 +304,21 @@ $ux-color: #f29c1a;
 	h4
 	{
 		@include trailer(.5, $baseFontSize, margin);
+		border-bottom: .2em solid #eee;
 	    border-bottom: .2rem solid #eee;
 	    color: $design-color;
 	    vertical-align: middle;
 		text-transform: uppercase;
+		line-height: 20px;
 	    line-height: 1rem;
 
 	    > i
 	    {
 	      @include adjust-font-size-to(10px);
 	      position: relative;
+	      top: -2px;
 	      top: -.12rem;
+	      margin-bottom: -7px;
 	      margin-bottom: .5rem;
 	      padding-right: .5rem;
 	      color: $design-color;
@@ -336,6 +349,7 @@ $ux-color: #f29c1a;
 
 		&:last-child
 		{
+			margin-bottom: 1px;
 			margin-bottom: .1rem;
 		}
 
@@ -354,12 +368,15 @@ $ux-color: #f29c1a;
 		
 		@include adjust-font-size-to(11px, 1.1, 16px);
 		display: inline-block;
+		margin-bottom: 2px;
 		margin-bottom: .2rem;
+		padding: 2px;
 		padding: .2rem;
 		padding-left: .5em;
 		width: 100%;
 		
 		border: $btnBorderWidth solid shade($design-color, 1%);
+		border-bottom: .4em solid shade($design-color, 12%);
 		border-bottom: .4rem solid shade($design-color, 12%);
 		
 		background: $design-color;
@@ -508,6 +525,7 @@ $ux-color: #f29c1a;
 		display: inline-block;
 		float: left;
 		margin: 0;
+		margin-left: 20px;
 		margin-left: 1.5rem;
 		width: 93%;
 		font-weight: bold;
@@ -520,10 +538,14 @@ $ux-color: #f29c1a;
 
 	p
 	{
+		margin-bottom: 1px;
 		margin-bottom: .1rem;
 
+		padding-left: 7px;
 		padding-left: .5rem;
+		border-left: $blue solid .3em;
 		border-left: $blue solid .3rem;
+		line-height: 21px;
 		line-height: 1.8rem;
 
 		&.school-town
@@ -544,10 +566,12 @@ $ux-color: #f29c1a;
 .experience
 {
 	@include leader(.5, $baseFontSize, margin);
+	padding: 14px;
 	padding: 1rem;
 	
 	ul, p, h4, h5
 	{
+		margin-left: 20px;
 		margin-left: 1.5rem;
 	}
 }

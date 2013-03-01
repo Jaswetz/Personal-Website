@@ -3,13 +3,15 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Jason Swetzoff -- Developer, Designer, and UX -- @jaswetz
 
 # THANKS
 
-    <name>
+    Ivan Vashchenko for help with the contact form.  
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    HTML5, CSS3,
+    jQuery, Modernizr,
+    Middleman, Sass,
+    Compass,

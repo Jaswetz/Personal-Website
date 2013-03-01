@@ -73,6 +73,7 @@ $wrap-padding-mobile: ($wrap-padding / 3);
 .wrap
 {
 	position: relative;
+	padding: 0 110px;
 	padding: 0 $wrap-padding;
 	max-width: 1204px; 
 	margin: 0 auto;

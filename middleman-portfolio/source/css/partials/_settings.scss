@@ -73,17 +73,20 @@ $ftrClr						: $grayDarker;
 $bsClrTint 					: tint($bsClr, 75%);
 $bsClrShade 				: shade($bsClr, 40%);
 
+// UI
+$borderColor				: darken(#e9ebee, 5%);
+
 // Typogrphy
 $bg1					    : $white;
 $ftrTxtClr					: $white;
 $bsTxtClr				    : $grayDark;
 $headerColor				: $bg1;
+$headerText				    : lighten($bsClr, 20%);	
 
 $highlightColor				: $orange;
 $highlightTextColor			: tint($bsClr, 80%);
 
-// UI
-$borderColor				: #e9ebee;
+
 
 // Buttons
 $primaryBtnBckgrnd          : $grayLighter;
