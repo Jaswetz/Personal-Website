@@ -8,6 +8,7 @@
 	text-align: center;
 
 	//position
+	margin-top: -.05em;
 	@include leader(.5, $baseFontSize, padding);
 	@include trailer(1.5, $baseFontSize, padding);
 

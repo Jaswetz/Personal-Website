@@ -65,9 +65,9 @@ configure :build do
   activate :minify_css
 
   # Change Compass configuration
-  compass_config do |config|
-    config.output_style = :compact
-  end
+  # compass_config do |config|
+  #   config.output_style = :compact
+  # end
 
   # Minify Javascript on build
   activate :minify_javascript

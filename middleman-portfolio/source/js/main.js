@@ -1,3 +1,5 @@
+
+
 /////////////
 // Plugins //
 /////////////
@@ -27,13 +29,18 @@
 
 // Place any jQuery/helper plugins in here.
 
+$(document).ready(function(){
+
+///////////////////////////////////
+// eMail address Spam Protection //
+///////////////////////////////////
+
+var emailAddress = ('swetzoff@' + 'gmail.com');
+$('#contact-link span').append(emailAddress);
 
 /////////////////////////////
 // Contact form submission //
 /////////////////////////////
-
-$(document).ready(function(){
-
 
 	$(function() {
 	
@@ -43,12 +50,6 @@ $(document).ready(function(){
 
 		e.preventDefault();
 
-		if (($("#visitors-name").val() == "") || 
-		    ($("#visitors-email").val() == "") || 
-		    ($("#visitors-message").val() == "")) { 
-                    alert("Please make sure all the fields are filled out."); 
-		} else {
-
 			$.ajax({
 
 				type: "POST",
@@ -57,20 +58,19 @@ $(document).ready(function(){
 				success: function(){
 
 					$('.success').fadeIn(1000);
-
-				}
 			});
 		}
 
 	});
 
 	return false;
-
-
 });
 
 
- // Smooth Scroll
+ ///////////////////
+ // Smooth Scroll //
+ ///////////////////
+ 
  function filterPath(string) {
   return string
     .replace(/^\//,'')

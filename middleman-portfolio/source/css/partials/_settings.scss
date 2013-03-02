@@ -23,6 +23,13 @@ $gtr-oversized: 15%;
 
 $bs-unit: 1rem;
 
+
+// Compass settings
+
+// IE9 SVG, needs conditional override of 'filter' to 'none'
+$experimental-support-for-svg: true;
+
+
 // ---------------------------------------------------------------------------
 // @COLORS
 
@@ -96,7 +103,7 @@ $btnBorderWidth				: .1rem;
 
 // Forms
 
-$formClr: tint($orange, 3);
+$formClr: tint($orange, 6);
 $formBorderColor: darken($formClr, 3);
 $placeholderClr:  $white;
 

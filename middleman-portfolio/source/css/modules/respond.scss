@@ -21,11 +21,6 @@ $mq-desktop				: 1382px !default;
 	@media (max-width : $mq-mobile-landscape) {
 		@content;
 	}
-
-	.lt-ie9
-	{
-		@content;
-	}
 }
  
 // Everything up to and including the portrait width of the phone
@@ -34,8 +29,6 @@ $mq-desktop				: 1382px !default;
 	@media (max-width : $mq-mobile-portrait) {
 		@content;
 	}
-
-
 }
  
 // Everything up to and including the mobile portrait
@@ -43,8 +36,6 @@ $mq-desktop				: 1382px !default;
 	@media (max-width : $mq-mobile-portrait) {
 		@content;
 	}
-
-
 }
  
 // Everything above and including the mobile portrait
@@ -52,8 +43,11 @@ $mq-desktop				: 1382px !default;
 	@media (min-width : $mq-mobile-portrait) {
 		@content;
 	}
-	
 
+	.lt-ie9
+	{
+		@content;
+	}
 }
  
 // Everthing larger than a portrait mobile up until mobile landscape
@@ -61,21 +55,11 @@ $mq-desktop				: 1382px !default;
 	@media only screen and (min-width : $mq-mobile-portrait + 1) and (max-width : $mq-mobile-landscape) {
 		@content;
 	}
-
-	.lt-ie9
-	{
-		@content;
-	}
 }
  
 // Everything up to and including the mobile landscape width
 @mixin mobile-landscape-and-below {
 	@media only screen and (max-width : $mq-mobile-landscape) {
-		@content;
-	}
-
-	.lt-ie9
-	{
 		@content;
 	}
 }
@@ -110,21 +94,11 @@ $mq-desktop				: 1382px !default;
 	@media only screen and (min-width : $mq-mobile-landscape + 1) and (max-width : $mq-tablet-portrait) {
 		@content;
 	}
-
-	.lt-ie9
-	{
-		@content;
-	}
 }
  
 // Everything below and including the portrait width of the tablet
 @mixin tablet-portrait-and-below {
 	@media only screen and (max-width : $mq-tablet-portrait) {
-		@content;
-	}
-
-	.lt-ie9
-	{
 		@content;
 	}
 }
@@ -158,11 +132,6 @@ $mq-desktop				: 1382px !default;
 // Up to and including the tablet landscape
 @mixin tablet-landscape-and-below {
 	@media only screen and (max-width : $mq-tablet-landscape) {
-		@content;
-	}
-
-	.lt-ie9
-	{
 		@content;
 	}
 }
@@ -218,6 +187,14 @@ $mq-desktop				: 1382px !default;
 // Retina screens have a 1.5 pixel ratio, not 2
 @mixin retina {
 	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+		@content;
+	}
+}
+
+
+@mixin ie8() {
+	.lt-ie9
+	{
 		@content;
 	}
 }

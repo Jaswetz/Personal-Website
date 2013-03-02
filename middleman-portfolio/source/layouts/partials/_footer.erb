@@ -3,48 +3,33 @@
     <div class="top">
         <!--Contact Form--> 
         <form method="POST" class="contact" id="contact">
+            <!-- <h3>Feel free to talk to me!</h3>
+            <p>You can fill the form below, or just use your eMail client by clicking <a id="contact-link" href="mailto:swetzoff@gmail.com" >here</a></p> -->
             <fieldset class="contact-inner">
-            <p>
                 <label for="visitors-name">
-                    <!-- <span>Name</span> -->
+                    <span class="label">Name?</span>
                     <div class="icn-wrap">
                         <i class="icon-user"></i>
-                    
+                    </div>
                     <input placeholder="Name?" type="text" name="visitors-name" id="visitors-name"
-                    tabindex="1">
-                    </div>  
-
-                </label>
-            </p>
-            <p>
-                <label>
-                    <!-- <span class="label-text">eMail</span> -->
-                    <span class="message-wrap">
-                       
+                    tabindex="1" required>
+                </label>          
+                <label for="visitors-email">
+                        <span class="label">eMail?</span>
                         <div class="icn-wrap">
                             <i class="icon-mail"></i>
-                        
-                        <input type="email" placeholder="eMail?" name="visitors-email" tabindex="2" id="visitors-email">
                         </div>
-                     
-                    </span>
-                   <!--   <span class="message-text">Please enter a valid email address</span> -->
+                        <input type="email" placeholder="eMail?" name="visitors-email" tabindex="2" id="visitors-email" required>          
                 </label>
-            </p>
-
-            <p>
-                <label>
-                    <!-- <span>Message</span> -->
-             
-                    <textarea name="visitors-message" placeholder="What up?" tabindex="3" id="visitors-message"></textarea>
-                   
+                <label for="visitors-message">
+                    <span class="label">What's Up?</span>             
+                    <textarea name="visitors-message" placeholder="What up?" tabindex="3" id="visitors-message" required></textarea>
                  </label>
-            </p>
 
             <span class="message- success">Success! Thanks for your message.</span>
 
             <p class="contact-submit">
-              <button name="submit" type="submit" id="contact-submit" class="button">Send Email</button>
+              <button name="submit" type="submit" id="contact-submit" class="button" tabindex="4">Send Email</button>
             </p>
               
 
@@ -67,7 +52,7 @@
                 </address>
             </li>
         </ul>
-        <p class="copywrite">© 2013 Jason Swetzoff</p>  
+        <p class="copywrite">&copy; 2013 Jason Swetzoff</p>  
         
         </div>  
     </div>

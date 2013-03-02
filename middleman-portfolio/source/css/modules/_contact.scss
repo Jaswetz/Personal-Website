@@ -34,6 +34,18 @@
   text-align: center;
 }
 
+@include ie8
+{
+  form
+  {
+    .icn-wrap
+    {
+      display: none;
+    }
+  }
+}
+
+
 form
 {
     @include desktop-and-up
@@ -50,6 +62,9 @@ form
    .icn-wrap
     {
       position: relative;
+      margin-left: .05em;
+
+   
 
      i
      {
@@ -79,6 +94,14 @@ form
     }
 }
 
+@include ie8
+{
+    form
+    {
+       margin: 0 20%;
+    }
+}
+
 
 
 input[type="text"],
@@ -92,6 +115,7 @@ textarea
   @extend %df-trans;
 
 
+  @include trailer(.5, $baseFontSize, margin);
   display: block;
   padding: .5em .5em;
   padding-left: 2.8em;
@@ -134,6 +158,16 @@ textarea
 
 }
 
+@include ie8
+{
+    input[type="text"],
+    input[type="email"],
+    textarea
+    {
+    padding-left: .5em;
+    }
+}
+
 textarea
 {
   padding-left: .5em;
@@ -149,6 +183,7 @@ textarea
 
 #contact button[type="submit"]
 {
+  @include filter-gradient(tint($orange, 2%), shade($orange, 5%), vertical); // IE6-8
   @include background(linear-gradient(top, tint($orange, 2%), shade($orange, 5%)));
   @include single-box-shadow(tint($orange, 12%), 0, $btnBorderWidth, 0, 0, inset);
   @include adjust-font-size-to(16px, 1, 16px);
@@ -188,6 +223,26 @@ label
   display: block; 
   cursor: pointer; 
 }
+
+//For IE8 and IE9
+
+.label
+{
+  display: none;
+}
+
+@include ie8
+{
+  .label
+  {
+  color: white;
+  width: 100%;
+  display: block;
+  margin-bottom: -21px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  } 
+} 
  
 
 fieldset 
