@@ -13,9 +13,9 @@ if($_POST){
 
 	//send email
 	if (mail("swetzoff@gmail.com", "Shapes Like Water contact form", $email_body)) {
-	    	echo 'Mail Sent';
+	    	echo '{"result": true}';
 	} else {
-		echo 'Mail Not Sent';
+		echo '{"result": false}';
 	}
 		
 }
