@@ -6,8 +6,7 @@
 	{
 		section.resume
 		{
-			margin-top: -3px;
-			margin-top: -.2rem;
+			margin-top: 3.5em;
 			@include box-shadow(0 0 .5rem 0 rgba(51, 51, 51, .45));
 		}
 	}
@@ -426,12 +425,25 @@ $ux-color: #f29c1a;
 			{
 				margin-right: 90%;
 				width: 10%;
+
+				@include mobile-only
+				{
+					margin-right: 85%;
+					width: 15%;
+				}
 			}
 
 			&.jquery
 			{
 				margin-right: 85%;
 				width: 15%;
+				
+				@include mobile-only
+				{
+					margin-right: 75%;
+					width: 25%;
+				}
+
 			}
 
 			&.drupal
@@ -496,6 +508,11 @@ $ux-color: #f29c1a;
 		&.omni
 		{
 			width: 30%;
+
+				@include mobile-only
+				{
+						width: 40%;
+				}
 		}
 
 		&.lucid
@@ -578,6 +595,15 @@ $ux-color: #f29c1a;
 	{
 		margin-left: 20px;
 		margin-left: 1.5rem;
+	}
+
+	@include mobile-only
+	{
+			ul
+			{
+				margin-left: 5px;
+				margin-left: .5rem;
+			}
 	}
 }
 

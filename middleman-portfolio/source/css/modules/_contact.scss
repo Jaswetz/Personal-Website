@@ -26,7 +26,7 @@
   @include border-radius($default-border-radius);
   position: relative;
   display: none;
-  padding: .5em;
+  padding: 0.5em;
   width:100%;
   border: $btnBorderWidth solid $formBorderColor;
   background: darken($green, 5%);
@@ -62,7 +62,7 @@ form
    .icn-wrap
     {
       position: relative;
-      margin-left: .05em;
+      margin-left: 0.05em;
 
    
 
@@ -73,8 +73,8 @@ form
         position: absolute;
         left: $btnBorderWidth /2;
         top: $btnBorderWidth;
-        padding-right: .75em;
-        padding-left: .26em;
+        padding-right: 0.75em;
+        padding-left: 0.26em;
         width: 2em;
         height: 2.68em;
         border: $btnBorderWidth solid darken($formClr, 1);
@@ -115,9 +115,9 @@ textarea
   @extend %df-trans;
 
 
-  @include trailer(.5, $baseFontSize, margin);
+  @include trailer(0.5, $baseFontSize, margin);
   display: block;
-  padding: .5em .5em;
+  padding: 0.5em 0.5em;
   padding-left: 2.8em;
   width: 100%;
 
@@ -164,13 +164,13 @@ textarea
     input[type="email"],
     textarea
     {
-    padding-left: .5em;
+    padding-left: 0.5em;
     }
 }
 
 textarea
 {
-  padding-left: .5em;
+  padding-left: 0.5em;
   text-align: center;
 
     &:focus
@@ -189,11 +189,11 @@ textarea
   @include adjust-font-size-to(16px, 1, 16px);
     
   display: inline-block;
-  padding: .8em;
+  padding: 0.8em;
   width:100%;
   border: none;
   border: $btnBorderWidth solid shade($orange, 10%);
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   
   // Font Styles
   color: $white;

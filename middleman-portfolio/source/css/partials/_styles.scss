@@ -10,6 +10,13 @@
 	@include transition-timing-function(ease-in);
 }
 
+%df-trnsfrm
+{
+	@include transition-property(all);
+	@include transition-duration(.2s);
+	@include transition-timing-function(ease-in);
+}
+
 %logo-trans
 {
 	@include transition-property(background);

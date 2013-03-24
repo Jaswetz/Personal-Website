@@ -1,21 +1,11 @@
 #Livereload
 activate :livereload
 
-###
-# Compass
-###
-
 # Normalize
 require 'compass-normalize'
 
-# Susy grids in Compass
-# First: gem install susy
+# Susy grids
 require 'susy'
-
-# Change Compass configuration
-# compass_config do |config|
-  # config.output_style = :compact
-# end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -64,10 +54,16 @@ configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
 
+  # Minify HTML
+  # activate :minify_html
+
+  # activate gzip
+  activate :gzip
+
   # Change Compass configuration
-  # compass_config do |config|
-  #   config.output_style = :compact
-  # end
+  compass_config do |config|
+    config.output_style = :compressed
+  end
 
   # Minify Javascript on build
   activate :minify_javascript

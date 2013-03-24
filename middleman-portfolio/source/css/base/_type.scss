@@ -11,7 +11,6 @@ body
 p
 {
   @include adjust-font-size-to(16px, 1.2, 16px);
-  position: inline-block;
 }
 
 p.large
@@ -31,13 +30,13 @@ h1, h2, h3, h4, h5, h6
 {
   margin: 0;
   font-weight: $headingsFontWeight;
-  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
 h1, h3, h2
 {
   font-family: $header-stack;
-  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
 h1
@@ -83,8 +82,4 @@ hr
   margin: 0;
   @include background(linear-gradient(left, rgba(112,128,144,0), rgba(112,128,144,.3), rgba(112,128,144,.0)));
   border: 0;
-}
-
-em
-{
 }
