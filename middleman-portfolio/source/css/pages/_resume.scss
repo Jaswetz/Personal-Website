@@ -534,6 +534,11 @@ $ux-color: #f29c1a;
 		{
 			position: relative;
 		}
+
+		&.degree, &.minor, &.education-time
+		{
+			margin-left: 30px;
+		}
 	}
 
 	p

@@ -42,10 +42,10 @@ $('#contact-link span').append(emailAddress);
 // Contact form submission //
 /////////////////////////////
 
-	$(function() {
+	$(function() {	
 	
-	var form = $('#contact');
-	
+  var form = $('#contact');
+
 	$("#contact .button").click(function(e) {
 
 		e.preventDefault();
@@ -58,8 +58,8 @@ $('#contact-link span').append(emailAddress);
 				success: function(){
 
 					$('.success').fadeIn(1000);
-			});
-		}
+			}});
+		
 
 	});
 
@@ -70,7 +70,7 @@ $('#contact-link span').append(emailAddress);
  ///////////////////
  // Smooth Scroll //
  ///////////////////
- 
+
  function filterPath(string) {
   return string
     .replace(/^\//,'')
@@ -79,7 +79,7 @@ $('#contact-link span').append(emailAddress);
   }
   var locationPath = filterPath(location.pathname);
   var scrollElem = scrollableElement('html', 'body');
- 
+
   $('a[href*=#]').each(function() {
     var thisPath = filterPath(this.pathname) || locationPath;
     if (  locationPath == thisPath
