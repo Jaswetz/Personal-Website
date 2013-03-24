@@ -1,5 +1,4 @@
 
-
 /////////////
 // Plugins //
 /////////////
@@ -42,25 +41,37 @@ $('#contact-link span').append(emailAddress);
 // Contact form submission //
 /////////////////////////////
 
-	$(function() {	
+$(function() {
 	
-  var form = $('#contact');
-
+	var form = $('#contact');
+	
 	$("#contact .button").click(function(e) {
 
 		e.preventDefault();
+
+                if (($("#visitors-name").val() == "") ||
+                    ($("#visitors-email").val() == "") ||
+                    ($("#visitors-message").val() == "")) {
+                    $('#notification').html("Please make sure all fields are filled out.").fadeIn(1000).delay(3000).fadeOut(1000);
+                } else {
 
 			$.ajax({
 
 				type: "POST",
 				url: "../php/contact.php",
 				data: form.serialize(),
+				dataType: 'json',
 				success: function(){
+                                        
+                                        if (!data.result) { $('#notification').html("Message could not be sent").fadeIn(1000).delay(3000).fadeOut(1000); }
+                                        else { $('#notification').html("Your message has been sent!").fadeIn(1000).delay(3000).fadeOut(1000); }
 
-					$('.success').fadeIn(1000);
-			}});
-		
-
+					//$('.success').fadeIn(1000);
+				}
+			});
+		}
+                
+        
 	});
 
 	return false;
@@ -70,7 +81,7 @@ $('#contact-link span').append(emailAddress);
  ///////////////////
  // Smooth Scroll //
  ///////////////////
-
+ 
  function filterPath(string) {
   return string
     .replace(/^\//,'')
@@ -79,7 +90,7 @@ $('#contact-link span').append(emailAddress);
   }
   var locationPath = filterPath(location.pathname);
   var scrollElem = scrollableElement('html', 'body');
-
+ 
   $('a[href*=#]').each(function() {
     var thisPath = filterPath(this.pathname) || locationPath;
     if (  locationPath == thisPath
