@@ -53,3 +53,12 @@ Vagrantfile
 #####################
 .sublime-project
 .sublime-workspace
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+# /build
+
+# Ignore Sass' cache
+/.sass-cache
