@@ -1,0 +1,277 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "hand",
+        "up",
+        "arrow"
+      ],
+      "code": 9757,
+      "from": 9757,
+      "uid": "034e645aa3bad56ce68389a816547c87",
+      "css": "up-hand",
+      "orig_css": "up-hand",
+      "orig_code": 9757,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "mail",
+        "email"
+      ],
+      "code": 9993,
+      "uid": "e335adbc2d898c7d85d40c507796e7b4",
+      "css": "mail",
+      "orig_css": "mail",
+      "orig_code": 9993,
+      "src": "entypo",
+      "from": 9993
+    },
+    {
+      "search": [
+        "pencil",
+        "write",
+        "reply",
+        "edit"
+      ],
+      "code": 9997,
+      "from": 9997,
+      "uid": "41087bc74d4b20b55059c60a33bf4008",
+      "css": "edit",
+      "orig_css": "edit",
+      "orig_code": 9997,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "ok",
+        true,
+        "check",
+        "mark"
+      ],
+      "code": 10003,
+      "uid": "14017aae737730faeda4a6fd8fb3a5f0",
+      "css": "check",
+      "orig_css": "check",
+      "orig_code": 10003,
+      "src": "entypo",
+      "from": 10003
+    },
+    {
+      "search": [
+        "close",
+        "cancel",
+        "reject"
+      ],
+      "code": 10005,
+      "from": 10005,
+      "uid": "c709da589c923ba3c2ad48d9fc563e93",
+      "css": "cancel",
+      "orig_css": "cancel",
+      "orig_code": 10005,
+      "src": "entypo"
+    },
+    {
+      "search": [
+        "download",
+        "cloud"
+      ],
+      "code": 59152,
+      "uid": "acba01b26400b5e898ef20aabb2ff84d",
+      "file": "cloud_download",
+      "css": "download-cloud",
+      "orig_css": "download-cloud",
+      "orig_code": 59152,
+      "src": "iconic",
+      "from": 59152
+    },
+    {
+      "search": [
+        "net"
+      ],
+      "code": 59254,
+      "uid": "414fe97e4af5215a06d29be0f2cecdf5",
+      "css": "network",
+      "orig_css": "network",
+      "orig_code": 59254,
+      "src": "entypo",
+      "from": 59254
+    },
+    {
+      "search": [
+        "brush"
+      ],
+      "code": 59290,
+      "uid": "39c4d0e225a1263a398a47523cb5b9bd",
+      "css": "brush",
+      "orig_css": "brush",
+      "orig_code": 59290,
+      "src": "entypo",
+      "from": 59290
+    },
+    {
+      "search": [
+        "paint",
+        "layers"
+      ],
+      "code": 59293,
+      "uid": "d2c499942f8a7c037d5a94f123eeb478",
+      "file": "layers",
+      "css": "layers",
+      "orig_css": "layers",
+      "orig_code": 59293,
+      "src": "iconic",
+      "from": 59293
+    },
+    {
+      "search": [
+        "vector"
+      ],
+      "code": 61509,
+      "uid": "33afa0f624ce5dae73f62a3f21a67f83",
+      "css": "vector",
+      "orig_css": "vector",
+      "orig_code": 61509,
+      "src": "mfglabs",
+      "from": 61509
+    },
+    {
+      "search": [
+        "dribbble",
+        "social",
+        "logo"
+      ],
+      "code": 61519,
+      "uid": "c5fa38a7b77f4efad5d8691b05035c7b",
+      "css": "dribbble-circled",
+      "orig_css": "dribbble-circled",
+      "orig_code": 61519,
+      "src": "mfglabs",
+      "from": 61519
+    },
+    {
+      "search": [
+        "github",
+        "social",
+        "logo"
+      ],
+      "code": 61524,
+      "uid": "3261112d66c6462ea20893f42b6f799b",
+      "css": "github-circled",
+      "orig_css": "github-circled",
+      "orig_code": 61524,
+      "src": "mfglabs",
+      "from": 61524
+    },
+    {
+      "search": [
+        "linkedin",
+        "social",
+        "logo"
+      ],
+      "code": 61531,
+      "uid": "d0c177a8e1688175c3445cc6b25bcc90",
+      "css": "linkedin-circled",
+      "orig_css": "linkedin-circled",
+      "orig_code": 61531,
+      "src": "mfglabs",
+      "from": 61531
+    },
+    {
+      "search": [
+        "link",
+        "url"
+      ],
+      "code": 61582,
+      "uid": "e15f0d620a7897e2035c18c80142f6d9",
+      "css": "link-ext",
+      "orig_css": "link-ext",
+      "orig_code": 61582,
+      "src": "fontawesome",
+      "from": 61582
+    },
+    {
+      "search": [
+        "github",
+        "social",
+        "logo"
+      ],
+      "code": 62208,
+      "uid": "d94334f23acba022bfd68e49d76b31bb",
+      "css": "github",
+      "orig_css": "github",
+      "orig_code": 62208,
+      "src": "entypo",
+      "from": 62208
+    },
+    {
+      "search": [
+        "twitter",
+        "social",
+        "logo"
+      ],
+      "code": 62217,
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "orig_css": "twitter",
+      "orig_code": 62217,
+      "src": "entypo",
+      "from": 62217
+    },
+    {
+      "search": [
+        "dribbble",
+        "social",
+        "logo"
+      ],
+      "code": 62235,
+      "uid": "e8d13cd05bd63219329b2b61835d776c",
+      "css": "dribbble",
+      "orig_css": "dribbble",
+      "orig_code": 62235,
+      "src": "entypo",
+      "from": 62235
+    },
+    {
+      "search": [
+        "lastfm",
+        "social",
+        "logo"
+      ],
+      "code": 62241,
+      "uid": "ae49d5a5d0c2f7253f375bde5f0da2d2",
+      "css": "lastfm-1",
+      "orig_css": "lastfm",
+      "orig_code": 62241,
+      "src": "entypo",
+      "from": 62241
+    },
+    {
+      "search": [
+        "globe"
+      ],
+      "code": 127758,
+      "uid": "6a12c2b74456ea21cc984e11dec227a1",
+      "css": "globe",
+      "orig_css": "globe",
+      "orig_code": 127758,
+      "src": "entypo",
+      "from": 127758
+    },
+    {
+      "search": [
+        "profile",
+        "contact",
+        "user"
+      ],
+      "code": 128100,
+      "uid": "bbd66ef66bb8fa9edde54d9a90b89150",
+      "css": "user",
+      "orig_css": "user",
+      "orig_code": 128100,
+      "src": "entypo",
+      "from": 128100
+    }
+  ]
+}
