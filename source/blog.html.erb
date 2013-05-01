@@ -1,0 +1,63 @@
+<section class="blog wrap">
+
+
+  <aside>
+    <div class="article-list- scroll">
+            <div class="article-list- wrap">
+
+                  <article class="article-list-item">
+                    <header class="entry-header entry-meta">
+                      <h1 class="entry-header"><a href="/2013-04-13.html">Vivamus Hendrerit Arcu</a></h1>
+
+                      <time class="entry-date">Apr 13 2013</time>
+                    </header>
+                  </article>
+
+                  <article class="article-list-item">
+                    <header class="entry-header entry-meta">
+                      <h1 class="entry-header"><a href="/2013-03-13-title.html">Donec Congue Lacinia Du</a></h1>
+
+                      <time class="entry-date">Mar 13 2013</time>
+                    </header>
+                  </article>
+
+                  <article class="article-list-item">
+                    <header class="entry-header entry-meta">
+                      <h1 class="entry-header"><a href="/2012-01-01-example-article.html">Curabitur Vulputate, Ligula</a></h1>
+
+                      <time class="entry-date">Jan  1 2012</time>
+                    </header>
+                  </article>
+
+            </div>
+        </div>
+  </aside>
+
+  <div class="main-content">
+
+  <div class="blog- inner">
+
+   <% blog.articles[0...1].each do |article| %>
+
+   <article class="blog-list item">
+
+    <header class="entry-header entry-meta">
+
+      <h3 class="entry-header">
+        <a href="<%= article.url %>"><%= article.title %></a>
+      </h3>
+
+      <time class="entry-date"><%= article.date.strftime('%b %e %Y') %></time>
+
+    </header>
+
+    <%= article.body %>
+
+  </article>
+
+  <% end %>
+
+</div>
+</div>
+
+</section>

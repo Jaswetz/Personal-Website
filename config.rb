@@ -1,3 +1,9 @@
+#MARKDOWN
+set :markdown_engine, :redcarpet
+set :markdown,  :fenced_code_blocks => true,
+                :autolink => true,
+                :smartypants => true
+
 #Livereload
 activate :livereload
 
@@ -6,6 +12,21 @@ require 'compass-normalize'
 
 # Susy grids
 require 'susy'
+
+
+###
+# Blog options, setup
+###
+
+activate :blog do |blog|
+  blog.permalink = ":title.html"
+  blog.sources = "blog/:title.html"
+  blog.layout = "layouts/article"
+  blog.default_extension = ".md"
+  # blog.tag_template  = "layouts/tag.html"
+  # blog.prefix = "blog"
+end
+
 
 ###
 # Page options, layouts, aliases and proxies

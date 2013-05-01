@@ -2,18 +2,11 @@
 // Global //
 ////////////
 
-	@include tablet-landscape-and-up
-	{
-		section.resume
-		{
-			margin-top: 3.5em;
-			@include box-shadow(0 0 .5rem 0 rgba(51, 51, 51, .45));
-		}
-	}
+
 
 .resume-.inner
 {
-	@include container(); 
+	@include container();
 }
 
 	.block
@@ -39,7 +32,7 @@
 				@include span-columns(8 omega,16);
 		}
 	}
-	
+
 	@include desktop-and-up
 	{
 		.resume .name
@@ -67,10 +60,10 @@
 	@include adjust-font-size-to(14px, 1, 16px);
 
 	h1
-	{	
+	{
 		padding-top: 14px;
 		padding-top: 1rem;
-		width: 100%;		
+		width: 100%;
 		color: $orange;
 		font-family: 'audimatbold';
 	}
@@ -141,21 +134,21 @@
 		margin: 0;
 		margin-left: 20px;
 		margin-left: 1.5rem;
-	}	
+	}
 }
 
 .main-info
 {
 	@include leader(1, $baseFontSize, margin);
 
-	ul 
+	ul
 	{
 		@extend %ul-reset;
 
 		li
 		{
 			width: 100%;
-			
+
 			> a
 			{
 				border-bottom: $btnBorderWidth solid #eee;
@@ -174,7 +167,7 @@
 				{
 					@include adjust-font-size-to(13px, 1, 16px);
 					display: inline-block;
-					
+
 					color: $bsClr;
 					text-decoration: none;
 					font-weight: bold;
@@ -185,7 +178,7 @@
 					span.item, i.label
 					{
 						@extend %df-trans;
-							
+
 					}
 
 					i.label
@@ -211,12 +204,12 @@
 
 				span.item, i.label
 				{
-					color: white;		
+					color: white;
 				}
 
 					i.label
 					{
-						
+
 						border-radius: 50%;
 						width: 1.5em;
 						height: 1.5em;
@@ -242,7 +235,7 @@
 				&:hover, &:active, &.focus
 				{
 					background: lighten($blue, 5%);
-					
+
 					span.item, i.label
 					{
 						text-shadow: none;
@@ -253,7 +246,7 @@
 				}
 			}
 
-			&.vcard 
+			&.vcard
 			{
 				float: right;
 				background: $orange;
@@ -261,13 +254,13 @@
 				&:hover, &:active, &.focus
 				{
 					background: lighten($orange, 5%);
-				
+
 					span.item, i.label
 					{
 						text-shadow: none;
 						color: white;
 					}
-				
+
 				}
 			}
 		}
@@ -364,7 +357,7 @@ $ux-color: #f29c1a;
 	{
 		@include single-box-shadow(lighten($design-color, 20%), 0, .12rem, 0, $default-box-shadow-spread, inset);
 		@include border-right-radius(1rem);
-		
+
 		@include adjust-font-size-to(11px, 1.1, 16px);
 		display: inline-block;
 		margin-bottom: 2px;
@@ -373,17 +366,17 @@ $ux-color: #f29c1a;
 		padding: .2rem;
 		padding-left: .5em;
 		width: 100%;
-		
+
 		border: $btnBorderWidth solid shade($design-color, 1%);
 		border-bottom: .4em solid shade($design-color, 12%);
 		border-bottom: .4rem solid shade($design-color, 12%);
-		
+
 		background: $design-color;
 		color: white;
 		font-weight: bold;
 	}
 
-	ul > li.front-end 
+	ul > li.front-end
 	{
 		h4
 		{
@@ -410,7 +403,7 @@ $ux-color: #f29c1a;
 
 		li
 		{
-			&.css, 
+			&.css,
 			&.html
 			{
 				width: 90%;
@@ -437,7 +430,7 @@ $ux-color: #f29c1a;
 			{
 				margin-right: 85%;
 				width: 15%;
-				
+
 				@include mobile-only
 				{
 					margin-right: 75%;
@@ -490,7 +483,7 @@ $ux-color: #f29c1a;
 		> ul
 		{
 			border-left: .3em solid shade($ux-color, 5%);
-		}		
+		}
 	}
 
 	li
@@ -531,7 +524,7 @@ $ux-color: #f29c1a;
 {
 	@include leader(.5, $baseFontSize, margin);
 	padding: 1rem;
-	
+
 	@include tablet-landscape-and-below
 	{
 		@include trailer(1, $baseFontSize, margin);
@@ -590,7 +583,7 @@ $ux-color: #f29c1a;
 	@include leader(.5, $baseFontSize, margin);
 	padding: 14px;
 	padding: 1rem;
-	
+
 	ul, p, h4, h5
 	{
 		margin-left: 20px;

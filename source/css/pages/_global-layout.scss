@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------
-// Global Layout  
+// Global Layout
 //----------------------------------------------------------------------------
 
 ////////////
@@ -58,12 +58,19 @@ body, .page-bckg
 	margin-top: $base-leader  * 5;
 }
 
-
-
-
 .page-bckg
 {
 	position: relative;
+}
+
+@include tablet-landscape-and-up
+{
+	section.resume,
+	section.blog
+	{
+		margin-top: 3.4em;
+		@include box-shadow(0 0 .5rem 0 rgba(51, 51, 51, .45));
+	}
 }
 
 ///////////////
@@ -78,10 +85,10 @@ $wrap-padding-mobile: ($wrap-padding / 3);
 	position: relative;
 	padding: 0 110px;
 	padding: 0 $wrap-padding;
-	max-width: 1204px; 
+	max-width: 1204px;
 	margin: 0 auto;
 
-	@include clearfix(); 
+	@include clearfix();
 }
 
 @include mobile-only

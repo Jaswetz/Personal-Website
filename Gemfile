@@ -1,6 +1,9 @@
 source :rubygems
 
-gem "middleman", "~>3.0.11"
+gem "middleman", "~>3.0.12"
+gem "middleman-blog"
+gem "nokogiri"
+gem "redcarpet"
 gem "compass-normalize"
 gem "susy"
 gem "middleman-livereload"
