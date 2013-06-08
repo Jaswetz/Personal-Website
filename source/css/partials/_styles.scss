@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------
-// Styles  
+// Styles
 //----------------------------------------------------------------------------
 
 // Animations
@@ -89,10 +89,12 @@
 %block
 {
 	border: 1px solid $borderColor;
-	@include border-radius($default-border-radius);	
+	@include border-radius($default-border-radius);
 	background: $white;
 	@include single-box-shadow(lighten($bsClr, 42%), 0, .25rem, 0, $default-box-shadow-spread, $default-box-shadow-inset);
 }
+
+
 
 // Buttons
 
@@ -153,7 +155,7 @@ $btn-trans-color: lighten($bsClr, 30%);
     {
        background: lighten( $btn-trans-color, 2% );
     }
-  
+
     &:active
     {
        box-shadow: none;

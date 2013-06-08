@@ -41,47 +41,56 @@ $('#contact-link span').append(emailAddress);
 // Contact form submission //
 /////////////////////////////
 
+function validateEmail(email)
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 $(function() {
-	
-	var form = $('#contact');
-	
-	$("#contact .button").click(function(e) {
 
-		e.preventDefault();
+  var form = $('#contact');
 
-                if (($("#visitors-name").val() == "") ||
-                    ($("#visitors-email").val() == "") ||
-                    ($("#visitors-message").val() == "")) {
-                    $('#notification').html("Please make sure all fields are filled out.").fadeIn(1000).delay(3000).fadeOut(1000);
-                } else {
+  $("#contact .button").click(function(e) {
 
-			$.ajax({
+    e.preventDefault();
 
-				type: "POST",
-				url: "../php/contact.php",
-				data: form.serialize(),
-				dataType: 'json',
-				success: function(){
-                                        
-                                        if (!data.result) { $('#notification').html("Message could not be sent").fadeIn(1000).delay(3000).fadeOut(1000); }
-                                        else { $('#notification').html("Your message has been sent!").fadeIn(1000).delay(3000).fadeOut(1000); }
+    if (($("#visitors-name").val() == "") ||
+        ($("#visitors-email").val() == "") ||
+        ($("#visitors-message").val() == "")) {
+        $('#notification').html("Please make sure all fields are filled out.").fadeIn(1000).delay(3000).fadeOut(1000);
+                    //alert("You forgot one of the fields, please make sure they are all filled out.");
+    } else if (!validateEmail($("#visitors-email").val())) {
+        $('#notification').html("Please make sure the email field is filled out.").fadeIn(1000).delay(3000).fadeOut(1000);
+    } else {
 
-					//$('.success').fadeIn(1000);
-				}
-			});
-		}
-                
-        
-	});
+      $.ajax({
 
-	return false;
+        type: "POST",
+        url: "contact.php",
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(data) {
+          if (!data.result) { $('#notification').html("Message could not be sent").fadeIn(1000).delay(3000).fadeOut(1000); }
+          else { $('#notification').html("Your message has been sent!").fadeIn(1000).delay(3000).fadeOut(1000); }
+        },
+        error: function(data) {
+          $('#notification').html("No connection to server.").fadeIn(1000).delay(3000).fadeOut(1000);
+        }
+      });
+    }
+
+  });
+
+  return false;
+
 });
 
 
  ///////////////////
  // Smooth Scroll //
  ///////////////////
- 
+
  function filterPath(string) {
   return string
     .replace(/^\//,'')
@@ -90,7 +99,7 @@ $(function() {
   }
   var locationPath = filterPath(location.pathname);
   var scrollElem = scrollableElement('html', 'body');
- 
+
   $('a[href*=#]').each(function() {
     var thisPath = filterPath(this.pathname) || locationPath;
     if (  locationPath == thisPath
@@ -108,7 +117,7 @@ $(function() {
       }
     }
   });
- 
+
   // use the first element that is "scrollable"
   function scrollableElement(els) {
     for (var i = 0, argLength = arguments.length; i <argLength; i++) {
@@ -129,3 +138,42 @@ $(function() {
   }
 
 });
+
+
+//////////////////
+// Article Menu //
+//////////////////
+
+var YTMenu = (function() {
+ 
+    function init() {
+         
+        [].slice.call( document.querySelectorAll( '.blog-menu' ) ).forEach( function( el, i ) {
+ 
+            var trigger = el.querySelector( 'div.blog-trigger' ),
+                icon = trigger.querySelector( 'span.blog-icon-menu' ),
+                open = false;
+ 
+            trigger.addEventListener( 'click', function( event ) {
+                if( !open ) {
+                    el.className += ' blog-menu-open';
+                    open = true;
+                }
+            }, false );
+ 
+            icon.addEventListener( 'click', function( event ) {
+                if( open ) {
+                    event.stopPropagation();
+                    open = false;
+                    el.className = el.className.replace(/\bblog-menu-open\b/,'');
+                    return false;
+                }
+            }, false );
+ 
+        } );
+ 
+    }
+ 
+    init();
+ 
+})();
